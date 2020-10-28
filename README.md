@@ -4,7 +4,7 @@
 
 Oh-My-Patt Design Pattern merupakan Repository, Wiki & GitHub Pages yang berisikan kumpulan design patterns dalam Framework Layer Architectures.
 
-Materi Design Pattern ini sebagian diambil dari buku "Design Patterns: Elements of Reusable Object-Oriented Software" alias _**Gang of Four Design Patterns**_ yang ditulis oleh Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. 
+Materi Design Pattern ini sebagian diambil dari buku "Design Patterns: Elements of Reusable Object-Oriented Software" alias _**Gang of Four Design Patterns**_ yang ditulis oleh Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
 
 Design Pattern terbagi menjadi 3 bagian:
 
@@ -25,7 +25,7 @@ Ada 5 jenis creational patterns:
 5. Prototype
 
 
-## Structural Patterns
+## B. Structural Patterns
 
 Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahkan skalabilitas _(scalability)_ dengan menjamin fleksibilitas dan efisiensi dari class itu sendiri.
 
@@ -39,7 +39,7 @@ Terdapat 7 jenis structual patterns:
 6. Flyweight
 7. Proxy
 
-## Behavioral Patterns
+## C. Behavioral Patterns
 
 Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik pemakaian algoritma maupun relasi antar class/object.
 
