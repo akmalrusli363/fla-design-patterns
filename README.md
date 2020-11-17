@@ -1,18 +1,24 @@
-# Oh-My-Patt: Design Patterns
+# Oh-My-Patt! - Design Patterns
 
-> The series of design patterns in Framework Layer Architectures.
+<p align="center" style="text-align:center"><img src="/assets/img/oh-my-patt.png#center" alt="Oh-My-Patt Design Patterns" /></p>
 
-Oh-My-Patt Design Pattern merupakan Repository, Wiki & GitHub Pages yang berisikan kumpulan design patterns dalam Framework Layer Architectures.
+> The series of design patterns in COMP6122 - Framework Layer Architectures.
+
+**Oh-My-Patt! Design Patterns** merupakan Repository, Wiki & GitHub Pages yang berisikan kumpulan design patterns dalam Framework Layer Architectures.
 
 Materi Design Pattern ini sebagian diambil dari buku "Design Patterns: Elements of Reusable Object-Oriented Software" alias _**Gang of Four Design Patterns**_ yang ditulis oleh Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
 
 Design Pattern terbagi menjadi 3 bagian:
 
-1. Creational patterns
-2. Structural patterns
-3. Behavioral patterns
+1. [Creational Design Patterns](Creational)
+2. [Structural Design Patterns](Structural)
+3. [Behavioral Design Patterns](Behavioral)
 
-## A. Creational Patterns
+## Creational Design Patterns
+
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/creational.png" alt="Creational Design Patterns" height="200" class="thumbnail" /></p>
+
+[Klik di sini untuk pembahasan Creational Design Patterns](Creational)
 
 Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi object untuk mempermudah pemakaian kembali code dan meningkatkan fleksibilitas dalam hierarki class.
 
@@ -25,11 +31,13 @@ Ada 5 jenis creational patterns:
 5. Prototype
 
 
-## B. Structural Patterns
+## Structural Design Patterns
+
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
 
 Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahkan skalabilitas _(scalability)_ dengan menjamin fleksibilitas dan efisiensi dari class itu sendiri.
 
-Terdapat 7 jenis structual patterns:
+Ada 7 jenis structual patterns:
 
 1. Adapter
 2. Bridge
@@ -39,7 +47,9 @@ Terdapat 7 jenis structual patterns:
 6. Flyweight
 7. Proxy
 
-## C. Behavioral Patterns
+## Behavioral Design Patterns
+
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/behavioral.png" alt="Behavioral Design Patterns" height="200" class="thumbnail" /></p>
 
 Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik pemakaian algoritma maupun relasi antar class/object.
 
@@ -59,5 +69,6 @@ Ada 10 jenis behavioral patterns:
 ## Referensi
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Refactoring.guru - https://refactoring.guru/design-patterns/catalog
-- Sourcemaking.com - https://sourcemaking.com/design_patterns
+- Refactoring.guru - [https://refactoring.guru/design-patterns/catalog](https://refactoring.guru/design-patterns/catalog)
+- Sourcemaking.com - [https://sourcemaking.com/design_patterns](https://sourcemaking.com/design_patterns)
+- Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)
