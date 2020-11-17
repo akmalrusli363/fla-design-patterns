@@ -1,0 +1,19 @@
+- title: Creational Patterns
+  url: Creational
+  subnav:
+    - title: Singleton
+      url: Creational/Singleton
+    - title: Factory Method
+      url: Creational/Factory-Method
+    - title: Abstract Factory
+      url: Creational/Abstract-Factory
+    - title: Builder
+      url: Creational/Builder
+    - title: Prototype
+      url: Creational/Prototype
+
+- title: Structural Patterns
+  url: Structural
+
+- title: Behavioral Patterns
+  url: Behavioral

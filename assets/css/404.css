@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.background {
+  background-image: url('../404-bg.png');
+  min-height: 350px;
+  height: 85vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  font-size: 1.3rem;
+  color: white;
+  text-align: center;
+  padding: 2em 0;
+  margin: 0 0;
+}
+
+.background > .error {
+  position: absolute;
+  width: fit-content;
+  padding: 1em 0;
+  margin:  auto auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.error * {
+  margin: auto;
+  padding: 0 0;
+}
+
+.error .error-code {
+  margin: 0 auto;
+  font-weight: normal;
+  font-size: 7em;
+}
+
+.error hr {
+  width: 70%;
+  margin: 1rem auto;
+  border-top: 2px dotted inherit;
+}
+
+.error quote {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.buttons {
+  margin: 1.4rem 0;
+}
+
+.btn-home {
+  padding: 0.5rem 1rem;
+  color: inherit;
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 750px) {
+  .background {
+    font-size: 1em;
+    height: 80vh;
+  }
+}

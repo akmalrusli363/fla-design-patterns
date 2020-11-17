@@ -1,0 +1,294 @@
+:root {
+  --main-accent-color: #2A396A;
+  --main-shadow-accent-color: #25325D;
+  --shadow-color: #00000033;
+
+  --bg-white: #F9F9F9;
+  --bg-dark: var(--main-accent-color);
+  --accent-text-color: white;
+
+  --accent1: #F1BE48; /* yellow - PANTONE 142 */
+  --accent2: #FC9BB3; /* pink - PANTONE 183 */
+  --accent3: #D3B4E2; /* purple - Orchid Bloom */
+  --accent4: #4FC5A5; /* green - Biscay Green */
+
+  --active: #7DCC79; /* green - PANTONE 7737 */
+}
+
+/* Navigation Bar */
+nav {
+  background-color: var(--main-accent-color);
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0px 4px 8px 0px var(--shadow-color);
+  vertical-align: middle;
+  transition: ease .3s;
+}
+
+nav.blend {
+  top: 0;
+  position: fixed;
+}
+
+nav.transparent {
+  background-color: #2A396A09;
+  box-shadow: 0px 0px 0px 0px var(--shadow-color);
+  border-bottom: 2px dotted rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav li {
+  margin: auto;
+}
+
+nav li .active {
+  font-weight: bold;
+}
+
+/* Navigation Menu (logo, logotype and hamburger menu) */
+.navigation-menu {
+  width: 100%;
+}
+
+.navigation-menu .logo {
+  margin: 0 0;
+  padding: 0.7em 1em;
+  vertical-align: middle;
+}
+
+.navigation-menu .logo img {
+  object-fit: contain;
+  width: auto;
+  height: 1.75em;
+  padding-right: 0.5em;
+  vertical-align: middle;
+}
+
+.navigation-menu .logo strong {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+.navigation-menu .icon {
+  display: none;
+}
+
+/* Navigation Menu Buttons */
+.menu, .navigation-menu {
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.menu a, .navigation-menu a {
+  float: left;
+  display: block;
+  color: var(--accent-text-color);
+  text-align: center;
+  padding: 1em 1em;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.menu .right {
+  float: right;
+}
+
+.menu .right .dropdown-content {
+  right: 0em;
+}
+
+/* Dropdown Button */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbutton {
+  font-size: 1em;
+  border: none;
+  outline: none;
+  color: var(--accent-text-color);
+  padding: 1em 1em;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  float: none;
+  position: absolute;
+  background-color: var(--bg-white);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px var(--shadow-color);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1em 1em;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content li a, .subdropdown-content li a {
+  border-bottom: 1px dotted lightgray;
+}
+
+.dropdown-content .subdropdown {
+  background-color: white;
+}
+
+/* Dropdown sub-contents */
+.subdropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-white);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px var(--shadow-color);
+  transform: translate(-100%,-3.2em);
+  z-index: 1;
+}
+
+.subdropdown-content a {
+  float: none;
+  color: black;
+  padding: 1em 1em;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Item Highlighting */
+.dropdown-content li .dropdown {
+  border-left: 4px solid var(--accent1);
+}
+
+.dropdown-content li .item {
+  border-left: 4px solid var(--accent2);
+}
+
+.dropdown-content li .external {
+  border-left: 4px solid var(--accent4);
+}
+
+.subdropdown-content li .item {
+  border-left: 4px solid var(--accent3);
+}
+
+/* Hovers */
+.navigation-menu a:hover, .menu a:hover, .dropdown:hover .dropbutton {
+  background-color: var(--hover-color, #00000033);
+  color: var(--accent-text-color);
+}
+
+.dropdown-content a:hover {
+  background-color: #00000011;
+  color: black;
+}
+
+.dropdown-content .subdropdown:hover {
+  background-color: #00000022;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .subdropdown:hover .subdropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 750px) {
+  nav.blend {
+    top: 0;
+    position: sticky;
+  }
+
+  nav.blend.transparent {
+    background-color: var(--main-accent-color);
+  }
+
+  .navigation-menu .menu a, .dropdown .dropbutton {
+    display: none;
+  }
+
+  .navigation-menu .logo strong {
+    display: none;
+  }
+
+  .navigation-menu .title {
+    float: none;
+    width: auto;
+    max-width: 70%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .navigation-menu .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .navigation-menu a.icon {
+    float: right;
+    display: block;
+  }
+
+  .menu {
+    background-color: var(--main-shadow-accent-color);
+    max-height: 80vh;
+    width: calc(100% + 50px);
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .menu.responsive .dropdown {
+    float: none;
+  }
+
+  .menu.responsive .dropdown-content {
+    position: relative;
+  }
+
+  .menu.responsive .dropdown .dropbutton {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu.responsive .subdropdown .subdropdown-content {
+    display: block;
+  }
+
+  .subdropdown-content {
+    display: block;
+    position: relative;
+    transform: translate(0, 0);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+    top: 0;
+    left: 0;
+  }
+}

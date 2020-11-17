@@ -1,0 +1,35 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.site-footer {
+  border-top: solid 2px $hr-border-color;
+}
+
+.plain {
+  padding: 1rem 2rem;
+  margin: 0 0;
+  padding-top: 1rem;
+}
+
+img {
+  &[src*="#center"] {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &[src*="#thumb-center"] {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 15rem;
+  }
+
+  &.thumbnail {
+    width: auto;
+    height: 15rem;
+  }
+}

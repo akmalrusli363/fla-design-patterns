@@ -1,0 +1,38 @@
+<nav id="navigationBar" class="{% if page.big_header == true %}blend{% endif %}">
+  <div class="navigation-menu">
+    <ul>
+      <li><a href="{{ site.baseurl }}" class="title"><strong>{{ site.title }}</strong></a></li>
+      <ul class="menu" id="navMenu">
+        <li><a href="{{ site.baseurl }}">Home</a></li>
+        <li><a href="{{ site.github.repository_url }}">View Repository</a></li>
+        <li><a href="{{ site.github.wiki_url }}">View on GitHub Wiki</a></li>
+        <li class="dropdown right">
+          <div class="dropbutton">Contents
+            <i class="fa fa-caret-down"></i>
+          </div>
+          <ul class="dropdown-content">
+            {% for item in site.data.navigation %}
+            <li class="subdropdown">
+              <a href="{{ site.baseurl }}/{{ item.url }}" class="{% if item.subnav %}dropdown{% else %}{% if item.external == true %}external{% else %}item{% endif %}{% endif %}">
+                {{ item.title }}
+              </a>
+              {% if item.subnav %}
+              <ul class="subdropdown-content">
+                {% for subitem in item.subnav %}
+                <li class="subdropdown">
+                  <a href="{{ site.baseurl }}/{{ subitem.url }}" class="item">
+                    {{ subitem.title }}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+      <li><a href="javascript:void(0);" class="icon" onclick="peekDropdown()">&#9776;</a></li>
+    </ul>
+  </div>
+</nav>
