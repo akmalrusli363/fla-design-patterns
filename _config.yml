@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+title: "Oh-My-Patt! - Design Patterns"
+description: "Design Patterns: Series of building blocks for your class and hiearchies"
+plugins:
+  - jemoji
