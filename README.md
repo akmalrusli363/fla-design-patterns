@@ -1,6 +1,6 @@
 # Oh-My-Patt! - Design Patterns
 
-<p align="center" style="text-align:center"><img src="oh-my-patt.png#center" alt="Oh-My-Patt Design Patterns" /></p>
+<p align="center" style="text-align:center"><img src="/assets/img/oh-my-patt.png#center" alt="Oh-My-Patt Design Patterns" /></p>
 
 > The series of design patterns in COMP6122 - Framework Layer Architectures.
 
@@ -10,24 +10,30 @@ Materi Design Pattern ini sebagian diambil dari buku "Design Patterns: Elements 
 
 Design Pattern terbagi menjadi 3 bagian:
 
-1. Creational Design Patterns
-2. Structural Design Patterns
-3. Behavioral Design Patterns
+1. [Creational Design Patterns](Creational)
+2. [Structural Design Patterns](Structural)
+3. [Behavioral Design Patterns](Behavioral)
 
 ## Creational Design Patterns
+
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/creational.png" alt="Creational Design Patterns" height="200" class="thumbnail" /></p>
+
+[Klik di sini untuk pembahasan Creational Design Patterns](Creational)
 
 Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi object untuk mempermudah pemakaian kembali code dan meningkatkan fleksibilitas dalam hierarki class.
 
 Ada 5 jenis creational patterns:
 
-1. Singleton
-2. Factory Method
-3. Abstract Method
-4. Builder
-5. Prototype
+1. [Singleton](Creational/Singleton)
+2. [Factory Method](Creational/Factory-Method)
+3. [Abstract Method](Creational/Abstract-Method)
+4. [Builder](Creational/Builder)
+5. [Prototype](Creational/Prototype)
 
 
 ## Structural Design Patterns
+
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
 
 Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahkan skalabilitas _(scalability)_ dengan menjamin fleksibilitas dan efisiensi dari class itu sendiri.
 
@@ -42,6 +48,8 @@ Ada 7 jenis structual patterns:
 7. Proxy
 
 ## Behavioral Design Patterns
+
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/behavioral.png" alt="Behavioral Design Patterns" height="200" class="thumbnail" /></p>
 
 Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik pemakaian algoritma maupun relasi antar class/object.
 
