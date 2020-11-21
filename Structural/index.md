@@ -10,8 +10,8 @@ Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahk
 
 Ada 7 jenis structual design patterns:
 
-1. Adapter
-2. Facade
+1. [Adapter](Adapter)
+2. [Facade](Facade)
 3. Decorator
 4. Proxy
 5. Bridge

@@ -14,6 +14,21 @@
 
 - title: Structural Patterns
   url: Structural
+  subnav:
+    - title: Adapter
+      url: Structural/Adapter
+    - title: Facade
+      url: Structural/Facade
+    - title: Bridge
+      url: Structural/Bridge
+    - title: Decorator
+      url: Structural/Decorator
+    - title: Proxy
+      url: Structural/Proxy
+    - title: Composite
+      url: Structural/Composite
+    - title: Flyweight
+      url: Structural/Flyweight
 
 - title: Behavioral Patterns
   url: Behavioral
