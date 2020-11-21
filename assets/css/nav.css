@@ -60,22 +60,19 @@ nav li .active {
 }
 
 .navigation-menu .logo {
-  margin: 0 0;
-  padding: 0.7em 1em;
+  padding: .1rem .5rem;
   vertical-align: middle;
 }
 
 .navigation-menu .logo img {
-  object-fit: contain;
-  width: auto;
-  height: 1.75em;
-  padding-right: 0.5em;
-  vertical-align: middle;
+  height: 3rem;
 }
 
-.navigation-menu .logo strong {
-  font-size: 1.3em;
+.navigation-menu .logo *:not(img) {
+  padding: .5rem;
   vertical-align: middle;
+  position: relative;
+  top: -1rem;
 }
 
 .navigation-menu .icon {
@@ -212,7 +209,7 @@ nav li .active {
   display: block;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   nav.blend {
     top: 0;
     position: sticky;
@@ -236,6 +233,14 @@ nav li .active {
     max-width: 70%;
     margin: 0 auto;
     position: relative;
+  }
+
+  .navigation-menu .title-img {
+    padding: 0.1rem 1rem;
+  }
+
+  .title-img img {
+    height: 3rem;
   }
 
   .navigation-menu .icon {

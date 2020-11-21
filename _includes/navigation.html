@@ -1,7 +1,9 @@
 <nav id="navigationBar" class="{% if page.big_header == true %}blend{% endif %}">
   <div class="navigation-menu">
     <ul>
-      <li><a href="{{ site.baseurl }}" class="title"><strong>{{ site.title }}</strong></a></li>
+      <li><a href="{{ site.baseurl }}" class="title logo">
+        <img src="{{ site.baseurl }}/assets/logo.png" alt="{{ site.title }}" title="{{ site.title }}"  height="40"></img>
+      </a></li>
       <ul class="menu" id="navMenu">
         <li><a href="{{ site.baseurl }}">Home</a></li>
         <li><a href="{{ site.github.repository_url }}">View Repository</a></li>
