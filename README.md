@@ -4,6 +4,10 @@
 
 > The series of design patterns in COMP6122 - Framework Layer Architectures.
 
+Hai teman-teman, selamat datang di laman GitHub Pages Framework Layer Architectures (FLA)! Kali ini saya kembali menuliskan ringkasan materi-materi FLA melalui Repository, Wiki, dan GitHub Pages dengan **100% asli hasil pembelajaran saya**.
+
+Oh iya, perkenalkan **"Oh-My-Patt!"**, brand laman Design Pattern berbahasa Indonesia dimana anda akan terjun ke dalam alam dunia Design Pattern dengan penyajian materi yang menarik & lengkap melalui project ini.
+
 **Oh-My-Patt! Design Patterns** merupakan Repository, Wiki & GitHub Pages yang berisikan kumpulan design patterns dalam Framework Layer Architectures.
 
 Materi Design Pattern ini sebagian diambil dari buku "Design Patterns: Elements of Reusable Object-Oriented Software" alias _**Gang of Four Design Patterns**_ yang ditulis oleh Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
@@ -45,13 +49,13 @@ Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahk
 
 Ada 7 jenis structual design patterns:
 
-1. [Adapter](Adapter)
-2. [Bridge](Bridge)
-3. Composite
-4. Decorator
-5. Facade
-6. Flyweight
-7. Proxy
+1. [Adapter](Structural/Adapter)
+2. [Bridge](Structural/Bridge)
+3. [Composite](Structural/Composite)
+4. [Decorator](Structural/Decorator)
+5. [Facade](Structural/Facade)
+6. [Flyweight](Structural/Flyweight)
+7. [Proxy](Structural/Proxy)
 
 ## Behavioral Design Patterns
 
@@ -73,6 +77,11 @@ Ada 10 jenis behavioral design patterns:
 8. Strategy
 9. Template Method
 10. Visitor
+
+
+## Catatan ringan
+
+Kalian juga bisa **Bookmark, Fork, buat Issue/Pull Request, maupun berkontribusi** ke [project ini](https://github.com/akmalrusli363/fla-design-patterns) karena saya akan melakukan update secara rutin pada Repository, Wiki, dan GitHub Pages mengenai Design Pattern selama proses pembelajaran saya ya! :wink: 
 
 ## Referensi
 
