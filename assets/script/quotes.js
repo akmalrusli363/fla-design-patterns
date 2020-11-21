@@ -7,6 +7,8 @@ var arr = [
   "Leh.. lagi cari situs judi? Tanyakan aja sama bang Judi..",
   "Ini bukan sabung ayam!",
   "Code Reengineering is a way to <strong>cleanse your brain</strong>, not making you married with code!",
+  "Bukan anak Software Enjineering",
+  "TURUN SALJU - TURUN ip karena SALah JUrusan",
   "Nyari downloadan materi? Kami gak ada file :((",
   "Nyari kode nuklir? Situs ini gak punya nomor berapapun :D",
   "CARI KE BINUSMAYA SONO!!!",
@@ -42,6 +44,15 @@ var arr = [
   "There are <strong>lot of 404s</strong> among this site",
   "There are <strong>only few of</strong> correct pages among this site",
   "There is <strong>1 true button</strong> to return to home site...",
+  "Siapa yang cita-citanya mau disesati seumur hidup?",
+  "Siapa yang cita-citanya pengen dirasukin alam akhirat?",
+  "pERGI m3nJ@di 4LliAn$1 aN4k-An4k IT slur...",
+  "Siapa yang cita-citanya pengen menjadi anak IT, jadi anak magang tapi gagal dan cuti kuliah sampai di-DO dari kampus?",
+  "Ayamku bukanlah ayam-mu!",
+  "Jika kamu <strong>tidak kenal</strong> ***, maka hidup anda terselamatkan",
+  "Disesatin BOCIL KEMATIAN!",
+  "Disesatin DOSEN Maut!",
+  "D IS ESA TI N  AN AK  Ma ut SoCS!",
 ];
 
 quote.innerHTML = arr[Math.floor(Math.random() * arr.length)];
