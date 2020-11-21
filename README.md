@@ -4,6 +4,11 @@
 
 > The series of design patterns in COMP6122 - Framework Layer Architectures.
 
+![GitHub deployments](https://img.shields.io/github/deployments/akmalrusli363/akmalrusli363.github.io/Github-Pages?label=GitHub%20Pages%20status)
+![Licensed under MIT License](https://img.shields.io/github/license/akmalrusli363/fla-design-patterns)
+![Refactoring.guru status](https://img.shields.io/website?down_message=offline%20%3A%28%28&label=refactoring.guru%20status&up_color=red&up_message=online&url=https%3A%2F%2Frefactoring.guru)
+![SourceMaking status](https://img.shields.io/website?down_message=offline%20%3A%28%28&label=sourcemaking%20status&up_color=1abc9c&up_message=online&url=https%3A%2F%2Fsourcemaking.com)
+
 Hai teman-teman, selamat datang di Repository Framework Layer Architectures (FLA)! Kali ini saya kembali menuliskan ringkasan materi-materi FLA melalui Repository, Wiki, dan GitHub Pages dengan **100% asli hasil pembelajaran saya**.
 
 Oh iya, perkenalkan **"Oh-My-Patt!"**, brand laman Design Pattern berbahasa Indonesia dimana anda akan terjun ke dalam alam dunia Design Pattern dengan penyajian materi yang menarik & lengkap melalui project ini.
@@ -73,7 +78,7 @@ Ada 10 jenis behavioral patterns:
 
 ## Catatan ringan
 
-Kalian juga bisa **Bookmark, Fork, buat Issue/Pull Request, maupun berkontribusi** ke [project ini](https://github.com/akmalrusli363/fla-design-patterns) karena saya akan melakukan update secara rutin pada Repository, Wiki, dan GitHub Pages mengenai Design Pattern selama proses pembelajaran saya ya! :wink: 
+Kalian juga bisa **Bookmark, Fork, buat Issue/Pull Request, maupun berkontribusi** ke [project ini](https://github.com/akmalrusli363/fla-design-patterns) karena saya akan melakukan update secara rutin pada Repository, Wiki, dan GitHub Pages mengenai Design Pattern selama proses pembelajaran saya ya! :wink:
 
 
 ## Referensi
