@@ -2,9 +2,9 @@
 
 [Main Page](..) → [Structural Design Patterns](#)
 
-<p align="center" style="text-align:center"><img src="/assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
+<p align="center" style="text-align:center"><img src="../assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
 
-<p align="center" style="text-align:center"><img src="/assets/img/structural/structural-model.png" alt="Structural Design Pattern Model" class="center" /></p>
+<p align="center" style="text-align:center"><img src="../assets/img/structural/structural-model.png" alt="Structural Design Pattern Model" class="center" /></p>
 
 Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahkan skalabilitas _(scalability)_ dengan menjamin fleksibilitas dan efisiensi dari class itu sendiri.
 
