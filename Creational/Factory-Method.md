@@ -2,7 +2,7 @@
 
 [Main Page](..) → [Creational Patterns](.) → [Factory Method](#)
 
-![Factory Method](https://refactoring.guru/images/patterns/content/factory-method/factory-method-en.png#center "Factory Method")
+![Factory Method](/assets/img/creational/factory-method.png#center "Factory Method")
 
 > Pembuatan industri perangkat elektronik semakin hari semakin maju dengan kehadiran berbagai jenis variasi perangkat elektronik termasuk kehadiran Smartphone dengan berbagai jenis model mulai dari smartphone konvensional, tablet, dan yang terbaru, smartphone lipat.
 >
@@ -124,8 +124,6 @@ public class SimsongFoldZ extends Smartphone {
 
 
 ## Catatan tambahan
-
-![Implementasi factory method ke class-class luaran](https://refactoring.guru/images/patterns/diagrams/factory-method/solution3-en.png#center "Implementasi factory method ke class-class luaran")
 
 Penggunaan **Factory Method** dapat dipergunakan pada class-class lain tanpa harus mengimplementasikan factory class tersendiri asalkan client class tersebut telah mengimplementasikan interface yang berisikan **Factory Method** yang return type berlaku.
 

@@ -2,9 +2,9 @@
 
 [Main Page](..) → [Creational Patterns](.) → [Singleton](#)
 
-> The most basic & simplest type of creational design pattern. Just define a private constructor & call for a instance to define a object.
-
 ![Singleton](https://refactoring.guru/images/patterns/content/singleton/singleton.png#center "Singleton")
+
+> The most basic & simplest type of creational design pattern. Just define a private constructor & call for a instance to define a object.
 
 Singleton merupakan design pattern yang paling mudah & sederhana yang bertujuan untuk membatasi deklarasi menjadi hanya 1 instance/object dalam sebuah class. Dalam Singleton, hanya ada 1 object dari class tersebut yang dapat dibuat untuk class client, yaitu _instance_ itu sendiri. Setiap pemanggilan object berikutnya yang dilakukan oleh client, object akan dipanggilkan langsung dari instance yang sudah dibuatkan oleh class tersebut.
 
