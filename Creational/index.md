@@ -20,7 +20,7 @@ Ada 5 jenis creational design patterns:
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/singleton) | [refactoring.guru](https://refactoring.guru/design-patterns/singleton) | [sourcemaking.com](https://sourcemaking.com/design_patterns/singleton)
 
-![Singleton](/assets/img/creational/singleton.png#center "Singleton")
+![Singleton](../assets/img/creational/singleton.png#center "Singleton")
 
 > The most basic & simplest type of creational design pattern. Just define a private constructor & call for a instance to define a object.
 
@@ -77,7 +77,7 @@ public class MySingleton {
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/factory-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/factory_method)
 
-![Factory Method](/assets/img/creational/factory-method.png#center "Factory Method")
+![Factory Method](../assets/img/creational/factory-method.png#center "Factory Method")
 
 Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object (misal SmartphoneFactory menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone)
 
@@ -194,7 +194,7 @@ public class SimsongFoldZ extends Smartphone {
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/abstract-factory) | [sourcemaking.com](https://sourcemaking.com/design_patterns/abstract_factory)
 
-![Abstract Factory](/assets/img/creational/abstract-factory.png#center "Abstract Factory")
+![Abstract Factory](../assets/img/creational/abstract-factory.png#center "Abstract Factory")
 
 Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **berbagai macam** object (misal FurnitureFactory menggunakan `createFurniture()` untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.))
 
@@ -356,7 +356,7 @@ public class ChandraFurniture {
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/builder) | [refactoring.guru](https://refactoring.guru/design-patterns/builder) | [sourcemaking.com](https://sourcemaking.com/design_patterns/builder)
 
-![Builder](/assets/img/creational/builder.png#center "Builder")
+![Builder](../assets/img/creational/builder.png#center "Builder")
 
 Builder menggunakan beberapa method/object yang dideklarasikan oleh client maupun *director* untuk kemudian dibuatkan/dideklarasikan/dikembalikan sebagai sebuah object.
 
@@ -508,7 +508,7 @@ Karena Director class merupakan class yang dipanggilkan secara universal oleh Cl
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/prototype) | [refactoring.guru](https://refactoring.guru/design-patterns/prototype) | [sourcemaking.com](https://sourcemaking.com/design_patterns/prototype)
 
-![Prototype](/assets/img/creational/prototype.png#center "Prototype")
+![Prototype](../assets/img/creational/prototype.png#center "Prototype")
 
 Prototype merupakan design pattern yang memanfaatkan _object clonability_ untuk menggandakan object dengan isi dan attribute dengan memastikan object tersebut identik namun tidak terkait satu sama lain.
 
@@ -575,7 +575,7 @@ Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan
 
 ### Contoh Implementasi
 
-![Slime, an example for Prototype implementation](/assets/img/creational/prototype-slime.png#center "Slime, an example for Prototype implementation")
+![Slime, an example for Prototype implementation](../assets/img/creational/prototype-slime.png#center "Slime, an example for Prototype implementation")
 
 Dalam kasus game RPG, terdapat sebuah monster bernama Slime merupakan monster yang dapat mengembang, mengecil, dan dapat membelah diri. Untuk menciptakan Slime baru dengan ukuran yang lebih besar ataupun lebih kecil, kita dapat menggunakan teknik cloning untuk menyalinkan semua properties dari slime utama ke slime gandaan _(cloned slimes)_ dengan memastikan bahwa setiap detail object tercopy dengan baik dengan _deep copy_.
 

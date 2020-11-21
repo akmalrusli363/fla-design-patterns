@@ -16,7 +16,7 @@ Sederhananya, client tidak bisa membuat object dari suatu class lebih dari 1 kal
 
 ### UML Model
 
-![Singleton](/assets/img/creational/singleton.png#center "Singleton")
+![Singleton](../assets/img/creational/singleton.png#center "Singleton")
 
 ### Contoh code
 

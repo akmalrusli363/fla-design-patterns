@@ -20,11 +20,11 @@ Salah satu contoh penerapan adapter adalah adapter antara JSON dan XML dimana ke
 
 ## UML Model
 
-![Adapter](/assets/img/structural/adapter.png#center "Adapter")
+![Adapter](../assets/img/structural/adapter.png#center "Adapter")
 
 ## Contoh: XML ↔ JSON
 
-![Web Adapter](/assets/img/structural/adapter-web-and-mobile.png#center "Adapter")
+![Web Adapter](../assets/img/structural/adapter-web-and-mobile.png#center "Adapter")
 
 Dalam mengadaptasi data antara XML dengan JSON (Web ke mobile, Oracle ke MySQL, maupun pasangan yang berbeda jenisnya), kita perlu mengetahui bahwa dalam mengadaptasi kedua jenis data tersebut tidak memerlukan penulisan ulang data maupun code yang dapat memperlama pengerjaan code dalam sebuah project.
 
@@ -89,13 +89,13 @@ Sehingga dengan menggunakan Adapter design pattern, maka data hasil konversi XML
 
 Terlalu ribet untuk mengimplementasikan code ini? Saya berikan ilustrasi UML untuk mempermudah konversi XML ke JSON di bawah:
 
-![UML Representation for XML to JSON Adapter](/assets/img/structural/adapter-xml-to-json.png#center "UML Representation for XML to JSON Adapter")
+![UML Representation for XML to JSON Adapter](../assets/img/structural/adapter-xml-to-json.png#center "UML Representation for XML to JSON Adapter")
 
 Namun karena pada topik ini bukan menyangkut cara menjawab permasalahan tersebut, maka kita simak contoh yang lebih sederhana lagi, yaitu kasus **Port Adapter** dan **Date Adapter**.
 
 ## Contoh A: Port Adapter
 
-![Plug Adapter](/assets/img/structural/adapter-plug.png#center "Adapter")
+![Plug Adapter](../assets/img/structural/adapter-plug.png#center "Adapter")
 
 Sesuai dengan judul di atas, kita dapat mengandai-andaikan bahwa kita memiliki 2 smartphone yaitu iPhone Xy dan Samsung S19. Smartphone iPhone Xy sudah ada sejak 2019 dan Smartphone Samsung S19 baru dibeli beberapa minggu yang lalu. Pada suatu hari, ketika charger dan kabel data Samsung (anggap USB-C) sedang digunakan oleh tetangga, kita hanya mempunyai kabel Lightning yang hanya dapat digunakan di perangkat iPhone saja sehingga harus membeli kabel data untuk HP Samsung yaitu USB-C.
 
@@ -409,7 +409,7 @@ public class DateAdapter {
 
 Atau dalam implementasi model UML:
 
-![Date to Calendar Adapter](/assets/img/structural/adapter-date-to-calendar.png#center "Date to Calendar Adapter")
+![Date to Calendar Adapter](../assets/img/structural/adapter-date-to-calendar.png#center "Date to Calendar Adapter")
 
 
 ## Referensi

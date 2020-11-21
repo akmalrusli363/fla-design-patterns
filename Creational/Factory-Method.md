@@ -4,7 +4,7 @@
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/factory-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/factory_method)
 
-![Factory Method](/assets/img/creational/factory-method.png#center "Factory Method")
+![Factory Method](../assets/img/creational/factory-method.png#center "Factory Method")
 
 > Pembuatan industri perangkat elektronik semakin hari semakin maju dengan kehadiran berbagai jenis variasi perangkat elektronik termasuk kehadiran Smartphone dengan berbagai jenis model mulai dari smartphone konvensional, tablet, dan yang terbaru, smartphone lipat.
 >

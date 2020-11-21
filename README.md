@@ -1,6 +1,6 @@
 # Oh-My-Patt! - Design Patterns
 
-<p align="center" style="text-align:center"><img src="/assets/img/oh-my-patt.png#center" alt="Oh-My-Patt Design Patterns" /></p>
+<p align="center" style="text-align:center"><img src="./assets/img/oh-my-patt.png#center" alt="Oh-My-Patt Design Patterns" /></p>
 
 > The series of design patterns in COMP6122 - Framework Layer Architectures.
 
@@ -16,7 +16,9 @@ Design Pattern terbagi menjadi 3 bagian:
 
 ## Creational Design Patterns
 
-<p align="center" style="text-align:center"><img src="/assets/img/pattern/creational.png" alt="Creational Design Patterns" height="200" class="thumbnail" /></p>
+<p align="center" style="text-align:center"><img src="./assets/img/pattern/creational.png" alt="Creational Design Patterns" height="200" class="thumbnail" /></p>
+
+<p align="center" style="text-align:center"><img src="./assets/img/creational/creational-model.png" alt="Creational Design Patterns Model" class="center" /></p>
 
 [Klik di sini untuk pembahasan Creational Design Patterns](Creational)
 
@@ -33,7 +35,9 @@ Ada 5 jenis creational design patterns:
 
 ## Structural Design Patterns
 
-<p align="center" style="text-align:center"><img src="/assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
+<p align="center" style="text-align:center"><img src="./assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
+
+<p align="center" style="text-align:center"><img src="./assets/img/structural/structural-model.png" alt="Structural Design Patterns Model" class="center" /></p>
 
 [Klik di sini untuk pembahasan Structural Design Patterns](Structural)
 
@@ -41,8 +45,8 @@ Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahk
 
 Ada 7 jenis structual design patterns:
 
-1. Adapter
-2. Bridge
+1. [Adapter](Adapter)
+2. [Bridge](Bridge)
 3. Composite
 4. Decorator
 5. Facade
@@ -51,7 +55,9 @@ Ada 7 jenis structual design patterns:
 
 ## Behavioral Design Patterns
 
-<p align="center" style="text-align:center"><img src="/assets/img/pattern/behavioral.png" alt="Behavioral Design Patterns" height="200" class="thumbnail" /></p>
+<p align="center" style="text-align:center"><img src="./assets/img/pattern/behavioral.png" alt="Behavioral Design Patterns" height="200" class="thumbnail" /></p>
+
+<p align="center" style="text-align:center"><img src="./assets/img/behavioral/behavioral-model.png" alt="Behavioral Design Patterns Model" class="center" /></p>
 
 Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik pemakaian algoritma maupun relasi antar class/object.
 

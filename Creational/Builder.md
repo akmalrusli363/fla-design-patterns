@@ -92,7 +92,7 @@ public class RobotDirector {
 
 ## UML Model
 
-![Builder](/assets/img/creational/builder.png#center "Builder")
+![Builder](../assets/img/creational/builder.png#center "Builder")
 
 ## Contoh kasus A: Robot
 

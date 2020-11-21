@@ -30,7 +30,7 @@ Salah satu contoh penerapan adapter adalah adapter antara JSON dan XML dimana ke
 
 [Source code](smartphone)
 
-![Plug Adapter](/assets/img/structural/adapter-plug.png#center "Adapter")
+![Plug Adapter](../assets/img/structural/adapter-plug.png#center "Adapter")
 
 Dalam kasus Port adapter, terdapat 2 perangkat smartphone yang RiJukie miliki yaitu iPhone Xy dan Samsung S19. Smartphone iPhone Xy sudah ada sejak 2019 dan Smartphone Samsung S19 baru dibeli beberapa minggu yang lalu. Pada suatu hari, kabel data/charger Samsung S19 dipinjam tetangga sehingga ia hanya mempunyai kabel Lightning yang hanya dapat digunakan di perangkat iPhone saja sehingga harus membeli kabel data untuk HP Samsung yaitu USB-C.
 

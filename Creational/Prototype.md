@@ -71,11 +71,11 @@ Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan
 
 ## UML Model
 
-![Prototype](/assets/img/creational/prototype.png#center "Prototype")
+![Prototype](../assets/img/creational/prototype.png#center "Prototype")
 
 ## Contoh implementasi
 
-![Slime, an example for Prototype implementation](/assets/img/creational/prototype-slime.png "Slime, an example for Prototype implementation")
+![Slime, an example for Prototype implementation](../assets/img/creational/prototype-slime.png "Slime, an example for Prototype implementation")
 
 Misal dalam sebuah game RPG terdapat sebuah monster bernama Slime merupakan monster yang dapat mengembang, mengecil, dan dapat membelah diri. Untuk menciptakan Slime baru dengan ukuran yang lebih besar ataupun lebih kecil, kita dapat menggunakan teknik cloning untuk menyalinkan semua properties dari slime utama ke slime gandaan _(cloned slimes)_ dengan implementasi code di bawah:
 

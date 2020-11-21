@@ -20,7 +20,7 @@ Berbeda dengan Factory method, Abstract class **mampu mengembalikan/memproduksi 
 
 ## UML Model
 
-![Abstract Factory](/assets/img/creational/abstract-factory.png#center "Abstract Factory")
+![Abstract Factory](../assets/img/creational/abstract-factory.png#center "Abstract Factory")
 
 ## Contoh kasus: Furniture
 
