@@ -2,6 +2,8 @@
 
 [Main Page](..) → [Creational Patterns](.) → [Prototype](#)
 
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/prototype) | [refactoring.guru](https://refactoring.guru/design-patterns/prototype) | [sourcemaking.com](https://sourcemaking.com/design_patterns/prototype)
+
 ![Prototype](https://refactoring.guru/images/patterns/content/prototype/prototype.png#center "Prototype")
 
 Prototype merupakan design pattern yang memanfaatkan _object clonability_ untuk menggandakan object dengan isi dan attribute dengan memastikan object tersebut identik namun tidak terkait satu sama lain.
@@ -66,6 +68,10 @@ public class AModel implements Cloneable {
 ```
 
 Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan exception berupa `CloneNotSupportedException` karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface `Cloneable`.
+
+## UML Model
+
+![Prototype](/assets/img/creational/prototype.png#center "Prototype")
 
 ## Contoh implementasi
 
@@ -613,5 +619,7 @@ Atau sebaliknya, kita juga bisa menggunakan library **JUnit Tests** untuk menguj
 ## Referensi
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru (Prototype, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/prototype](https://refactoring.guru/design-patterns/prototype)
+- SourceMaking (Prototype) - [https://sourcemaking.com/design_patterns/prototype](https://sourcemaking.com/design_patterns/prototype)
 - Gang Of Four (GoF) Design Patterns: Prototype - [https://www.journaldev.com/1440/prototype-design-pattern-in-java](https://www.journaldev.com/1440/prototype-design-pattern-in-java)

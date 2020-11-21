@@ -10,13 +10,17 @@ Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi o
 
 Ada 5 jenis creational design patterns:
 
-1.  [Singleton](Singleton)
-2.  [Factory Method](Factory-Method)
-3.  [Abstract Factory](Abstract-Factory)
-4.  [Builder](Builder)
-5.  [Prototype](Prototype)
+1.  [Singleton](#singleton)
+2.  [Factory Method](#factory-method)
+3.  [Abstract Factory](#abstract-factory)
+4.  [Builder](#builder)
+5.  [Prototype](#prototype)
 
-## Singleton
+## [Singleton](Singleton)
+
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/singleton) | [refactoring.guru](https://refactoring.guru/design-patterns/singleton) | [sourcemaking.com](https://sourcemaking.com/design_patterns/singleton)
+
+![Singleton](/assets/img/creational/singleton.png#center "Singleton")
 
 > The most basic & simplest type of creational design pattern. Just define a private constructor & call for a instance to define a object.
 
@@ -68,7 +72,12 @@ public class MySingleton {
 }
 ```
 
-## Factory Method
+
+## [Factory Method](Factory-Method)
+
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/factory-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/factory_method)
+
+![Factory Method](/assets/img/creational/factory-method.png#center "Factory Method")
 
 Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object (misal SmartphoneFactory menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone)
 
@@ -180,7 +189,12 @@ public class SimsongFoldZ extends Smartphone {
 }
 ```
 
-## Abstract Factory
+
+## [Abstract Factory](Abstract-Factory)
+
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/abstract-factory) | [sourcemaking.com](https://sourcemaking.com/design_patterns/abstract_factory)
+
+![Abstract Factory](/assets/img/creational/abstract-factory.png#center "Abstract Factory")
 
 Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **berbagai macam** object (misal FurnitureFactory menggunakan `createFurniture()` untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.))
 
@@ -337,7 +351,12 @@ public class ChandraFurniture {
 }
 ```
 
-## Builder
+
+## [Builder](Builder)
+
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/builder) | [refactoring.guru](https://refactoring.guru/design-patterns/builder) | [sourcemaking.com](https://sourcemaking.com/design_patterns/builder)
+
+![Builder](/assets/img/creational/builder.png#center "Builder")
 
 Builder menggunakan beberapa method/object yang dideklarasikan oleh client maupun *director* untuk kemudian dibuatkan/dideklarasikan/dikembalikan sebagai sebuah object.
 
@@ -484,7 +503,12 @@ public class RobotDirector {
 
 Karena Director class merupakan class yang dipanggilkan secara universal oleh Client & tidak memerlukan instance, maka class tersebut sebaiknya dideklarasikan sebagai Singleton class untuk menghindari deklarasi ganda yang tidak diperlukan oleh class/instance lain atau sebagai static class yang cukup dipanggil langsung dari class tanpa mendeklarasikan object.
 
-## Prototype
+
+## [Prototype](Prototype)
+
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/prototype) | [refactoring.guru](https://refactoring.guru/design-patterns/prototype) | [sourcemaking.com](https://sourcemaking.com/design_patterns/prototype)
+
+![Prototype](/assets/img/creational/prototype.png#center "Prototype")
 
 Prototype merupakan design pattern yang memanfaatkan _object clonability_ untuk menggandakan object dengan isi dan attribute dengan memastikan object tersebut identik namun tidak terkait satu sama lain.
 
@@ -550,6 +574,8 @@ public class AModel implements Cloneable {
 Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan exception berupa `CloneNotSupportedException` karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface `Cloneable`.
 
 ### Contoh Implementasi
+
+![Slime, an example for Prototype implementation](/assets/img/creational/prototype-slime.png#center "Slime, an example for Prototype implementation")
 
 Dalam kasus game RPG, terdapat sebuah monster bernama Slime merupakan monster yang dapat mengembang, mengecil, dan dapat membelah diri. Untuk menciptakan Slime baru dengan ukuran yang lebih besar ataupun lebih kecil, kita dapat menggunakan teknik cloning untuk menyalinkan semua properties dari slime utama ke slime gandaan _(cloned slimes)_ dengan memastikan bahwa setiap detail object tercopy dengan baik dengan _deep copy_.
 
@@ -679,3 +705,11 @@ public class Main {
   }
 }
 ```
+
+## Referensi
+
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Refactoring.guru - [https://refactoring.guru/design-patterns/creational-patterns](https://refactoring.guru/design-patterns/creational-patterns)
+- SourceMaking.com - [https://sourcemaking.com/design_patterns/creational_patterns](https://sourcemaking.com/design_patterns/creational_patterns)
+- Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)

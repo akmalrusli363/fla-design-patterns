@@ -2,6 +2,8 @@
 
 [Main Page](..) → [Creational Patterns](.) → [Abstract Factory](#)
 
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/abstract-factory) | [sourcemaking.com](https://sourcemaking.com/design_patterns/abstract_factory)
+
 ![Abstract Factory](https://refactoring.guru/images/patterns/content/abstract-factory/abstract-factory-en.png#center "Abstract Factory")
 
 > Pembuatan industri furniture melibatkan beberapa basis model yang berbeda (misal sofa, lemari, meja, ranjang) meski pada dasarnya adalah Furniture.
@@ -14,7 +16,11 @@ Factory method dan Abstract factory adalah 2 design pattern yang menerapkan tekn
 
 ![Ragam model furniture](https://refactoring.guru/images/patterns/diagrams/abstract-factory/problem-en.png#center "Ragam model furniture")
 
-Berbeda dengan Factory method, Abstract class **mampu mengembalikan/memproduksi 2 atau lebih jenis class beserta turunannya** dimana pembuatan object mencakup beberapa model class dengan pengerjaan masing-masing model terfokuskan pada konteks yang berlaku (misal FurnitureFactory menggunakan createFurniture() untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.) dimana pengerjaan turunan modelnya (misal Sofa) dilakukan secara tersendiri oleh turunan Factory-nya (SofaFactory)).
+Berbeda dengan Factory method, Abstract class **mampu mengembalikan/memproduksi 2 atau lebih jenis class beserta turunannya** dimana pembuatan object mencakup beberapa model class dengan pengerjaan masing-masing model terfokuskan pada konteks yang berlaku (misal FurnitureFactory menggunakan `createFurniture()` untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.) dimana pengerjaan turunan modelnya (misal Sofa) dilakukan secara tersendiri oleh turunan Factory-nya (SofaFactory)).
+
+## UML Model
+
+![Abstract Factory](/assets/img/creational/abstract-factory.png#center "Abstract Factory")
 
 ## Contoh kasus: Furniture
 
@@ -219,4 +225,5 @@ public class Client {
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
 - Refactoring.guru (Abstract Factory, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/abstract-factory](https://refactoring.guru/design-patterns/abstract-factory)
+- SourceMaking (Abstract Factory) - [https://sourcemaking.com/design_patterns/abstract_factory](https://sourcemaking.com/design_patterns/abstract_ _factory)
 - Gang Of Four (GoF) Design Patterns: Abstract Factory - [https://www.journaldev.com/1418/abstract-factory-design-pattern-in-java](https://www.journaldev.com/1418/abstract-factory-design-pattern-in-java)

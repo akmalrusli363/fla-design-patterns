@@ -2,6 +2,8 @@
 
 [Main Page](..) → [Creational Patterns](.) → [Factory Method](#)
 
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/factory-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/factory_method)
+
 ![Factory Method](/assets/img/creational/factory-method.png#center "Factory Method")
 
 > Pembuatan industri perangkat elektronik semakin hari semakin maju dengan kehadiran berbagai jenis variasi perangkat elektronik termasuk kehadiran Smartphone dengan berbagai jenis model mulai dari smartphone konvensional, tablet, dan yang terbaru, smartphone lipat.
@@ -131,5 +133,7 @@ Penggunaan **Factory Method** dapat dipergunakan pada class-class lain tanpa har
 ## Referensi
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru (Factory Method, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/factory-method](https://refactoring.guru/design-patterns/factory-method)
+- SourceMaking (Factory Method) - [https://sourcemaking.com/design_patterns/factory_method](https://sourcemaking.com/design_patterns/factory_method)
 - Gang Of Four (GoF) Design Patterns: Factory - [https://www.journaldev.com/1392/factory-design-pattern-in-java](https://www.journaldev.com/1392/factory-design-pattern-in-java)

@@ -2,6 +2,8 @@
 
 [Main Page](..) → [Creational Patterns](.) → [Builder](#)
 
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/builder) | [refactoring.guru](https://refactoring.guru/design-patterns/builder) | [sourcemaking.com](https://sourcemaking.com/design_patterns/builder)
+
 ![Builder](https://refactoring.guru/images/patterns/content/builder/builder-en.png#center "Builder")
 
 > Pernah mendengar istilah _"Mending rakit PC"_ yang viral belakangan ini? Istilah ini membuktikan bahwa PC adalah perangkat yang dirakit dari beberapa komponen terpisah. Berbeda dengan Laptop, Smartphone, maupun Tablet yang dirakit langsung oleh perusahaan perakit, PC memberikan banyak pilihan dan fleksibilitas yang diberikan kepada pengguna untuk memilih komponen sesuai kebutuhan dan budget yang dimiliki mereka masing-masing.
@@ -87,6 +89,10 @@ public class RobotDirector {
 
 }
 ```
+
+## UML Model
+
+![Builder](/assets/img/creational/builder.png#center "Builder")
 
 ## Contoh kasus A: Robot
 
@@ -341,4 +347,5 @@ public class ComputerSetBuilder {
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
 - Refactoring.guru (Builder, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/builder](https://refactoring.guru/design-patterns/builder)
+- SourceMaking (Builder) - [https://sourcemaking.com/design_patterns/builder](https://sourcemaking.com/design_patterns/builder)
 - Gang Of Four (GoF) Design Patterns: Builder - [https://www.journaldev.com/1425/builder-design-pattern-in-java](https://www.journaldev.com/1425/builder-design-pattern-in-java)
