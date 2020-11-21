@@ -1,12 +1,12 @@
-# Creational Patterns
+# Creational Design Patterns
 
-[Main Page](..) → [Creational Patterns](#)
+[Main Page](..) → [Creational Design Patterns](#)
 
-<p align="center" style="text-align:center"><img src="/assets/img/pattern/creational.png" alt="Creational Patterns" height="200" class="thumbnail" /></p>
+<p align="center" style="text-align:center"><img src="/assets/img/pattern/creational.png" alt="Creational Design Patterns" height="200" class="thumbnail" /></p>
 
 Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi object untuk mempermudah pemakaian kembali code dan meningkatkan fleksibilitas dalam hierarki class.
 
-Ada 5 jenis creational patterns:
+Ada 5 jenis creational design patterns:
 
 1.  [Singleton](Singleton)
 2.  [Factory Method](Factory-Method)
@@ -483,3 +483,197 @@ public class RobotDirector {
 Karena Director class merupakan class yang dipanggilkan secara universal oleh Client & tidak memerlukan instance, maka class tersebut sebaiknya dideklarasikan sebagai Singleton class untuk menghindari deklarasi ganda yang tidak diperlukan oleh class/instance lain atau sebagai static class yang cukup dipanggil langsung dari class tanpa mendeklarasikan object.
 
 ## Prototype
+
+Prototype merupakan design pattern yang memanfaatkan _object clonability_ untuk menggandakan object dengan isi dan attribute dengan memastikan object tersebut identik namun tidak terkait satu sama lain.
+
+Dalam bahasa pemrograman Java, class-class/model yang ingin mengimplementasikan Prototype design pattern harus mengimplementasikan interface yang bernama `Cloneable` dimana interface tersebut memiliki method `clone()` yang dapat menggandakan seluruh object attribute beserta isinya.
+
+Cara termudahnya dapat dilakukan dengan permodelan code seperti di bawah:
+
+```java
+public class AModel implements Cloneable {
+  //attributes & methods
+
+  /**
+   * Clone object attributes (including sub-attributes) to new object.
+   */
+  @Override
+  public AModel clone() throws CloneNotSupportedException {
+    // as simple by copy their properties using superclass clone()
+    return super.clone();
+  }
+}
+```
+
+Atau jika kita menginginkan semua object tersalin dengan baik secara _deep copy_ tanpa override method, dengan bantuan Constructor copy di bawah:
+
+```java
+public class AModel implements Cloneable {
+  //attributes & methods
+
+  /**
+   * Use constructor copy without throws CloneNotSupportedException
+   */
+  @Override
+  public AModel clone() {
+    // or by copy attributes to constructor copy with set every attribute values below:
+    AModel cloned = new AModel("//sets of existing attributes//");
+    return cloned;
+  }
+}
+```
+
+Atau gabungan dari keduanya dengan bantuan try-catch untuk mitigasi terhadap masalah cloning pada object tertentu:
+
+```java
+public class AModel implements Cloneable {
+  //attributes & methods
+
+  /**
+   * Use super.clone() + constructor copy mixes using try-catch
+   */
+  @Override
+  public AModel clone() {
+    AModel cloned;
+    try {
+      cloned = (AModel) super.clone();
+    } catch (CloneNotSupportedException e) {
+      cloned = new AModel("//sets of existing attributes//");
+    }
+    return cloned;
+  }
+}
+```
+
+Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan exception berupa `CloneNotSupportedException` karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface `Cloneable`.
+
+### Contoh Implementasi
+
+Dalam kasus game RPG, terdapat sebuah monster bernama Slime merupakan monster yang dapat mengembang, mengecil, dan dapat membelah diri. Untuk menciptakan Slime baru dengan ukuran yang lebih besar ataupun lebih kecil, kita dapat menggunakan teknik cloning untuk menyalinkan semua properties dari slime utama ke slime gandaan _(cloned slimes)_ dengan memastikan bahwa setiap detail object tercopy dengan baik dengan _deep copy_.
+
+Dalam code implementasi berikut, kita dapat menggunakan `super.clone()` dan Constructor Copy di dalam method implementasi `clone()` dari interface `Cloneable` di bawah:
+
+```java
+public class Slime implements Cloneable {
+  private int size;
+  private float damage;
+  private String color;
+
+  // slime color choices (or predefine it yourself)
+  public static final String GREEN_SLIME = "Green";
+  public static final String BLUE_SLIME = "Blue";
+
+  // base damage for slime with size of 2
+  private static final int BASE_DAMAGE = 10;
+  private static final int BASE_SIZE = 2;
+  private static final String DEFAULT_SLIME_COLOR = GREEN_SLIME;
+
+  public Slime() {
+    this(BASE_SIZE);
+  }
+
+  public Slime(int size) {
+    this(size, DEFAULT_SLIME_COLOR);
+  }
+
+  public Slime(int size, String color) {
+    setSize(size);
+    this.color = color;
+  }
+
+  public void setColor(String color) {
+    this.color = color;
+  }
+
+  public String getColor() {
+    return color;
+  }
+
+  public void setSize(int size) {
+    this.size = (size < 1) ? 1 : size;
+    setDamage(size);
+  }
+
+  public int getSize() {
+    return size;
+  }
+
+  public void setDamage(int size) {
+    this.damage = (size * BASE_DAMAGE) / 2;
+  }
+
+  public float getDamage() {
+    return damage;
+  }
+
+  /**
+   * The clone() method are used for cloning object. If not supported, use copy constructor as replacement for object cloning.
+   * @return cloned object
+   */
+  @Override
+  public Slime clone() {
+    try {
+        return (Slime) super.clone();
+    } catch (CloneNotSupportedException e) {
+        return new Slime(size, color);
+    }
+  }
+
+  public Slime grow() {
+    Slime upgraded = clone();
+    upgraded.setSize(upgraded.size * 2);
+    return upgraded;
+  }
+
+  public Slime shrink() {
+    Slime shrunk = clone();
+    shrunk.setSize(size / 2);
+    return shrunk;
+  }
+
+  public Slime[] split() throws Exception {
+    if (size <= 1) {
+      throw new Exception("This slime's size is too small to split!");
+    }
+
+    int numOfSplits = getRandomSlimeSplits();
+    Slime[] splitSlimes = new Slime[numOfSplits];
+    for (int i = 0; i < numOfSplits; i++) {
+      splitSlimes[i] = this.shrink();
+    }
+
+    return splitSlimes;
+  }
+
+  private int getRandomSlimeSplits() {
+    int maxSplits = 6;
+    int minSplits = 2;
+    return (int) Math.round((Math.random() * (maxSplits - minSplits)) + minSplits);
+  }
+
+  public String toString() {
+      return String.format("Slime (color: %s | size: %d | damage: %.2f HP)", color, size, damage);
+  }
+}
+
+public class Main {
+  public static void main(String[] a) {
+    Slime slime = new Slime(5);
+    System.out.println("Parent before split: " + slime.toString() + "\n");
+
+    try {
+      Slime[] splits = slime.split();
+      slime.setSize(3);
+      slime.setColor(Slime.BLUE_SLIME);
+      System.out.println("Parent after split: " + slime.toString() + "\n");
+
+      System.out.println("Splits:");
+      for (Slime s : splits) {
+        System.out.println(s.toString());
+      }
+    } catch (Exception e) {
+        System.out.println(e.toString());
+    }
+  }
+}
+```

@@ -22,7 +22,7 @@ Design Pattern terbagi menjadi 3 bagian:
 
 Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi object untuk mempermudah pemakaian kembali code dan meningkatkan fleksibilitas dalam hierarki class.
 
-Ada 5 jenis creational patterns:
+Ada 5 jenis creational design patterns:
 
 1. [Singleton](Creational/Singleton)
 2. [Factory Method](Creational/Factory-Method)
@@ -35,9 +35,11 @@ Ada 5 jenis creational patterns:
 
 <p align="center" style="text-align:center"><img src="/assets/img/pattern/structural.png" alt="Structural Design Patterns" height="200" class="thumbnail" /></p>
 
+[Klik di sini untuk pembahasan Structural Design Patterns](Structural)
+
 Merupakan design pattern yang berperan dalam strukturisasi object untuk memudahkan skalabilitas _(scalability)_ dengan menjamin fleksibilitas dan efisiensi dari class itu sendiri.
 
-Ada 7 jenis structual patterns:
+Ada 7 jenis structual design patterns:
 
 1. Adapter
 2. Bridge
@@ -53,7 +55,7 @@ Ada 7 jenis structual patterns:
 
 Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik pemakaian algoritma maupun relasi antar class/object.
 
-Ada 10 jenis behavioral patterns:
+Ada 10 jenis behavioral design patterns:
 
 1. Chain of Responsibility
 2. Command
