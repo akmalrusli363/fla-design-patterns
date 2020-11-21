@@ -2,21 +2,27 @@
 
 <p align="center" style="text-align:center"><img src="creational.png" alt="Creational Patterns" height="200" class="thumbnail" /></p>
 
+<p align="center" style="text-align:center"><img src="creational-model.png" alt="Creational Design Pattern Model" class="center" /></p>
+
 Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi object untuk mempermudah pemakaian kembali code dan meningkatkan fleksibilitas dalam hierarki class.
 
 Ada 5 jenis creational patterns:
 
-1.  Singleton
-2.  Factory Method
-3.  Abstract Method
-4.  Builder
-5.  Prototype
+1.  [Singleton](#Singleton)
+2.  [Factory Method](#Factory-Method)
+3.  [Abstract Method](#Abstract-Method)
+4.  [Builder](#Builder)
+5.  [Prototype](#Prototype)
 
 ## Singleton
 
+[Penjelasan & Source code](singleton) | [refactoring.guru](https://refactoring.guru/design-patterns/singleton) | [sourcemaking.com](https://sourcemaking.com/design_patterns/singleton)
+
+![Singleton](singleton/singleton.png "Singleton")
+
 > The most basic & simplest type of creational design pattern. Just define a private constructor & call for a instance to define a object.
 
-Singleton merupakan design pattern yang paling mudah & sederhana yang bertujuan untuk membatasi deklarasi menjadi hanya 1 instance/object dalam sebuah class. Dalam Singleton, hanya ada 1 object dari class tersebut yang dapat dibuat untuk class client, yaitu _instance_ itu sendiri. Setiap pemanggilan object berikutnya yang dilakukan oleh client, object akan dipanggilkan langsung dari instance yang sudah dibuatkan oleh class tersebut.
+Singleton merupakan design pattern yang paling sederhana yang bertujuan untuk membatasi deklarasi menjadi hanya 1 instance/object dalam sebuah class. Dalam Singleton, hanya ada 1 object dari class tersebut yang dapat dibuat untuk class client, yaitu _instance_ itu sendiri. Setiap pemanggilan object berikutnya yang dilakukan oleh client, object akan dipanggilkan langsung dari instance yang sudah dibuatkan oleh class tersebut.
 
 Sederhananya, client tidak bisa membuat object dari suatu class lebih dari 1 kali, sebaliknya object tersebut kemudian memanggil instance/object pertama sudah dibuatkan oleh class tersebut.
 
@@ -30,7 +36,7 @@ public class Storage {
    * An instance for Storage, initially to be null before client class invoke to define this object for first time!
    * For next declarations, it will return this object defined from this class since first declaration.
    */
-  private volatile static Storage instamce = null;
+  private volatile static Storage instance = null;
 
   public synchronized static Storage getInstance() {
     if (instance == null)
@@ -51,7 +57,7 @@ public class MySingleton {
     // TODO contents of constructor (if needed)
   }
 
-  private volatile static MySingleton instamce = null;
+  private volatile static MySingleton instance = null;
 
   public synchronized static MySingleton getInstance() {
     if (instance == null) {
@@ -65,6 +71,10 @@ public class MySingleton {
 ```
 
 ## Factory Method
+
+[Penjelasan & Source code](factorymethod) | [refactoring.guru](https://refactoring.guru/design-patterns/factory-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/factory_method)
+
+![Factory Method](factorymethod/factory-method.png "Factory Method")
 
 Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object (misal SmartphoneFactory menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone)
 
@@ -177,6 +187,10 @@ public class SimsongFoldZ extends Smartphone {
 ```
 
 ## Abstract Factory
+
+[Penjelasan & Source code](abstractfactory) | [refactoring.guru](https://refactoring.guru/design-patterns/abstract-factory) | [sourcemaking.com](https://sourcemaking.com/design_patterns/abstract_factory)
+
+![Abstract Factory](abstractfactory/abstract-factory.png "Abstract Factory")
 
 Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **berbagai macam** object (misal FurnitureFactory menggunakan `createFurniture()` untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.))
 
@@ -335,6 +349,10 @@ public class ChandraFurniture {
 
 ## Builder
 
+[Penjelasan & Source code](builder) | [refactoring.guru](https://refactoring.guru/design-patterns/builder) | [sourcemaking.com](https://sourcemaking.com/design_patterns/builder)
+
+![Builder](builder/builder.png "Builder")
+
 Builder menggunakan beberapa method/object yang dideklarasikan oleh client maupun *director* untuk kemudian dibuatkan/dideklarasikan/dikembalikan sebagai sebuah object.
 
 Berbeda dengan Constructor yang mengharuskan Client untuk memasukkan beberapa parameter untuk mendeklarasikan object (dimana dalam beberapa kasus tertentu, beberapa parameter tidak pernah digunakan alias _useless_), Builder class dapat memberikan fleksibilitas Client dalam menentukan/mendeklarasikan object yang mereka inginkan tanpa harus bergantung pada setiap attribute yang mereka inginkan.
@@ -482,11 +500,210 @@ Karena Director class merupakan class yang dipanggilkan secara universal oleh Cl
 
 ## Prototype
 
-Segera...
+[Penjelasan & Source code](prototype) | [refactoring.guru](https://refactoring.guru/design-patterns/prototype) | [sourcemaking.com](https://sourcemaking.com/design_patterns/prototype)
+
+![Prototype](prototype/prototype.png "Prototype")
+
+Prototype merupakan design pattern yang memanfaatkan _object clonability_ untuk menggandakan object dengan isi dan attribute dengan memastikan object tersebut identik namun tidak terkait satu sama lain.
+
+Dalam bahasa pemrograman Java, class-class/model yang ingin mengimplementasikan Prototype design pattern harus mengimplementasikan interface yang bernama `Cloneable` dimana interface tersebut memiliki method `clone()` yang dapat menggandakan seluruh object attribute beserta isinya.
+
+Cara termudahnya dapat dilakukan dengan permodelan code seperti di bawah:
+
+```java
+public class AModel implements Cloneable {
+  //attributes & methods
+
+  /**
+   * Clone object attributes (including sub-attributes) to new object.
+   */
+  @Override
+  public AModel clone() throws CloneNotSupportedException {
+    // as simple by copy their properties using superclass clone()
+    return super.clone();
+  }
+}
+```
+
+Atau jika kita menginginkan semua object tersalin dengan baik secara _deep copy_ tanpa override method, dengan bantuan Constructor copy di bawah:
+
+```java
+public class AModel implements Cloneable {
+  //attributes & methods
+
+  /**
+   * Use constructor copy without throws CloneNotSupportedException
+   */
+  @Override
+  public AModel clone() {
+    // or by copy attributes to constructor copy with set every attribute values below:
+    AModel cloned = new AModel("//sets of existing attributes//");
+    return cloned;
+  }
+}
+```
+
+Atau gabungan dari keduanya dengan bantuan try-catch untuk mitigasi terhadap masalah cloning pada object tertentu:
+
+```java
+public class AModel implements Cloneable {
+  //attributes & methods
+
+  /**
+   * Use super.clone() + constructor copy mixes using try-catch
+   */
+  @Override
+  public AModel clone() {
+    AModel cloned;
+    try {
+      cloned = (AModel) super.clone();
+    } catch (CloneNotSupportedException e) {
+      cloned = new AModel("//sets of existing attributes//");
+    }
+    return cloned;
+  }
+}
+```
+
+Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan exception berupa `CloneNotSupportedException` karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface `Cloneable`.
+
+### Contoh Implementasi
+
+![Slime, an example for Prototype implementation](prototype-slime.png "Slime, an example for Prototype implementation")
+
+Dalam kasus game RPG, terdapat sebuah monster bernama Slime merupakan monster yang dapat mengembang, mengecil, dan dapat membelah diri. Untuk menciptakan Slime baru dengan ukuran yang lebih besar ataupun lebih kecil, kita dapat menggunakan teknik cloning untuk menyalinkan semua properties dari slime utama ke slime gandaan _(cloned slimes)_ dengan memastikan bahwa setiap detail object tercopy dengan baik dengan _deep copy_.
+
+Dalam code implementasi berikut, kita dapat menggunakan `super.clone()` dan Constructor Copy di dalam method implementasi `clone()` dari interface `Cloneable` di bawah:
+
+```java
+public class Slime implements Cloneable {
+  private int size;
+  private float damage;
+  private String color;
+
+  // slime color choices (or predefine it yourself)
+  public static final String GREEN_SLIME = "Green";
+  public static final String BLUE_SLIME = "Blue";
+
+  // base damage for slime with size of 2
+  private static final int BASE_DAMAGE = 10;
+  private static final int BASE_SIZE = 2;
+  private static final String DEFAULT_SLIME_COLOR = GREEN_SLIME;
+
+  public Slime() {
+    this(BASE_SIZE);
+  }
+
+  public Slime(int size) {
+    this(size, DEFAULT_SLIME_COLOR);
+  }
+
+  public Slime(int size, String color) {
+    setSize(size);
+    this.color = color;
+  }
+
+  public void setColor(String color) {
+    this.color = color;
+  }
+
+  public String getColor() {
+    return color;
+  }
+
+  public void setSize(int size) {
+    this.size = (size < 1) ? 1 : size;
+    setDamage(size);
+  }
+
+  public int getSize() {
+    return size;
+  }
+
+  public void setDamage(int size) {
+    this.damage = (size * BASE_DAMAGE) / 2;
+  }
+
+  public float getDamage() {
+    return damage;
+  }
+
+  /**
+   * The clone() method are used for cloning object. If not supported, use copy constructor as replacement for object cloning.
+   * @return cloned object
+   */
+  @Override
+  public Slime clone() {
+    try {
+        return (Slime) super.clone();
+    } catch (CloneNotSupportedException e) {
+        return new Slime(size, color);
+    }
+  }
+
+  public Slime grow() {
+    Slime upgraded = clone();
+    upgraded.setSize(upgraded.size * 2);
+    return upgraded;
+  }
+
+  public Slime shrink() {
+    Slime shrunk = clone();
+    shrunk.setSize(size / 2);
+    return shrunk;
+  }
+
+  public Slime[] split() throws Exception {
+    if (size <= 1) {
+      throw new Exception("This slime's size is too small to split!");
+    }
+
+    int numOfSplits = getRandomSlimeSplits();
+    Slime[] splitSlimes = new Slime[numOfSplits];
+    for (int i = 0; i < numOfSplits; i++) {
+      splitSlimes[i] = this.shrink();
+    }
+
+    return splitSlimes;
+  }
+
+  private int getRandomSlimeSplits() {
+    int maxSplits = 6;
+    int minSplits = 2;
+    return (int) Math.round((Math.random() * (maxSplits - minSplits)) + minSplits);
+  }
+
+  public String toString() {
+      return String.format("Slime (color: %s | size: %d | damage: %.2f HP)", color, size, damage);
+  }
+}
+
+public class Main {
+  public static void main(String[] a) {
+    Slime slime = new Slime(5);
+    System.out.println("Parent before split: " + slime.toString() + "\n");
+
+    try {
+      Slime[] splits = slime.split();
+      slime.setSize(3);
+      slime.setColor(Slime.BLUE_SLIME);
+      System.out.println("Parent after split: " + slime.toString() + "\n");
+
+      System.out.println("Splits:");
+      for (Slime s : splits) {
+        System.out.println(s.toString());
+      }
+    } catch (Exception e) {
+        System.out.println(e.toString());
+    }
+  }
+}
+```
 
 ## Referensi
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru - [https://refactoring.guru/design-patterns/creational-patterns](https://refactoring.guru/design-patterns/creational-patterns)
 - Sourcemaking.com - [https://sourcemaking.com/design_patterns/creational_patterns](https://sourcemaking.com/design_patterns/creational_patterns)
 - Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)
