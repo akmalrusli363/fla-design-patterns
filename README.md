@@ -11,7 +11,7 @@ Materi Design Pattern ini sebagian diambil dari buku "Design Patterns: Elements 
 Design Pattern terbagi menjadi 3 bagian:
 
 1. [Creational Design Patterns](src/ohmypatt/patt/creational/)
-2. Structural Design Patterns (Coming soon!)
+2. [Structural Design Patterns](src/ohmypatt/patt/structural/)
 3. Behavioral Design Patterns (Coming soon!)
 
 ## Creational Design Patterns
