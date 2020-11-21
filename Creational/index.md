@@ -4,6 +4,8 @@
 
 <p align="center" style="text-align:center"><img src="/assets/img/pattern/creational.png" alt="Creational Design Patterns" height="200" class="thumbnail" /></p>
 
+<p align="center" style="text-align:center"><img src="/assets/img/creational/creational-model.png" alt="Creational Design Pattern Model" class="center" /></p>
+
 Merupakan design pattern yang berperan dalam pembuatan object maupun deklarasi object untuk mempermudah pemakaian kembali code dan meningkatkan fleksibilitas dalam hierarki class.
 
 Ada 5 jenis creational design patterns:
