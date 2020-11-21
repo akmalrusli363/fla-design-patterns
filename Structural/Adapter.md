@@ -2,6 +2,8 @@
 
 [Main Page](..) → [Structural Patterns](.) → [Adapter](#)
 
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/adapter) | [refactoring.guru](https://refactoring.guru/design-patterns/adapter) | [sourcemaking.com](https://sourcemaking.com/design_patterns/adapter)
+
 ![Adapter](https://refactoring.guru/images/patterns/content/adapter/adapter-en.png#center "Adapting Wheel-based car to Rail-based vehicle")
 
 > Penjualan smartphone di Indonesia sangatlah subur! Bahkan di tahun 2020, di saat pandemi Corona (COVID-19), ketika seluruh umat manusia menjalankan kegiatannya dari rumah _(meski ada yang harus kerja ke kantor dengan protokol kesehatan)_, smartphone menjadi salah satu benda yang paling berjasa bagi umat manusia di Indonesia dan di seluruh dunia.
@@ -14,7 +16,11 @@
 
 Adapter merupakan design pattern yang menghubungkan antara sebuah class yang dibuat oleh Client dengan class/package/library lain (3rd party) dengan bantuan middle class. Dengan memanfaatkan class penengah, data-data maupun attribute yang digunakan oleh client dapat compatible dengan attribute pada class luaran (3rd party).
 
-Salah satu contoh penerapan adapter adalah adapter antara JSON dan XML dimana kedua jenis object data ini tidak kompatibel secara langsung namun dapat dikomversikan dengan bantuan middle class.
+Salah satu contoh penerapan adapter adalah adapter antara JSON dan XML dimana kedua jenis object data ini tidak kompatibel secara langsung namun dapat dikomversikan dengan bantuan middle class. Selain itu, ada banyak contoh-contoh lain dimana Client dapat menggunakan design pattern ini untuk mengadaptasi class library terhadap class Client.
+
+## UML Model
+
+![Adapter](/assets/img/structural/adapter.png#center "Adapter")
 
 ## Contoh: XML ↔ JSON
 
@@ -83,7 +89,7 @@ Sehingga dengan menggunakan Adapter design pattern, maka data hasil konversi XML
 
 Terlalu ribet untuk mengimplementasikan code ini? Saya berikan ilustrasi UML untuk mempermudah konversi XML ke JSON di bawah:
 
-
+![UML Representation for XML to JSON Adapter](/assets/img/structural/adapter-xml-to-json.png#center "UML Representation for XML to JSON Adapter")
 
 Namun karena pada topik ini bukan menyangkut cara menjawab permasalahan tersebut, maka kita simak contoh yang lebih sederhana lagi, yaitu kasus **Port Adapter** dan **Date Adapter**.
 
@@ -321,6 +327,23 @@ Ada sekitar 8 method penting yang dianggap _deprecated_ dalam class `Date` dan d
 - `setYear()`/`getYear)`
 - `setTimeOffset()`/`getTimeOffset()`
 
+Adapun beberapa method tersebut dianggap deprecated diketahui dalam penjelasan dalam dokumen JDK dijelaskan sebagai berikut:
+
+> Prior to JDK 1.1, the class Date had two additional functions. It allowed the interpretation of dates as year, month, day, hour, minute, and second values. It also allowed the formatting and parsing of date strings. Unfortunately, the API for these functions was not amenable to internationalization. As of JDK 1.1, the Calendar class should be used to convert between dates and time fields and the DateFormat class should be used to format and parse date strings. The corresponding methods in Date are deprecated.
+
+Perlu diketahui bahwa Date dalam Java merupakan implementasi Date/Time dalam Java, namun dengan tingkat presisi hingga miliseconds serta hanya menyimpan data berupa _milisecond epochs_.
+
+Banyaknya fungsi dalam class `Date` yang digantikan oleh class `Calendar` dikaitkan dengan masalah standar waktu internasional dimana dalam beberapa kasus, beberapa method dalam class `Date` sudah tidak relevan dengan kasus-kasus tertentu.
+
+Adapun beberapa method yang menghasilkan nilai yang tidak diinginkan oleh user seperti `getYear()` dimana method tersebut menghasilkan tahun yang dikurangi dengan 1900 padahal user ingin mengeluarkan output tahun Masehi (misal 2020) di bawah:
+
+```java
+Date date = new Date();
+int year = date.getYear();
+// year = 120 bukan 2020 karena date.getYear() = date.year - 1900
+System.out.println(year);
+```
+
 Karena User/Client tidak boleh lagi menggunakan ke-delapan method tersebut di lain waktu dan tidak relevan dengan perkembangan jaman di Java, maka kita dapat menggunakan adapter Date untuk konversi field Date sebagai object Calendar dan mengembalikan object sebagai Date bila diperlukan oleh Client sebagai berikut:
 
 ```java
@@ -383,3 +406,17 @@ public class DateAdapter {
   }
 }
 ```
+
+Atau dalam implementasi model UML:
+
+![Date to Calendar Adapter](/assets/img/structural/adapter-date-to-calendar.png#center "Date to Calendar Adapter")
+
+
+## Referensi
+
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Refactoring.guru (Adapter, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/adapter](https://refactoring.guru/design-patterns/adapter)
+- SourceMaking (Adapter) - [https://sourcemaking.com/design_patterns/adapter](https://sourcemaking.com/design_patterns/adapter)
+- Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1487/adapter-design-pattern-java](https://www.journaldev.com/1487/adapter-design-pattern-java)
+- Java SE 8 Documentation: java.util.Date - [https://docs.oracle.com/javase/8/docs/api/java/util/Date.html](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)

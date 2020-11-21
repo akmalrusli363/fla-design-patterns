@@ -2,6 +2,8 @@
 
 [Main Page](..) → [Structural Patterns](.) → [Facade](#)
 
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/facade) | [refactoring.guru](https://refactoring.guru/design-patterns/facade) | [sourcemaking.com](https://sourcemaking.com/design_patterns/facade)
+
 ![Facade](/assets/img/structural/facade.png "Facade")
 
 ![Facade](https://sourcemaking.com/files/v2/content/patterns/Facade1.png#center "Limits Client access to internal classes")
@@ -179,8 +181,25 @@ public class Main {
 Dengan demikian, permasalahan terhadap masalah-masalah yang tidak diinginkan oleh user dapat dicegah dan user dapat menghemat waktu untuk mengurus berbagai urusan karena ditangani langsung oleh Facade.
 
 
+## Contoh kasus: SQL Connector
+
+Mengapa SQL Connector? Sebetulnya penerapan Facade dalam dunia Database sangat berperan dalam mengetahui apa yang kita perlukan untuk mengendalikan data-data dalam database seperti Create, Read, Update, maupun Delete. Kita bisa melakukan beberapa hal untuk mengambil data-data yang kita inginkan seperti mengambil data, menambahkan data, mengupdate data, hingga melakukan operasi data untuk keperluan tertentu.
+
+Mari kita mulai dari kebutuhan dasar, yaitu implementasi Adapter untuk mengambil data dari SQL
+
+
+
 ## Kekurangan/Bahaya Facade
 
 Facade bukanlah solusi yang baik bagi pengguna/Client apalagi Client memerlukan banyak hal yang perlu dilakukan dengan interaksi langsung dengan class termaksud (Misalnya Client ingin memilih opsi custom order dimana Client ingin menghilangkan tahap-tahapan tertentu yang dipesan oleh Client itu sendiri).
 
 Selain itu, Facade juga berpotensi menciptakan God Class karena membengkaknya kebutuhan class yang diperlukan bagi Client untuk meminimalisir kompleksitas secara langsung terhadap user.
+
+
+## Referensi
+
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Refactoring.guru (Facade) - [https://refactoring.guru/design-patterns/facade](https://refactoring.guru/design-patterns/facade)
+- SourceMaking (Facade, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/facade](https://sourcemaking.com/design_patterns/facade)
+- Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1557/facade-design-pattern-in-java](https://www.journaldev.com/1557/facade-design-pattern-in-java)
