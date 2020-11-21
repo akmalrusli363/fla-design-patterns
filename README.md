@@ -69,6 +69,7 @@ Ada 10 jenis behavioral patterns:
 ## Referensi
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru - [https://refactoring.guru/design-patterns/catalog](https://refactoring.guru/design-patterns/catalog)
 - Sourcemaking.com - [https://sourcemaking.com/design_patterns](https://sourcemaking.com/design_patterns)
 - Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)

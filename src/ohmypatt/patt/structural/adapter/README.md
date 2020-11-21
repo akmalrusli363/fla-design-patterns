@@ -421,4 +421,4 @@ Atau dalam implementasi model UML:
 - Refactoring.guru (Adapter, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/adapter](https://refactoring.guru/design-patterns/adapter)
 - SourceMaking (Adapter) - [https://sourcemaking.com/design_patterns/adapter](https://sourcemaking.com/design_patterns/adapter)
 - Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1487/adapter-design-pattern-java](https://www.journaldev.com/1487/adapter-design-pattern-java)
-- Java SE 8 Documentation: java.util.Date - [https://docs.oracle.com/javase/8/docs/api/java/util/Date.html](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- Java SE 8 Documentation: `java.util.Date` - [https://docs.oracle.com/javase/8/docs/api/java/util/Date.html](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
