@@ -3,6 +3,25 @@
 
 @import "{{ site.theme }}";
 
+#skip-to-content {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+  z-index: 10;
+
+  &:focus {
+    position: fixed;
+    top: 5rem;
+    left: 1rem;
+    height: auto;
+    width: auto;
+    background: invert($body-link-color);
+    outline: thick solid invert($body-link-color);
+  }
+}
+
 .site-footer {
   border-top: solid 2px $hr-border-color;
 }

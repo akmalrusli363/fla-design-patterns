@@ -81,7 +81,7 @@ Ada 10 jenis behavioral design patterns:
 
 ## Catatan ringan
 
-Kalian juga bisa **Bookmark, Fork, buat Issue/Pull Request, maupun berkontribusi** ke [project ini](https://github.com/akmalrusli363/fla-design-patterns) karena saya akan melakukan update secara rutin pada Repository, Wiki, dan GitHub Pages mengenai Design Pattern selama proses pembelajaran saya ya! :wink: 
+Kalian juga bisa **Bookmark, beri Bintang/Star, Fork, buat Issue/Pull Request, maupun berkontribusi** ke [project ini](https://github.com/akmalrusli363/fla-design-patterns) karena saya akan melakukan update secara rutin pada Repository, Wiki, dan GitHub Pages mengenai Design Pattern selama proses pembelajaran saya ya! :wink: 
 
 ## Referensi
 
