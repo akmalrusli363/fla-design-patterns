@@ -2,6 +2,18 @@
 ---
 
 @import "{{ site.theme }}";
+@import "fonts.css";
+
+body {
+  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.page-header {
+  .project-name {
+    font-family: "Fredoka One", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+  }
+}
 
 #skip-to-content {
   height: 1px;

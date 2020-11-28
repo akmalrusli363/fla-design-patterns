@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "Fredoka One";
+    src: url("../font/FredokaOne-Regular.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Varela Round";
+    src: url("../font/VarelaRound-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("../font/Nunito/Nunito-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("../font/Nunito/Nunito-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("../font/Nunito/Nunito-Italic.ttf") format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("../font/Nunito/Nunito-BoldItalic.ttf") format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Varela Round", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

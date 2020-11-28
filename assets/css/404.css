@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Varela Round", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .background {
@@ -34,6 +34,10 @@ body {
   padding: 0 0;
 }
 
+.error .error-code, .error p {
+  font-family: "Fredoka One", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .error .error-code {
   margin: 0 auto;
   font-weight: normal;
@@ -47,8 +51,8 @@ body {
 }
 
 .error quote {
+  font-family: "Varela Round", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  font-style: italic;
 }
 
 .buttons {
