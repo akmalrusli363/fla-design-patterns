@@ -1,5 +1,8 @@
 # Oh-My-Patt! - Design Patterns
 
+| [GitHub Pages](https://akmalrusli363.github.io/fla-design-patterns/) | [GitHub Wiki](wiki) "Coming soon!"
+|---|---|
+
 <p align="center" style="text-align:center"><img src="oh-my-patt.png#center" alt="Oh-My-Patt Design Patterns" /></p>
 
 > The series of design patterns in COMP6122 - Framework Layer Architectures.
