@@ -2,7 +2,6 @@ package ohmypatt.patt.structural.adapter.smartphone.model.iphone;
 
 import ohmypatt.patt.structural.adapter.smartphone.adapter.charger.IPhoneCharger;
 import ohmypatt.patt.structural.adapter.smartphone.adapter.lightning.Lightning;
-import ohmypatt.patt.structural.adapter.smartphone.adapter.usbc.UsbTypeC;
 
 public class IPhone {
 
