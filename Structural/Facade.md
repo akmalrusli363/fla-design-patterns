@@ -4,7 +4,7 @@
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/facade) | [refactoring.guru](https://refactoring.guru/design-patterns/facade) | [sourcemaking.com](https://sourcemaking.com/design_patterns/facade)
 
-![Facade](../assets/img/structural/facade.png "Facade")
+![Facade](../assets/img/structural/facade.png#center "Facade")
 
 ![Facade](https://sourcemaking.com/files/v2/content/patterns/Facade1.png#center "Limits Client access to internal classes")
 
