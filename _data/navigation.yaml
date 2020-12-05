@@ -32,3 +32,24 @@
 
 - title: Behavioral Patterns
   url: Behavioral
+  subnav:
+    - title: Template Method
+      url: Behavioral/Template-Method
+    - title: Observer
+      url: Behavioral/Observer
+    - title: State
+      url: Behavioral/State
+    - title: Strategy
+      url: Behavioral/Strategy
+    - title: Mediator
+      url: Behavioral/Mediator
+    - title: Chain of Responsibility
+      url: Behavioral/Chain-Of-Responsibility
+    - title: Command
+      url: Behavioral/Command
+    - title: Iterator
+      url: Behavioral/Iterator
+    - title: Visitor
+      url: Behavioral/Visitor
+    - title: Memento
+      url: Behavioral/Memento
