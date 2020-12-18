@@ -6,11 +6,59 @@
 @import "rogue-github";
 @import "fonts.css";
 
+.dark {
+  background-color: $dark-bg-color !important;
+  color: $dark-body-text-color;
+
+  .page-header {
+    background-color: $dark-header-bg-color !important;
+    background-image: linear-gradient(120deg, $dark-header-bg-color-secondary, $dark-header-bg-color);
+  }
+
+  .main-content {
+    a {
+      color: $dark-body-link-color;
+    }
+
+    code.highlighter-rouge {
+      color: $dark-body-text-color;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $dark-section-headings-color;
+    }
+
+    blockquote {
+      color: $dark-blockquote-text-color;
+    }
+  }
+
+  footer {
+    color: $dark-body-text-color;
+
+    a {
+      color: $dark-body-link-color;
+    }
+
+    .site-footer-credits {
+      color: $blockquote-text-color;
+    }
+  }
+}
+
+input, button {
+  color: $body-text-color;
+  border: 1px solid $body-text-color;
+  border-radius: .25rem;
+}
+
 body {
+  transition: .1s ease;
   font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .page-header {
+  transition: 0.2s ease !important;
   .project-name {
     font-family: "Fredoka One", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
@@ -34,6 +82,10 @@ body {
     background: invert($body-link-color);
     outline: thick solid invert($body-link-color);
   }
+}
+
+.night-toggle {
+  cursor: pointer;
 }
 
 .site-footer {
@@ -79,6 +131,7 @@ img {
 }
 
 .main-content {
+
   h1,
   h2,
   h3,
