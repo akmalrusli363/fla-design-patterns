@@ -2,7 +2,7 @@
 
 [Main Page](..) → [Behavioral Design Patterns](.) → [Observer](#)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/observer) | [refactoring.guru](https://refactoring.guru/design-patterns/observer) | [sourcemaking.com](https://sourcemaking.com/design_patterns/observer)
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/observer) | [refactoring.guru](https://refactoring.guru/design-patterns/observer) | [sourcemaking.com](https://sourcemaking.com/design_patterns/observer)
 
 ![Observer](../assets/img/behavioral/observer.png#center "Observer")
 
@@ -60,7 +60,7 @@ public interface Observable {
 public class Channel implements Observable {
   private String name;
   private Vector<User> subscibers;
-  
+
   public Channel(String name) {
     this.name = name;
     this.subscibers = new Vector<User>();
@@ -140,14 +140,14 @@ public class User implements Observer {
   public void subscribe(Channel channel) {
     channel.addSubscriber(this);
   }
-  
+
   public void unsubscribe(Channel channel) {
     channel.removeSubscriber(this);
   }
-  
+
   public String getName() {
     return name;
-  }  
+  }
 }
 ```
 
@@ -157,7 +157,7 @@ Setelah itu, buatlah class `Channel` dengan implementasi interface `Observable` 
 public class Channel implements Observable {
   private String name;
   private Vector<User> subscibers;
-  
+
   public Channel(String name) {
     this.name = name;
     this.subscibers = new Vector<User>();
@@ -195,11 +195,11 @@ public class Main {
     User user1 = new User("Wika Wika");
     User user2 = new User("Jobot TV");
     User user3 = new User("Jinjit Karunia");
-    
+
     ch.addSubscriber(user1);
     ch.addSubscriber(user2);
     ch.notifyUser("Ada video baru buat anda! Jangan lupa di subscribe ya!");
-    
+
     user3.subscribe(ch);
     ch.notifyUser("Video baru!");
   }
@@ -222,7 +222,7 @@ Pada basis view, anggap kita buat class yang di-extend dari `JFrame` untuk menam
 ```java
 public class MyFrame extends JFrame {
   private JButton button;
-  
+
   public void init() {
     setSize(500, 500);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -331,11 +331,11 @@ public class MyFrame extends JFrame {
     button = new JButton("Click Me!");
     add(button);
   }
-  
+
   public void addButtonListener(MouseListener listener) {
     button.addMouseListener(listener);
   }
-  
+
   public void removeButtonListener(MouseListener listener) {
     button.removeMouseListener(listener);
   }
