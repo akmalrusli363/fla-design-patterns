@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: "Fredoka One";
+    src: url("../font/FredokaOne-Regular.otf") format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Varela Round";
     src: url("../font/VarelaRound-Regular.ttf") format('truetype');
     font-weight: normal;

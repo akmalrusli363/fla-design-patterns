@@ -51,7 +51,7 @@ var arr = [
   "There are <strong>lot of 404s</strong> among this site",
   "There are <strong>only few of</strong> correct pages among this site",
   "There is <strong>1 true button</strong> to return to home site...",
-  "Siapa yang cita-citanya mau dipeluk kesesatan seumur hidup?",
+  "Siapa yang cita-citanya mau dipeluk hingga tersesat seumur hidup?",
   "Siapa di sini yang cita-citanya pengen dirasukin alam akhirat?",
   "Siapa yang cita-citanya pengen cumlaude tapi semester awal udah SP?",
   "Siapa yang cita-citanya mau dikawinin ayam?",
@@ -83,6 +83,10 @@ var arr = [
   "Nani??",
   "Ya, lemot bung :(",
   "Tenang, internet kamu aman kok 🙃",
+  "Makanya kerjain projectnya biar gak corrupt!!",
+  "offline",
+  "[insert chrome://dino game here...]",
+  "aowkokwokokwokwkwk",
   "Sobat, sebagai langkah awal silahkan restart modem nya terlebih dahulu selama 10 menit lalu dicoba koneksikan kembali.",
   "Mantap kuliah onlinenya pak!!"
 ];
