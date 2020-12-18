@@ -1,0 +1,293 @@
+// ==========================================================================
+//   Syntax highlighting
+//   ------------------------------------------------------------------
+//   Acquired from (sylhare/Type-on-Strap):
+//   >> https://github.com/sylhare/Type-on-Strap/blob/master/_sass/base/_highlight.scss
+// ==========================================================================
+
+div.highlighter-rouge,
+figure.highlight,
+.highlight code {
+  position: relative;
+  background: $base00 !important;
+  color: $base05;
+  font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+  font-size: 0.85em;
+  line-height: 1.3em;
+  border-radius: 4px;
+
+  > pre,
+  pre.highlight {
+    margin: 0;
+    padding: 1em;
+  }
+}
+
+li .highlight * {
+  font-size: 14px;
+}
+
+pre .rouge-table,
+.highlight pre,
+.code pre {
+  margin: 0;
+  overflow: auto;
+}
+
+.rouge-table * {
+  font-size: 1em;
+}
+
+li div.highlighter-rouge {
+  margin-top: 0.5em;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  margin-bottom: 1em;
+}
+
+code.highlighter-rouge {
+  padding: 0.2em 0.4em;
+  font-size: 0.85em;
+  background-color: transparentize($base00, 0.85);
+  color: rgb(36, 41, 46);
+  border-radius: 2px;
+  font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+}
+
+table.rouge-table {
+  margin-bottom: 0;
+  font-size: 1em;
+  width: 100%;
+  border: 0;
+
+  td {
+    padding: 0;
+    width: calc(100% - 1em);
+    border: 0;
+    /* line numbers*/
+    &.gutter,
+    &.rouge-gutter {
+      padding-right: 1em;
+      width: 2em;
+      color: $base04;
+      border-right: 1px solid $base04;
+      text-align: right
+    }
+
+    /* code */
+    &.code,
+    &.rouge-code {
+      padding-left: 1em
+    }
+  }
+
+  pre {
+    margin: 0
+  }
+}
+
+.highlight pre {
+  width: 100%
+}
+
+.highlight .hll {
+  background-color: $base06
+}
+
+.highlight {
+  background-color: $base00 !important;
+  .bp{ /* Name.Builtin.Pseudo */
+    color: $base0C  }
+  .c { /* Comment */
+    color: $base04 }
+  .cm{ /* Comment.Multiline */
+    color: $base04  }
+  .cp{ /* Comment.Preproc */
+    color: $base04  }
+  .c1{ /* Comment.Single */
+    color: $base04  }
+  .cs{ /* Comment.Special */
+    color: $base04  }
+  .dl{ /* String.Quotes 8 */
+    color: $base0A  }
+  .err { /* Error */
+    color: $base0C }
+  .gd{ /* Generic.Deleted */
+    color: $base0C  }
+  .ge{ /* Generic.Emph */
+    font-style: italic  }
+  .gh{ /* Generic.Heading */
+    color: $base05;font-weight: bold  }
+  .gi{ /* Generic.Inserted */
+    color: $base0A  }
+  .gp{ /* Generic.Prompt */
+    color: $base04;font-weight: bold  }
+  .gs{ /* Generic.Strong */
+    font-weight: bold  }
+  .gu{ /* Generic.Subheading */
+    color: $base08;font-weight: bold  }
+  .il{ /* Literal.Number.Integer.Long */
+    color: $base0E  }
+  .k { /* Keyword */
+    color: $base0D }
+  .kc{ /* Keyword.Constant */
+    color: $base0D  }
+  .kd{ /* Keyword.Declaration */
+    color: $base0D  }
+  .kn{ /* Keyword.Namespace */
+    color: $base0D  }
+  .kp{ /* Keyword.Pseudo */
+    color: $base0D  }
+  .kr{ /* Keyword.Reserved */
+    color: $base0D  }
+  .kt{ /* Keyword.Type */
+    color: $base09  }
+  .l{ /* Literal */
+    color: $base0E  }
+  .ld{ /* Literal.Date */
+    color: $base0A  }
+  .m{ /* Literal.Number */
+    color: $base0E  }
+  .mb{ /* Literal.Bytes */
+    color: $base0E  }
+  .mf{ /* Literal.Number.Float */
+    color: $base0E  }
+  .mh{ /* Literal.Number.Hex */
+    color: $base0E  }
+  .mi{ /* Literal.Number.Integer */
+    color: $base0E  }
+  .mo{ /* Literal.Number.Oct */
+    color: $base0E  }
+  .n{ /* Name */
+    color: $base05  }
+  .na{ /* Name.Attribute */
+    color: $base0B  }
+  .nb{ /* Name.Builtin */
+    color: $base05  }
+  .nc{ /* Name.Class */
+    color: $base05  }
+  .no{ /* Name.Constant */
+    color: $base05  }
+  .nd{ /* Name.Decorator */
+    color: $base0F  }
+  .ni{ /* Name.Entity */
+    color: $base05  }
+  .ne{ /* Name.Exception */
+    color: $base0C  }
+  .nf{ /* Name.Function */
+    color: $base0B  }
+  .nl{ /* Name.Label */
+    color: $base05  }
+  .nn{ /* Name.Namespace */
+    color: $base05  }
+  .nt{ /* Name.Tag */
+    color: $base08  }
+  .nv{ /* Name.Variable */
+    color: $base0C  }
+  .nx{ /* Name.Other */
+    color: $base0B  }
+  .o{ /* Operator */
+    color: $base08  }
+  .ow{ /* Operator.Word */
+    color: $base0D  }
+  .p{ /* Punctuation */
+    color: $base05  }
+  .py{ /* Name.Property */
+    color: $base05  }
+  .s{ /* Literal.String */
+    color: $base0A  }
+  .sb{ /* Literal.String.Backtick */
+    color: $base0A  }
+  .sc{ /* Literal.String.Char */
+    color: $base05  }
+  .sd{ /* Literal.String.Doc */
+    color: $base04  }
+  .s2{ /* Literal.String.Double */
+    color: $base0A  }
+  .se{ /* Literal.String.Escape */
+    color: $base0E  }
+  .sh{ /* Literal.String.Heredoc */
+    color: $base0A  }
+  .si{ /* Literal.String.Interpol */
+    color: $base0E  }
+  .sx{ /* Literal.String.Other */
+    color: $base0A  }
+  .sr{ /* Literal.String.Regex */
+    color: $base0A  }
+  .s1{ /* Literal.String.Single */
+    color: $base0A  }
+  .ss{ /* Literal.String.Symbol */
+    color: $base0A  }
+  .vc{ /* Name.Variable.Class */
+    color: $base0C  }
+  .vg{ /* Name.Variable.Global */
+    color: $base0C  }
+  .vi{ /* Name.Variable.Instance */
+    color: $base0C  }
+  .w{ /* Text.Whitespace */
+    color: $base05  }
+}
+
+// Fix Github syntax display
+.gist .blob-num {
+  width: 3.5% !important;
+}
+
+.gist {
+  th, td {
+    border-bottom: 0;
+  }
+}
+
+// Fix nbconvert dataframe
+.dataframe tbody {
+  font-size: 0.8em;
+  border-color: white;
+
+  tr {
+    :nth-child(even) {
+      background-color: $base06;
+    }
+
+    th {
+      border-top: 0;
+      border-left: 0;
+      border-bottom: 0;
+    }
+
+
+    td {
+      padding: 0;
+      border: 0;
+      text-align: center;
+    }
+  }
+
+
+}
+
+.dataframe thead tr {
+  :nth-child(n+2) {
+    color: black;
+    //width: 100px;
+
+    font-size: 0.75em;
+    text-align: center !important;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  :first-child {
+    border-top: 0;
+    border-left: 0;
+  }
+
+}
+
+table.dataframe {
+  border: 0 solid $border-color;
+  border-collapse: collapse;
+}
