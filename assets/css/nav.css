@@ -95,6 +95,14 @@ nav li .active {
   font-size: 1em;
 }
 
+.navigation-menu .mobile {
+  display: none;
+}
+
+.navigation-menu .desktop {
+  display: inherit;
+}
+
 .menu .right {
   float: right;
 }
@@ -252,6 +260,14 @@ nav li .active {
 
   .title-img img {
     height: 3rem;
+  }
+
+  .navigation-menu .mobile {
+    display: block;
+  }
+
+  .navigation-menu .desktop {
+    display: none;
   }
 
   .navigation-menu .icon {
