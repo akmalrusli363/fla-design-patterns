@@ -10,13 +10,22 @@ Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik p
 
 Ada 10 jenis behavioral design patterns:
 
-1. Template Method
-2. Observer
+1. [Template Method](Template-Method)
+2. [Observer](Observer)
 3. State
-4. Strategy
+4. [Strategy](Strategy)
 5. Mediator
 6. Chain of Responsibility
 7. Command
-8. Iterator
+8. [Iterator](Iterator)
 9. Visitor
 10. Memento
+
+
+## Referensi
+
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Refactoring.guru - [https://refactoring.guru/design-patterns/behavioral-patterns](https://refactoring.guru/design-patterns/behavioral-patterns)
+- Sourcemaking.com - [https://sourcemaking.com/design_patterns/behavioral_patterns](https://sourcemaking.com/design_patterns/behavioral_patterns)
+- Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)

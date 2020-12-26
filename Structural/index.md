@@ -13,7 +13,7 @@ Ada 7 jenis structual design patterns:
 1. [Adapter](#adapter)
 2. [Facade](#facade)
 3. Decorator
-4. Proxy
+4. [Proxy](#proxy)
 5. Bridge
 6. Composite
 7. Flyweight
@@ -261,7 +261,7 @@ Penggunaan Facade sendiri bertujuan untuk mengurangi kompleksitas class-class li
 
 ### Contoh kasus: Kamar
 
-[Source code](room)
+[Source code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/facade/room)
 
 Ketika user dihadapkan dengan banyaknya hal yang perlu mereka lakukan untuk menyiapkan momen-momen penting seperti menyaksikan sepakbola, terkadang kita harus menyiapkan berbagai hal yang barangkali kita tidak inginkan seperti remote TV, channel TV yang ingin kita tonton, jumlah lampu yang dinyalakan, suhu AC, serta menyiapkan barang-barang yang kita inginkan saat itu.
 
@@ -426,9 +426,176 @@ Dengan demikian, permasalahan terhadap masalah-masalah yang tidak diinginkan ole
 
 Coming soon...
 
-## Proxy
+## [Proxy](Proxy)
 
-Coming soon...
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/proxy) | [refactoring.guru](https://refactoring.guru/design-patterns/proxy) | [sourcemaking.com](https://sourcemaking.com/design_patterns/proxy)
+
+![Proxy](../assets/img/structural/proxy.png#center "Proxy")
+
+Merupakan design pattern yang diciptakan sebagai class penengah yang bertujuan untuk mengatur akses ke object asli (baik melalui pembatasan, caching, maupun panggilan ke remote class). Sebelum Client dapat benar-benar mengakses object asli, sebuah class harus menghadapi beberapa proses (seperti validasi, akses remote, dll) terlebih dahulu untuk mencegah akses object asli secara langsung.
+
+Design pattern ini sering digunakan dalam kasus koneksi ke database, services, maupun kasus data caching yang sering dipakai dalam aplikasi-aplikasi (baik service maupun app-based) yang memerlukan data secara online.
+
+
+## Jenis-jenis Proxy
+
+### 1. Lazy initialization (Virtual Proxy)
+
+Dalam beberapa kasus, terdapat beberapa object yang dapat membebani resource meski jarang dipakai dan dibutuhkan oleh user meski berbarengan dengan pembuatan object class yang baru sekalipun ketika aplikasi tersebut diluncurkan.
+
+Untuk menghemat resources yang digunakan oleh class, Proxy ini dapat membiarkan object tersebut kosong ketika object tersebut dibuat maupun aplikasi tersebut diluncurkan hingga class tersebut dipanggil dan class tersebut akan mengambil data bila diperlukan oleh user sendiri.
+
+Dengan *Lazy-loading*, penggunaan resource dapat dihematkan sehemat mungkin sehingga object cukup dipanggil bila diperlukan oleh user saja.
+
+### 2. Access control (Protection Proxy)
+
+Pengembangan aplikasi, terutama berbasis web (Web application) dan service memerlukan adanya access control untuk mencegah pihak-pihak yang bukan haknya untuk mengakses laman/fitur/service tertentu.
+
+Untuk membatasi user-user dari pengaksesan data/service tertentu meski bukan tanggungjawabnya, Protection Proxy diberikan untuk mencegah orang-orang yang bukan tanggungjawabnya menyalahgunakan service tersebut.
+
+### 3. Local execution of a remote service (Remote Proxy)
+
+Apabila Client ingin mengakses Database, diperlukan Remote Proxy yang akan mengetahui kapan data tersebut diambil maupun diproses ke sumber luar (remote sources). Proxy ini juga akan berperan dalam pengaturan akses data secara external (baik HTTP maupun Database).
+
+### 4. Logging requests (Logging Proxy)
+
+Apabila request tersebut ingin dicatat oleh Client sebagai bukti transaksi request, Proxy dapat dipergunakan dalam pencatatan request dari user kepada server.
+
+### 5. Caching request results (Caching Proxy)
+
+Apabila hasil request tersebut ingin disimpan oleh Client, Proxy akan menyimpan hasil request tersebut dan akan mengembalikan data yang di-*cached* sebelumnya sebagai bila request tersebut sama dengan apa yang disimpan sebelumnya.
+
+### Contoh Kasus: Accessing the Service
+
+![Youtube Service Proxy](../assets/img/structural/proxy-service.png#center "Youtube Service Proxy")
+
+Berangkat dari kasus dasar, misalnya terdapat sebuah aplikasi yang ingin menyalurkan feed-feed video dari YouTube yang ingin disajikan oleh penonton dimana user dapat memilih video yang ingin ia tonton.
+
+Karena akses object asli (pada umumnya) harus menghadapi akses database, maka koneksi internet dan kestabilan server dalam menghadapi banyak pengguna dibutuhkan agar setiap user dapat memperoleh data yang dibutuhkan.
+
+Sebagai solusinya, kita akan membuat sebuah class yang menjadi proxy, dan memiliki satu attribute yang berisikan class yang akan Client akses. Melalui Proxy, nantinya Client perlu melakukan proses verifikasi terlebih dahulu untuk kemudian mendelegasikan kepada Proxy untuk mengambil data dari object class asli tersebut sebagai cached data kepada Client.
+
+### Implementasi Code
+
+Pertama-tama, buatkan model yang berisikan data yang akan diakses oleh Client:
+
+```java
+package model;
+public class Video {
+  private String name;
+  private int duration;
+  
+  public Video(String name, int duration) {
+    this.name = name;
+    this.duration = duration;
+  }
+
+  public String getName() {
+    return name;
+  }
+  
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+  public int getDuration() {
+    return duration;
+  }
+  
+  public void setDuration(int duration) {
+    this.duration = duration;
+  }
+}
+```
+
+Kedua, buat interface bernama `IYoutubeService` yang berisikan method-method untuk mengambil data beserta list berisikan `Video`:
+
+```java
+package service;
+
+import java.util.ArrayList;
+import model.Video;
+
+public interface IYoutubeService {
+  ArrayList<Video> listVideos();
+  Video getSpecificVideo(String name);
+}
+```
+
+Ketiga, buat object real servicenya dan proxy untuk mengambil data yang sudah ada atau mengambil dari real service bila beda dengan permintaan user.
+
+```java
+package service;
+
+import java.util.ArrayList;
+import model.Video;
+
+public class YoutubeRealService implements IYoutubeService {
+  private ArrayList<Video> videos;
+
+  public YoutubeRealService() {
+    videos = new ArrayList<>();
+    videos.add(new Video("John Wick 3", 103));
+    videos.add(new Video("Tom and Jerry", 25));
+    videos.add(new Video("Avengers: End Game", 210));
+    videos.add(new Video("Goblindo", 45));
+    videos.add(new Video("Game of Thrones", 52));
+  }
+
+  @Override
+  public ArrayList<Video> listVideos() {
+    return videos;
+  }
+
+  @Override
+  public Video getSpecificVideo(String name) {
+    for (Video video : videos) {
+      if (video.getName().equals(name)) {
+        return video;
+      }
+    }
+    return null;
+  }
+}
+
+public class CachedService implements IYoutubeService {
+  private IYoutubeService service;
+  private ArrayList<Video> listVideos;
+  private Video video;
+
+  /**
+   * Load Youtube real service from this proxy
+   */
+  public CachedService() {
+    service = new YoutubeRealService();
+  }
+
+  /**
+   * Ambil list video dari Youtube real service
+   */
+  @Override
+  public ArrayList<Video> listVideos() {
+    if (listVideos == null) {
+      listVideos = service.listVideos();
+    }
+    return listVideos;
+  }
+
+  /**
+   * Ambil video dari real service bila belum ada video dalam service 
+   * atau video tersebut berbeda dengan permintaan user
+   */
+  @Override
+  public Video getSpecificVideo(String name) {
+    if (video == null || video.getName().equals(name) == false) {
+      video = service.getSpecificVideo(name);
+    }
+    return video;
+  }
+}
+```
+
+Nantinya apabila user ingin mengambil konten yang diinginkan olehnya, Client cukup menggunakan video yang sudah diperoleh dari Service sebelumnya melalui Proxy. Apabila informasi-informasi yang dibutuhkan oleh user ingin diperbarui, Client dapat memanggil Proxy untuk mengambil dari Service secara langsung.
 
 ## Bridge
 
@@ -446,6 +613,6 @@ Coming soon...
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
 - Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
-- Refactoring.guru - [https://refactoring.guru/design-patterns/structural-patterns](https://refactoring.guru/design-patterns/creational-patterns)
-- Sourcemaking.com - [https://sourcemaking.com/design_patterns/structural_patterns](https://sourcemaking.com/design_patterns/creational_patterns)
+- Refactoring.guru - [https://refactoring.guru/design-patterns/structural-patterns](https://refactoring.guru/design-patterns/structural-patterns)
+- Sourcemaking.com - [https://sourcemaking.com/design_patterns/structural_patterns](https://sourcemaking.com/design_patterns/structural_patterns)
 - Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)
