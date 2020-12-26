@@ -153,10 +153,21 @@ nav li .active {
   display: none;
   position: absolute;
   background-color: var(--bg-white);
-  min-width: 160px;
+  min-width: 180px;
   box-shadow: 0px 8px 16px 0px var(--shadow-color);
   transform: translate(-100%,-3.2em);
+  max-height: 25rem;
+  max-height: 70vh;
+  overflow-y: scroll;
   z-index: 1;
+}
+
+.subdropdown-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.subdropdown-content::-webkit-scrollbar-thumb {
+  background: #bbb;
 }
 
 .subdropdown-content a {
