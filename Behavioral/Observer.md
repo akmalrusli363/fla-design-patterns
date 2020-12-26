@@ -363,6 +363,6 @@ Ketika komponen tersebut mendapatkan perlakuan dari keyboard, mouse, maupun even
 - Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru (Observer) - [https://refactoring.guru/design-patterns/observer](https://refactoring.guru/design-patterns/observer)
 - SourceMaking (Observer) - [https://sourcemaking.com/design_patterns/observer](https://sourcemaking.com/design_patterns/observer)
-- Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1557/observer-design-pattern-in-java](https://www.journaldev.com/1557/observer-design-pattern-in-java)
+- Gang Of Four (GoF) Design Patterns: Observer - [https://www.journaldev.com/1739/observer-design-pattern-in-java](https://www.journaldev.com/1739/observer-design-pattern-in-java)
 - Java Tutorial: Introduction to Event Listeners - [https://docs.oracle.com/javase/tutorial/uiswing/events/intro.html](https://docs.oracle.com/javase/tutorial/uiswing/events/intro.html)
 - Java 1.1 Event Model @ Universidad de Granada (ilustrasi gambar) - [https://bioinfo2.ugr.es/OReillyReferenceLibrary/java/awt/ch04_03.htm](https://bioinfo2.ugr.es/OReillyReferenceLibrary/java/awt/ch04_03.htm)

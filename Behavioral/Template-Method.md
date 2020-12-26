@@ -330,5 +330,5 @@ Sebaliknya, penggunaan keyword `final` pada sebuah method menandakan bahwa metho
 - Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru (Template Method) - [https://refactoring.guru/design-patterns/adapter](https://refactoring.guru/design-patterns/template-method)
 - SourceMaking (Template Method) - [https://sourcemaking.com/design_patterns/adapter](https://sourcemaking.com/design_patterns/template_method)
-- Gang Of Four (GoF) Design Patterns: Template Method - [https://www.journaldev.com/1487/adapter-design-pattern-java](https://www.journaldev.com/1487/adapter-design-pattern-java)
+- Gang Of Four (GoF) Design Patterns: Template Method - [https://www.journaldev.com/1763/template-method-design-pattern-in-java](https://www.journaldev.com/1763/template-method-design-pattern-in-java)
 - Java SE 8 Documentation: Default Methods - [https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)

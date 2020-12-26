@@ -300,5 +300,5 @@ Nantinya apabila user ingin mengambil konten yang diinginkan olehnya, Client cuk
 - Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
 - Refactoring.guru (Proxy) - [https://refactoring.guru/design-patterns/proxy](https://refactoring.guru/design-patterns/proxy)
 - SourceMaking (Proxy) - [https://sourcemaking.com/design_patterns/proxy](https://sourcemaking.com/design_patterns/proxy)
-- Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1557/proxy-design-pattern-in-java](https://www.journaldev.com/1557/proxy-design-pattern-in-java)
+- Gang Of Four (GoF) Design Patterns: Proxy - [https://www.journaldev.com/1572/proxy-design-pattern](https://www.journaldev.com/1572/proxy-design-pattern)
 - Wikipedia English: Proxy Pattern - [https://en.wikipedia.org/wiki/Proxy_pattern](https://en.wikipedia.org/wiki/Proxy_pattern)
