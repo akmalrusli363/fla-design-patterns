@@ -12,10 +12,10 @@ Ada 7 jenis structual design patterns:
 
 1. [Adapter](#adapter)
 2. [Facade](#facade)
-3. Decorator
+3. Bridge
 4. [Proxy](#proxy)
-5. Bridge
-6. Composite
+5. [Decorator](#decorator)
+6. [Composite](#composite)
 7. Flyweight
 
 ## [Adapter](Adapter)
@@ -422,7 +422,7 @@ public class Main {
 Dengan demikian, permasalahan terhadap masalah-masalah yang tidak diinginkan oleh user dapat dicegah dan user dapat menghemat waktu untuk mengurus berbagai urusan karena ditangani langsung oleh Facade.
 
 
-## Decorator
+## Bridge
 
 Coming soon...
 
@@ -437,9 +437,9 @@ Merupakan design pattern yang diciptakan sebagai class penengah yang bertujuan u
 Design pattern ini sering digunakan dalam kasus koneksi ke database, services, maupun kasus data caching yang sering dipakai dalam aplikasi-aplikasi (baik service maupun app-based) yang memerlukan data secara online.
 
 
-## Jenis-jenis Proxy
+### Jenis-jenis Proxy
 
-### 1. Lazy initialization (Virtual Proxy)
+#### 1. Lazy initialization (Virtual Proxy)
 
 Dalam beberapa kasus, terdapat beberapa object yang dapat membebani resource meski jarang dipakai dan dibutuhkan oleh user meski berbarengan dengan pembuatan object class yang baru sekalipun ketika aplikasi tersebut diluncurkan.
 
@@ -447,21 +447,21 @@ Untuk menghemat resources yang digunakan oleh class, Proxy ini dapat membiarkan 
 
 Dengan *Lazy-loading*, penggunaan resource dapat dihematkan sehemat mungkin sehingga object cukup dipanggil bila diperlukan oleh user saja.
 
-### 2. Access control (Protection Proxy)
+#### 2. Access control (Protection Proxy)
 
 Pengembangan aplikasi, terutama berbasis web (Web application) dan service memerlukan adanya access control untuk mencegah pihak-pihak yang bukan haknya untuk mengakses laman/fitur/service tertentu.
 
 Untuk membatasi user-user dari pengaksesan data/service tertentu meski bukan tanggungjawabnya, Protection Proxy diberikan untuk mencegah orang-orang yang bukan tanggungjawabnya menyalahgunakan service tersebut.
 
-### 3. Local execution of a remote service (Remote Proxy)
+#### 3. Local execution of a remote service (Remote Proxy)
 
 Apabila Client ingin mengakses Database, diperlukan Remote Proxy yang akan mengetahui kapan data tersebut diambil maupun diproses ke sumber luar (remote sources). Proxy ini juga akan berperan dalam pengaturan akses data secara external (baik HTTP maupun Database).
 
-### 4. Logging requests (Logging Proxy)
+#### 4. Logging requests (Logging Proxy)
 
 Apabila request tersebut ingin dicatat oleh Client sebagai bukti transaksi request, Proxy dapat dipergunakan dalam pencatatan request dari user kepada server.
 
-### 5. Caching request results (Caching Proxy)
+#### 5. Caching request results (Caching Proxy)
 
 Apabila hasil request tersebut ingin disimpan oleh Client, Proxy akan menyimpan hasil request tersebut dan akan mengembalikan data yang di-*cached* sebelumnya sebagai bila request tersebut sama dengan apa yang disimpan sebelumnya.
 
@@ -597,11 +597,11 @@ public class CachedService implements IYoutubeService {
 
 Nantinya apabila user ingin mengambil konten yang diinginkan olehnya, Client cukup menggunakan video yang sudah diperoleh dari Service sebelumnya melalui Proxy. Apabila informasi-informasi yang dibutuhkan oleh user ingin diperbarui, Client dapat memanggil Proxy untuk mengambil dari Service secara langsung.
 
-## Bridge
+## [Decorator](Decorator)
 
 Coming soon...
 
-## Composite
+## [Composite](Composite)
 
 Coming soon...
 

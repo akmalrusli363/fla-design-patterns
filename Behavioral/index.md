@@ -12,12 +12,12 @@ Ada 10 jenis behavioral design patterns:
 
 1. [Template Method](Template-Method)
 2. [Observer](Observer)
-3. State
+3. [State](State)
 4. [Strategy](Strategy)
 5. Mediator
-6. Chain of Responsibility
-7. Command
-8. [Iterator](Iterator)
+6. [Iterator](Iterator)
+7. Chain of Responsibility
+8. Command
 9. Visitor
 10. Memento
 
