@@ -67,16 +67,16 @@ Merupakan design pattern yang melibatkan fungsionalitas dalam suatu class baik p
 
 Ada 10 jenis behavioral design patterns:
 
-1. Chain of Responsibility
-2. Command
-3. Iterator
-4. Mediator
-5. Memento
-6. Observer
-7. State
-8. Strategy
-9. Template Method
-10. Visitor
+1. [Chain of Responsibility](Behavioral/Chain-of-Responsibility)
+2. [Command](Behavioral/Command)
+3. [Iterator](Behavioral/Iterator)
+4. [Mediator](Behavioral/Mediator)
+5. [Memento](Behavioral/Memento)
+6. [Observer](Behavioral/Observer)
+7. [State](Behavioral/State)
+8. [Strategy](Behavioral/Strategy)
+9. [Template Method](Behavioral/Template-Method)
+10. [Visitor](Behavioral/Visitor)
 
 
 ## Catatan ringan
@@ -85,7 +85,11 @@ Kalian juga bisa **Bookmark, beri Bintang/Star, Fork, buat Issue/Pull Request, m
 
 ## Referensi
 
+Kalian dapat menyimak materi yang telah dibahas pada laman ini dengan membaca kembali sumber referensi yang ada (baik sumber utama maupun sumber-sumber tambahan dari topik tertentu) untuk menambah wawasan tambahan anda mengenai dunia design pattern.
+
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
 - Refactoring.guru - [https://refactoring.guru/design-patterns/catalog](https://refactoring.guru/design-patterns/catalog)
 - Sourcemaking.com - [https://sourcemaking.com/design_patterns](https://sourcemaking.com/design_patterns)
 - Gang Of Four (GoF) Design Patterns - [https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns)
+
+Penting untuk kalian ketahui bahwa dua sumber online utama, **Refactoring.guru** dan **Sourcemaking.com**, menyajikan cara implementasi dan pembahasan yang berbeda. Oleh sebabnya, ada baiknya bagi anda untuk membaca kedua sumber tersebut untuk menjamin bahwa konsep yang diterapkan benar-benar sesuai konsep dan pemahaman.

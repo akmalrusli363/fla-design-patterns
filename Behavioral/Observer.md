@@ -6,7 +6,7 @@
 
 ![Observer](../assets/img/behavioral/observer.png#center "Observer")
 
-Merupakan design pattern yang menggunakan 2 Class, yaitu Observable (misalnya Penulis/Channel) sebagai sumber informasi dan Observer/Watcher (misalnya Pembaca/Viewer) sebagai penerima informasi.
+**Observer** merupakan design pattern yang menggunakan 2 Class, yaitu Observable (misalnya Penulis/Channel) sebagai sumber informasi dan Observer/Watcher (misalnya Pembaca/Viewer) sebagai penerima informasi.
 
 Dalam Observer design pattern, Observable memiliki banyak Observer dimana setiap Observer berhak menerima informasi yang diterima melalui perintah yang dipanggil dari Observable.
 
