@@ -306,5 +306,6 @@ nav li .active {
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
     top: 0;
     left: 0;
+    max-height: max-content;
   }
 }
