@@ -5,6 +5,10 @@
 //   >> https://github.com/sylhare/Type-on-Strap/blob/master/_sass/base/_highlight.scss
 // ==========================================================================
 
+.highlight {
+  border-radius: 0.3rem;
+}
+
 div.highlighter-rouge,
 figure.highlight,
 .highlight code {
@@ -14,12 +18,13 @@ figure.highlight,
   font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
   font-size: 0.85em;
   line-height: 1.3em;
-  border-radius: 4px;
+  border-radius: 0.3rem;
 
   > pre,
   pre.highlight {
     margin: 0;
     padding: 1em;
+    border-color: $base02;
   }
 }
 
@@ -52,7 +57,7 @@ code.highlighter-rouge {
   font-size: 0.85em;
   background-color: transparentize($base00, 0.85);
   color: rgb(36, 41, 46);
-  border-radius: 2px;
+  border-radius: 0.3rem;
   font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
 }
 
