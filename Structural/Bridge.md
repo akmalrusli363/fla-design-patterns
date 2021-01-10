@@ -1,10 +1,20 @@
 # Bridge
 
+[Main Page](..) → [Structural Design Patterns](.) → [bridge](#)
+
+[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/structural/bridge) | [refactoring.guru](https://refactoring.guru/design-patterns/bridge) | [sourcemaking.com](https://sourcemaking.com/design_patterns/bridge)
+
 ![Bridge](../assets/img/structural/bridge.png#center "Bridge")
 
 **Bridge** adalah design pattern yang memisahkan satu kesatuan konsep yang saling bereleasi satu sama lain sebagai 2 hierarki yang terpisah yaitu **abstraksi dan implementasi** dimana abstraksi _(abstraction)_ mempunyai hubungan *has-a* (memiliki attribute) dengan implementasi _(implementor/implementation)_ sehingga menghasilkan hubungan "bridge" antara abstraksi dengan implementasi.
 
-Bridge digunakan untuk mengurangi ikatan *coupling* seminimal mungkin pada satu kesatuan konsep dengan memisahkan abstraksi dan interface sehingga dapat mencegah terjadinya dependensi yang berlebihan (apalagi menghasilkan hierarki) yang tidak dibutuhkan[^1] serta dapat memaksimalkan segala potensi yang dibutuhkan oleh user kepada abstraksi maupun implementasi terhadap komponen yang digunakan oleh user.
+Dalam **Bridge** design pattern, satu kesatuan konsep sebuah komponen dipisahkan hierarkinya menjadi 2 hierarki yaitu **hierarki abstraksi** dan **hierarki interface**.
+
+Bridge bertujuan untuk mengurangi ikatan *coupling* seminimal mungkin sehingga dapat mencegah terjadinya dependensi yang berlebihan (apalagi menghasilkan hierarki) yang tidak dibutuhkan[^1] serta dapat meningkatkan ekspansibilitas pada masing-masing hierarki abstraksi dan implementasi.
+
+![Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)](https://refactoring.guru/images/patterns/content/bridge/bridge-3-en.png#white-center "Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)")
+
+Karena hierarki antara abstraksi *(abstraction)* dan implementasi *(implementator)* merupakan satu kesatuan konsep hierarki yang terpisah oleh "bridge", maka perubahan maupun pembuatan class tambahan yang melibatkan salah satu sisi hierarki baik abstraksi maupun implementasi dapat lebih mudah ditangani sehingga tidak mempersulit keberadaan komponen secara keseluruhan.
 
 Selain itu, Bridge bertujuan agar masing-masing hierarki dapat diperluas sesuai kebutuhan user maupun kebutuhan tambahan dari system/platform apabila terdapat tambahan fitur yang diperlukan terhadap komponen yang akan digunakan oleh user maupun memenuhi kebutuhan platform agar komponen dapat berjalan dengan semestinya.
 
@@ -24,9 +34,7 @@ Perlu kalian ketahui, untuk menghasilkan code yang berkualitas, bersih, dan muda
 
 Ketika *shape* dan *color* terpisahkan oleh "bridge", maka *shape* akan mengambil peran sebagai abstraksi/abstraction dimana dalam hierarki tersebut terdapat attribute yang berisikan implementasi (yaitu *color*).
 
-![Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)](https://refactoring.guru/images/patterns/content/bridge/bridge-3-en.png#white-center "Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)")
-
-Karena hierarki antara abstraksi *(abstraction)* dan implementasi *(implementator)* merupakan satu kesatuan konsep hierarki yang terpisah oleh "bridge", maka perubahan maupun pembuatan class tambahan yang melibatkan salah satu sisi hierarki baik abstraksi maupun implementasi dapat lebih mudah ditangani sehingga tidak mempersulit keberadaan komponen secara keseluruhan.
+Dengan demikian ketika user ingin menambahkan maupun melakukan kostumisasi terhadap model-model *shape* maupun warna, maka perubahan maupun penambahan class cukup dilakukan pada salah satu sisi hierarki saja (abstraksi atau implementasinya saja).
 
 
 ## Essences of Bridge
@@ -52,6 +60,8 @@ public abstract class Shape {
   public abstract void display();
 
   public Color getColor() { return color; }
+
+  public void setColor(Color color) { this.color = color; }
 
   public String getDisplayColor() { return color.toString(); }
 }
@@ -92,21 +102,30 @@ Dalam implementation, segala isi dan kebutuhan yang diperlukan dari abstraksi di
  */
 public interface Color {
   String getColor();
+  String toString();
+}
 
-  default String toString() {
+public class Red implements Color {
+  @Override
+  public String getColor() {
+    return "Red";
+  }
+
+  @Override
+  public String toString() {
     return getColor();
   }
 }
 
-public class Red implements Color {
-  private String getColor() {
-    return "Red";
-  }
-}
-
 public class Green implements Color {
-  private String getColor() {
+  @Override
+  public String getColor() {
     return "Green";
+  }
+
+  @Override
+  public String toString() {
+    return getColor();
   }
 }
 ```
@@ -249,14 +268,14 @@ public class RadioRemote implements Remote {
 
   @Override
   public void next() {
-    if (frequency < maxChannel) {
+    if (frequency < maxFreq) {
       frequency += .1f;
     }
   }
 
   @Override
   public void previous() {
-    if (frequency > minChannel) {
+    if (frequency > minFreq) {
       frequency -= .1f;
     }
   }
@@ -278,7 +297,7 @@ public class Remote {
   }
 
   public void togglePower() {
-    if (device.isPoweredOn()) {
+    if (device.isTurnedOn()) {
       device.turnOn();
     } else {
       device.turnOff();
@@ -290,7 +309,7 @@ public class Remote {
   }
 
   public void decreaseVolume() {
-    device.decreaseVolume(device.getVolume() - 1);
+    device.setVolume(device.getVolume() - 1);
   }
   
   public void toggleMute() {
@@ -313,12 +332,13 @@ Dan perangkat-perangkat elektronik didefinisikan dalam hierarki implementasi seb
 public interface Device {
   void turnOn();
   void turnOff();
-  void getVolume();
+  boolean isTurnedOn();
+  int getVolume();
   void setVolume(int volume);
   void toggleMute();
   void next();
   void previous();
-  void toString();
+  String toString();
 }
 
 public class TV implements Device {
@@ -338,7 +358,12 @@ public class TV implements Device {
   }
 
   @Override
-  public void getVolume() {
+  public boolean isTurnedOn() {
+    return turnedOn;
+  }
+
+  @Override
+  public int getVolume() {
     return volume;
   }
 
@@ -380,7 +405,7 @@ public class TV implements Device {
 
 public class Radio implements Device {
   private static final int minVolume = 0, maxVolume = 100;
-  private static final float minFreq = 87.5, maxFreq = 108.0;
+  private static final float minFreq = 87.5f, maxFreq = 108.0f;
   private boolean turnedOn = false, muted = false;
   private int volume = 10;
   private float frequency = minFreq;
@@ -396,7 +421,12 @@ public class Radio implements Device {
   }
 
   @Override
-  public void getVolume() {
+  public boolean isTurnedOn() {
+    return turnedOn;
+  }
+
+  @Override
+  public int getVolume() {
     return volume;
   }
 
@@ -414,14 +444,14 @@ public class Radio implements Device {
 
   @Override
   public void next() {
-    if (frequency < maxChannel) {
+    if (frequency < maxFreq) {
       frequency += .1f;
     }
   }
 
   @Override
   public void previous() {
-    if (frequency > minChannel) {
+    if (frequency > minFreq) {
       frequency -= .1f;
     }
   }
@@ -442,16 +472,24 @@ Contoh code class tambahan:
 
 ```java
 public class SuperRemote extends Remote {
+  public SuperRemote(Device device) {
+    super(device);
+  }
+
   // an extra method for extra functionality
   public void setVolume(int volume) {
     device.setVolume(volume);
+  }
+
+  public void isTurnedOn() {
+    System.out.println(device.isTurnedOn());
   }
 
   // keep it abstract, make sure that commands need to be delegated to implementator
   public void getInformation() {
     System.out.println("Device information:");
     System.out.println("----------------------");
-    SYstem.out.println(device.toString());
+    System.out.println(device.toString());
   }
 }
 ```

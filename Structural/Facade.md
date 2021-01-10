@@ -185,7 +185,7 @@ Dengan demikian, permasalahan terhadap masalah-masalah yang tidak diinginkan ole
 
 Facade bukanlah solusi yang baik bagi pengguna/Client apalagi Client memerlukan banyak hal yang perlu dilakukan dengan interaksi langsung dengan class termaksud (Misalnya Client ingin memilih opsi custom order dimana Client ingin menghilangkan tahap-tahapan tertentu yang dipesan oleh Client itu sendiri).
 
-Selain itu, Facade juga berpotensi menciptakan God Class karena membengkaknya kebutuhan class yang diperlukan bagi Client untuk meminimalisir kompleksitas secara langsung terhadap user.
+Selain itu, Facade juga berpotensi menciptakan God Class[^1] karena bengkaknya kebutuhan class yang diperlukan bagi Client untuk meminimalisir kompleksitas secara langsung terhadap user.
 
 
 ## Referensi
@@ -195,3 +195,10 @@ Selain itu, Facade juga berpotensi menciptakan God Class karena membengkaknya ke
 - Refactoring.guru (Facade) - [https://refactoring.guru/design-patterns/facade](https://refactoring.guru/design-patterns/facade)
 - SourceMaking (Facade, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/facade](https://sourcemaking.com/design_patterns/facade)
 - Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1557/facade-design-pattern-in-java](https://www.journaldev.com/1557/facade-design-pattern-in-java)
+
+
+## Catatan Kaki
+
+[^1]: God Class adalah sebuah kasus *anti-pattern* dimana sebuah class mempunyai attribute maupun method/function yang sangat amat banyak dimana keberadaan attribute maupun method/function dapat dipisahkan (di-ekstrak) sebagai class tersendiri.
+
+      Kasus ini juga berkaitan erat dengan smell [Martin Fowler - large class](https://akmalrusli363.github.io/smell/Fowler/Bloaters#large-class) dimana pada kasus ini juga tentunya melanggar [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle) karena harus menanggung banyak tanggung jawab sekaligus dalam 1 class (meski peran Facade untuk mengurangi kompleksitas dari beberapa class untuk dipergunakan pada client class).
