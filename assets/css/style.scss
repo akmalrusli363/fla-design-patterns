@@ -89,7 +89,7 @@ body {
 }
 
 .site-footer {
-  border-top: solid 2px $hr-border-color;
+  border-top: dotted 1px rgba($hr-border-color, 0.2);
 }
 
 .plain {
@@ -131,7 +131,6 @@ img {
 }
 
 .main-content {
-
   h1,
   h2,
   h3,
@@ -141,6 +140,5 @@ img {
     padding-top: 5rem;
     margin-top: -5rem;
   }
-
   margin-top: -5rem;
 }

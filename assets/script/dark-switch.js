@@ -16,11 +16,11 @@ function toggleDarkMode(dark) {
         iconToggler.classList.add("fa-sun-o");
         iconToggler.classList.remove("fa-moon-o");
     }
-    sessionStorage.setItem("nightMode", dark);
+    localStorage.setItem("nightMode", dark);
 }
 
-if (matched && sessionStorage.getItem("nightMode") != 'false') {
+if (matched && localStorage.getItem("nightMode") != 'false') {
     toggleDarkMode(true);
-} else if (!matched && sessionStorage.getItem("nightMode") == 'true') {
+} else if (!matched && localStorage.getItem("nightMode") == 'true') {
     toggleDarkMode(true);
 }

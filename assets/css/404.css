@@ -4,7 +4,6 @@ body {
 }
 
 .background {
-  background-image: url('../404-bg.png');
   min-height: 350px;
   height: 85vh;
   background-position: center;
@@ -22,7 +21,7 @@ body {
   position: absolute;
   width: fit-content;
   padding: 1em 0;
-  margin:  auto auto;
+  margin: auto auto;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
