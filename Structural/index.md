@@ -12,7 +12,7 @@ Ada 7 jenis structual design patterns:
 
 1. [Adapter](#adapter)
 2. [Facade](#facade)
-3. Bridge
+3. [Bridge](#bridge)
 4. [Proxy](#proxy)
 5. [Decorator](#decorator)
 6. [Composite](#composite)
@@ -422,7 +422,7 @@ public class Main {
 Dengan demikian, permasalahan terhadap masalah-masalah yang tidak diinginkan oleh user dapat dicegah dan user dapat menghemat waktu untuk mengurus berbagai urusan karena ditangani langsung oleh Facade.
 
 
-## Bridge
+## [Bridge](Bridge)
 
 Coming soon...
 

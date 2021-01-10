@@ -10,7 +10,7 @@
 
 Dalam **Bridge** design pattern, satu kesatuan konsep sebuah komponen dipisahkan hierarkinya menjadi 2 hierarki yaitu **hierarki abstraksi** dan **hierarki interface**.
 
-Bridge bertujuan untuk mengurangi ikatan *coupling* seminimal mungkin sehingga dapat mencegah terjadinya dependensi yang berlebihan (apalagi menghasilkan hierarki) yang tidak dibutuhkan[^1] serta dapat meningkatkan ekspansibilitas pada masing-masing hierarki abstraksi dan implementasi.
+Bridge bertujuan untuk mengurangi ikatan *coupling* seminimal mungkin sehingga dapat mencegah terjadinya dependensi yang berlebihan (apalagi menghasilkan hierarki yang tidak dibutuhkan)[^1] serta dapat meningkatkan ekspansibilitas pada masing-masing hierarki abstraksi dan implementasi.
 
 ![Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)](https://refactoring.guru/images/patterns/content/bridge/bridge-3-en.png#white-center "Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)")
 
