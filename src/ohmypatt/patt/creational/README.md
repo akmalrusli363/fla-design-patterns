@@ -569,7 +569,7 @@ Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan
 
 ### Contoh Implementasi
 
-![Slime, an example for Prototype implementation](prototype-slime.png "Slime, an example for Prototype implementation")
+![Slime, an example for Prototype implementation](prototype/prototype-slime.png "Slime, an example for Prototype implementation")
 
 Dalam kasus game RPG, terdapat sebuah monster bernama Slime merupakan monster yang dapat mengembang, mengecil, dan dapat membelah diri. Untuk menciptakan Slime baru dengan ukuran yang lebih besar ataupun lebih kecil, kita dapat menggunakan teknik cloning untuk menyalinkan semua properties dari slime utama ke slime gandaan _(cloned slimes)_ dengan memastikan bahwa setiap detail object tercopy dengan baik dengan _deep copy_.
 
