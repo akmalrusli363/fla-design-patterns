@@ -10,10 +10,10 @@ Ada 7 jenis structual patterns:
 
 1. [Adapter](Adapter)
 2. [Facade](Facade)
-3. Decorator
-4. Proxy
-5. Bridge
-6. Composite
+3. [Decorator](Decorator)
+4. [Proxy](Proxy)
+5. [Bridge](Bridge)
+6. [Composite](Composite)
 7. Flyweight
 
 ## Adapter
@@ -28,7 +28,7 @@ Salah satu contoh penerapan adapter adalah adapter antara JSON dan XML dimana ke
 
 [Source code](smartphone)
 
-![Plug Adapter](adapter-plug.png "Adapter")
+![Plug Adapter](adapter/adapter-plug.png "Adapter")
 
 Dalam kasus Port adapter, terdapat 2 perangkat smartphone yang RiJukie miliki yaitu iPhone Xy dan Samsung S19. Smartphone iPhone Xy sudah ada sejak 2019 dan Smartphone Samsung S19 baru dibeli beberapa minggu yang lalu. Pada suatu hari, kabel data/charger Samsung S19 dipinjam tetangga sehingga ia hanya mempunyai kabel Lightning yang hanya dapat digunakan di perangkat iPhone saja sehingga harus membeli kabel data untuk HP Samsung yaitu USB-C.
 
@@ -251,6 +251,8 @@ Untuk isi code lebih jelasnya dapat kalian lihat pada [source code](smartphone).
 
 [Penjelasan & Source code](facade) | [refactoring.guru](https://refactoring.guru/design-patterns/facade) | [sourcemaking.com](https://sourcemaking.com/design_patterns/facade)
 
+![Facade](facade/facade.png)
+
 Facade adalah design pattern yang mempermudah Client untuk mengakses wilayah-wilayah dalam suatu ruang lingkup API. Facade memungkinkan anda untuk mengendalikan banyak object-object sekaligus dalam 1 genggaman tangan anda.
 
 Dengan Facade, Client tidak perlu mengetahui seluruh isi class dalam library karena Facade-lah yang akan mengendalikan seluruh proses-proses di dalamnya.
@@ -259,7 +261,7 @@ Penggunaan Facade sendiri bertujuan untuk mengurangi kompleksitas class-class li
 
 ### Contoh kasus: Kamar
 
-[Source code](room)
+[Source code](facade/room)
 
 Ketika user dihadapkan dengan banyaknya hal yang perlu mereka lakukan untuk menyiapkan momen-momen penting seperti menyaksikan sepakbola, terkadang kita harus menyiapkan berbagai hal yang barangkali kita tidak inginkan seperti remote TV, channel TV yang ingin kita tonton, jumlah lampu yang dinyalakan, suhu AC, serta menyiapkan barang-barang yang kita inginkan saat itu.
 
@@ -422,11 +424,309 @@ Dengan demikian, permasalahan terhadap masalah-masalah yang tidak diinginkan ole
 
 ## Decorator
 
-Coming soon...
+[Penjelasan & Source code](decorator) | [refactoring.guru](https://refactoring.guru/design-patterns/decorator) | [sourcemaking.com](https://sourcemaking.com/design_patterns/decorator)
+
+![Decorator](decorator/decorator.png "Decorator")
+
+Merupakan design pattern yang dapat merangkapkan dirinya sendiri dalam model class yang sama, yang berisikan dirinya, dan diakses secara delegatif dari dalam ke luar maupun dari luar ke dalam.
+
+Decorator sangat memungkinkan pengguna untuk merangkap object yang dideklarasikan ke dalam object-object sehierarki dengannya sehingga object tersebut dapat ditambahkan kelengkapan-kelengkapan object dari class lain di dalamnya tanpa harus memodifikasi code dari sebuah object sedikitpun.
+
+### Contoh Kasus: Player, Armor, and Attachment
+
+[Source code](decorator/playerskin) | [Contoh tambahan (Essences of Decorator)](decorator/armory)
+
+![Example of Decorator: Weapon](decorator/decorator-weapon.png "Example of Decorator: Weapon")
+
+> Ilustrasi ini masih berkaitan dengan game battle royale/FPS namun tidak relevan dengan contoh kasus di bawah :smile_cat:
+
+> Ada sekian banyak contoh penerapan Decorator, namun karena berhubung dengan tema materi yang sangat terfokuskan pada game FPS/Battle Royale, maka contoh kasus berikut lebih mencakup pada perlengkapan Player dalam sebuah game berbasis FPS/Battle Royale itu sendiri.
+
+Sebuah game yang dirancang oleh Ananda Studio mengajak player untuk bertarung dengan sistem *Battle Royale* dimana player dapat mengenakan armor dan attachment sekaligus. Untuk mempermudah penambahan aksesoris terhadap sebuah armor, setiap armor dibekali dengan Decorator design pattern yang tentunya mempermudah armor untuk menambah aksesoris sebanyak-banyaknya.
+
+Kita mulai dari Player dimana player dapat mengenakan armor yang ingin ia pakaikan (mulai dari topi, baju, celana, dan sepatu) serta dapat memperlengkap armor dengan aksesoris yang diinginkan oleh player. Kita mulai dari code paling dasar yaitu interface `Player` dan class `BasePlayer` terlebih dahulu.
+
+```java
+public interface Player {
+  void deploySkin();
+}
+
+public class BasePlayer implements Player {
+  private String name;
+  private int healthPoint, level;
+
+  private static int baseHealthPoint = 100;
+
+  public BasePlayer(String name, int level, int healthPoint) {
+    this.name = name;
+    this.level = level;
+    this.healthPoint = healthPoint;
+  }
+
+  public BasePlayer(String name, int level) {
+    this(name, level, baseHealthPoint * (level/5));
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getLevel() {
+    return level;
+  }
+
+  public int getHealthPoint() {
+    return healthPoint;
+  }
+
+  @Override
+  public void deploySkin() {
+    System.out.println("Player name : " + name);
+    System.out.printf("Player level / HP : Lvl %d (%d HP)\n", level, healthPoint);
+    System.out.println("Wear base clothing to player...");
+  }
+}
+```
+
+Kemudian buatlah class decorator `PlayerDecorator` yang diextend dari base class `Player`. Pastikan class tersebut tetap bersifat `abstract` agar tidak dibuatkan langsung sebagai object.
+
+```java
+public abstract class PlayerDecorator implements Player {
+  protected Player innerSkin; // alias wrapee
+
+  public PlayerDecorator(Player innerSkin) {
+    this.innerSkin = innerSkin;
+  }
+}
+```
+
+Setelah decorator abstract class dibuat, tambahkan aksesoris pelengkap player (misal baju, topi, celana, sepatu, termasuk aksesoris pelengkapnya seperti jetpack, sayap, dan backpack).
+
+```java
+public class Shirt extends PlayerDecorator {
+  private String shirtName;
+
+  public Shirt(Player innerSkin, String shirtName) {
+    super(innerSkin);
+    this.shirtName = shirtName;
+  }
+
+  @Override
+  public void deploySkin() {
+    innerSkin.deploySkin();
+    System.out.println("Wear shirt to player: " + shirtName);
+  }
+}
+
+public class Hat extends PlayerDecorator {
+  private String hatName, hatType;
+
+  public Hat(Player innerSkin, String hatName, String hatType) {
+    super(innerSkin);
+    this.hatName = hatName;
+    this.hatType = hatType;
+  }
+
+  @Override
+  public void deploySkin() {
+    innerSkin.deploySkin();
+    System.out.println("Wear " + hatType + " hat to player: " + hatName);
+  }
+}
+```
+
+Ketika user ingin menjalankan/mengeksekusi class yang user buat dan kenakan skin:
+
+```java
+Player ucok = new BasePlayer("Ucok", 2000, 99);
+ucok = new Shirt(ucok, "Supreme T-Shirt");
+ucok = new Hat(ucok, "Topi tentara");
+ucok.deploySkin();
+```
+
+Maka outputnya adalah sebagai berikut:
+
+```
+Player name : Ucok
+Player level / HP : Lvl 2000 (99 HP)
+Wear base clothing to player...
+Wear shirt to player: Supreme T-Shirt
+Wear military-type hat to player: Topi tentara
+```
 
 ## Proxy
 
-Coming soon...
+[Penjelasan & Source code](proxy) | [refactoring.guru](https://refactoring.guru/design-patterns/proxy) | [sourcemaking.com](https://sourcemaking.com/design_patterns/proxy)
+
+![Proxy](proxy/proxy.png "Proxy")
+
+Merupakan design pattern yang diciptakan sebagai class penengah yang bertujuan untuk mengatur akses ke object asli (baik melalui pembatasan, caching, maupun panggilan ke remote class). Sebelum Client dapat benar-benar mengakses object asli, sebuah class harus menghadapi beberapa proses (seperti validasi, akses remote, dll) terlebih dahulu untuk mencegah akses object asli secara langsung.
+
+Design pattern ini sering digunakan dalam kasus koneksi ke database, services, maupun kasus data caching yang sering dipakai dalam aplikasi-aplikasi (baik service maupun app-based) yang memerlukan data secara online.
+
+
+### Jenis-jenis Proxy
+
+#### 1. Lazy initialization (Virtual Proxy)
+
+Dalam beberapa kasus, terdapat beberapa object yang dapat membebani resource meski jarang dipakai dan dibutuhkan oleh user meski berbarengan dengan pembuatan object class yang baru sekalipun ketika aplikasi tersebut diluncurkan.
+
+Untuk menghemat resources yang digunakan oleh class, Proxy ini dapat membiarkan object tersebut kosong ketika object tersebut dibuat maupun aplikasi tersebut diluncurkan hingga class tersebut dipanggil dan class tersebut akan mengambil data bila diperlukan oleh user sendiri.
+
+Dengan *Lazy-loading*, penggunaan resource dapat dihematkan sehemat mungkin sehingga object cukup dipanggil bila diperlukan oleh user saja.
+
+#### 2. Access control (Protection Proxy)
+
+Pengembangan aplikasi, terutama berbasis web (Web application) dan service memerlukan adanya access control untuk mencegah pihak-pihak yang bukan haknya untuk mengakses laman/fitur/service tertentu.
+
+Untuk membatasi user-user dari pengaksesan data/service tertentu meski bukan tanggungjawabnya, Protection Proxy diberikan untuk mencegah orang-orang yang bukan tanggungjawabnya menyalahgunakan service tersebut.
+
+#### 3. Local execution of a remote service (Remote Proxy)
+
+Apabila Client ingin mengakses Database, diperlukan Remote Proxy yang akan mengetahui kapan data tersebut diambil maupun diproses ke sumber luar (remote sources). Proxy ini juga akan berperan dalam pengaturan akses data secara external (baik HTTP maupun Database).
+
+#### 4. Logging requests (Logging Proxy)
+
+Apabila request tersebut ingin dicatat oleh Client sebagai bukti transaksi request, Proxy dapat dipergunakan dalam pencatatan request dari user kepada server.
+
+#### 5. Caching request results (Caching Proxy)
+
+Apabila hasil request tersebut ingin disimpan oleh Client, Proxy akan menyimpan hasil request tersebut dan akan mengembalikan data yang di-*cached* sebelumnya sebagai bila request tersebut sama dengan apa yang disimpan sebelumnya.
+
+### Contoh Kasus: Accessing the Service
+
+[Source code](proxy/yuutube) | [Contoh tambahan (Essences of Proxy)](proxy/berryservice)
+
+![Youtube Service Proxy](proxy/proxy-service.png "Youtube Service Proxy")
+
+Berangkat dari kasus dasar, misalnya terdapat sebuah aplikasi yang ingin menyalurkan feed-feed video dari YouTube yang ingin disajikan oleh penonton dimana user dapat memilih video yang ingin ia tonton.
+
+Karena akses object asli (pada umumnya) harus menghadapi akses database, maka waktu yang dibutuhkan untuk mendapatkan data tersebut boleh dikatakan cukup lama dan harus dalam keadaan stabil agar dapat diperoleh data yang dibutuhkan. Ketika data asli tersebut sering diakses oleh banyak orang dalam waktu yang bersamaan, maka akan terjadi lambatnya akses pada object/data tersebut.
+
+Sebagai solusinya, kita akan membuat sebuah class yang menjadi proxy, dan memiliki satu attribute yang berisikan class yang akan Client akses. Melalui Proxy, nantinya Client akan berhadapan dengan Proxy dan menjalani operasi verifikasi seperti validasi data untuk kemudian memberikan kuasa pada Proxy untuk mengambil data dari object class asli tersebut sebagai cached data kepada Client.
+
+#### Implementasi Code
+
+Pertama-tama, buatkan model yang berisikan data yang akan diakses oleh Client:
+
+```java
+package model;
+public class Video {
+  private String name;
+  private int duration;
+
+  public Video(String name, int duration) {
+    this.name = name;
+    this.duration = duration;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getDuration() {
+    return duration;
+  }
+
+  public void setDuration(int duration) {
+    this.duration = duration;
+  }
+}
+```
+
+Kedua, buat interface bernama `IYoutubeService` yang berisikan method-method untuk mengambil data beserta list berisikan `Video`:
+
+```java
+package service;
+
+import java.util.ArrayList;
+import model.Video;
+
+public interface IYoutubeService {
+  ArrayList<Video> listVideos();
+  Video getSpecificVideo(String name);
+}
+```
+
+Ketiga, buat object real servicenya dan proxy untuk mengambil data yang sudah ada atau mengambil dari real service bila beda dengan permintaan user.
+
+```java
+package service;
+
+import java.util.ArrayList;
+import model.Video;
+
+public class YoutubeRealService implements IYoutubeService {
+  private ArrayList<Video> videos;
+
+  public YoutubeRealService() {
+    videos = new ArrayList<>();
+    videos.add(new Video("John Wick 3", 103));
+    videos.add(new Video("Tom and Jerry", 25));
+    videos.add(new Video("Avengers: End Game", 210));
+    videos.add(new Video("Goblindo", 45));
+    videos.add(new Video("Game of Thrones", 52));
+  }
+
+  @Override
+  public ArrayList<Video> listVideos() {
+    return videos;
+  }
+
+  @Override
+  public Video getSpecificVideo(String name) {
+    for (Video video : videos) {
+      if (video.getName().equals(name)) {
+        return video;
+      }
+    }
+    return null;
+  }
+}
+
+public class CachedService implements IYoutubeService {
+  private IYoutubeService service;
+  private ArrayList<Video> listVideos;
+  private Video video;
+
+  /**
+   * Load Youtube real service from this proxy
+   */
+  public CachedService() {
+    service = new YoutubeRealService();
+  }
+
+  /**
+   * Ambil list video dari Youtube real service
+   */
+  @Override
+  public ArrayList<Video> listVideos() {
+    if (listVideos == null) {
+      listVideos = service.listVideos();
+    }
+    return listVideos;
+  }
+
+  /**
+   * Ambil video dari real service bila belum ada video dalam service
+   * atau video tersebut berbeda dengan permintaan user
+   */
+  @Override
+  public Video getSpecificVideo(String name) {
+    if (video == null || video.getName().equals(name) == false) {
+      video = service.getSpecificVideo(name);
+    }
+    return video;
+  }
+}
+```
+
+Nantinya apabila user ingin mengambil konten yang diinginkan olehnya, Client cukup menggunakan video yang sudah diperoleh dari Service sebelumnya melalui Proxy. Apabila informasi-informasi yang dibutuhkan oleh user ingin diperbarui, Client dapat memanggil Proxy untuk mengambil dari Service secara langsung.
+
 
 ## Bridge
 
@@ -434,7 +734,187 @@ Coming soon...
 
 ## Composite
 
-Coming soon...
+[Penjelasan & Source code](composite) | [refactoring.guru](https://refactoring.guru/design-patterns/composite) | [sourcemaking.com](https://sourcemaking.com/design_patterns/composite)
+
+![Composite](composite/composite.png "Composite")
+
+Merupakan design pattern dimana komponen-komponen dari sebuah hierarki memiliki hubungan *has-a* ke object lain (mempunyai attribute ke object lain) yang dapat bersifat rekursif. Sebuah hubungan rekursif yang dimiliki sebuah object bisa saja terhubung pada class-class dalam hierarki yang sama yang bersifat kolektif hingga ujung node (alias leaf) yang tidak beranak.
+
+**Composite** sangat memungkinkan sebuah object untuk mempunyai banyak object yang bercabang-cabang di dalamnya sebagai sebuah *tree*.
+
+Secara konseptual, tree mengandung *node leaf* dan *branch* yang berisikan node-node dan branch-branch di dalamnya. Nantinya sebuah composite dapat diakses *(transverse)* melalui *DFS (depth first search)* dan *BFS (breadth first search)*.
+
+Bagi sebagian orang, Composite bisa saja disamakan dengan *Decorator*, namun bedanya ada pada jumlah anak dalam hubungan rekursif yang banyak, namun tidak secara eksplisit mengandung implementasi dari sebuah object yang rekursif di dalamnya.
+
+### Analogi
+
+![Composite = Tree](composite/composite-tree.gif "Composite = Tree")
+
+**Composite** merupakan design pattern yang konsepnya terinspirasi dari *Tree* dimana sebuah tree mengandung *leaf* dan *branch* yang diwakili oleh node-node dalam sebuah *leaf* maupun *branch*. Sebuah *leaf* merupakan node-node yang tidak mempunyai cabang/anak sedangkan *branch* merupakan node yang mempunyai cabang/anak di dalamnya.
+
+Contoh konsep yang mudah dianalogikan pada Composite adalah sistem *folder* dan *file*, dimana sebuah folder *(parent)* dapat berisikan file (*leaf*) dan folder (*parent*) yang bercabang-cabang dan berisikan folder dalam folder hingga folder tersebut hanya berisikan file atau kosong sama sekali.
+
+### Contoh Kasus
+
+[Source code](composite/filesystem)
+
+![Composite example: File System](composite-file-system.gif "Composite example: File System")
+
+Salah satu contoh konsep yang paling umum digunakan dalam Operating System adalah File System dimana dalam sebuah storage terdapat banyak file dan folder yang dikumpulkan dalam satu *root directory*. Setiap folder berisikan beberapa file dan folder di dalamnya, juga bisa berupa folder kosong dimana folder tersebut tidak berisikan apapun didalamnya.
+
+Untuk deklarasi dasar, disajikan base class berupa `Component` sebagai berikut:
+
+```java
+public abstract class Component {
+  protected String name;
+
+  public Component(String name) {
+    this.name = name;
+  }
+
+  public abstract void open();
+  public abstract void rename(String name);
+
+  public final void print() {
+    printUsingIndentation(0);
+  }
+
+  protected abstract void printUsingIndentation(int indentation);
+  protected void printIndent(int n) {
+    for(int i = 0; i < n; i++) {
+      System.out.print(" ");
+    }
+  }
+}
+```
+
+Kemudian pada file dibuatkan sebagai *leaf node* dimana sebuah file hanya berisikan attribute dan behavior dari base class `Component` tanpa adanya hubungan *has-a* dengan object-object sehierarki.
+
+```java
+public class File extends Component {
+  public File(String name) {
+    super(name);
+  }
+
+  @Override
+  public void open() {
+    System.out.println("opening file...");
+  }
+
+  @Override
+  public void rename(String name) {
+    this.name = name;
+    System.out.println("renaming file...");
+  }
+
+  @Override
+  protected void printUsingIndentation(int indentation) {
+    printIndent(indentation);
+    System.out.println(name);
+  }
+}
+```
+
+Dan folder yang dibuatkan sebagai *branch node* yang berisikan file dan folder yang berbasis dari hierarki yang sama, serta memiliki attribute dan behavior dari base class `Component` dengan tambahan function/method berupa `add(Component)` dan `remove(Component)` untuk menunjang penambahan & pengurangan komponen-komponen yang akan dimasukkan ke dalam *Composite/Container*.
+
+```java
+public class Folder extends Component {
+  private Vector<Component> components;
+
+  public Folder(String name) {
+    super(name);
+    components = new Vector<Component>();
+  }
+
+  public void add(Component c) {
+    components.add(c);
+  }
+
+  public void remove(Component c) {
+    components.remove(c);
+  }
+
+  @Override
+  public void open() {
+    System.out.println("opening folder...");
+  }
+
+  @Override
+  public void rename(String name) {
+    this.name = name;
+    System.out.println("renaming folder...");
+  }
+
+  @Override
+  protected void printUsingIndentation(int indentation) {
+    printIndent(indentation);
+    System.out.println(name);
+
+    for(Component c : components) {
+      c.printUsingIndentation(indentation + 2);
+    }
+  }
+}
+```
+
+Misalkan kita ingin membuat struktur folder sebagai berikut:
+
+- GoF
+  - creational
+    - prototype.txt
+    - singleton.txt
+  - structural
+    - adapter.txt
+    - composite.txt
+    - decorator.txt
+  - behavioral
+    - observer.txt
+    - strategy.txt
+  - cover.jpg
+
+Maka di client class, kita bisa mendeklarasikan isi-isi dari folder dan file dari struktur folder sebagai berikut:
+
+```java
+Folder root = new Folder("GoF");
+Folder folder1 = new Folder("creational");
+Folder folder2 = new Folder("structural");
+Folder folder3 = new Folder("behavioral");
+
+root.add(folder1);
+root.add(folder2);
+root.add(folder3);
+
+folder1.add(new File("prototype.txt"));
+folder1.add(new File("singleton.txt"));
+
+folder2.add(new File("adapter.txt"));
+folder2.add(new File("composite.txt"));
+folder2.add(new File("decorator.txt"));
+
+folder3.add(new File("observer.txt"));
+folder3.add(new File("strategy.txt"));
+
+root.add(new File("cover.jpg"));
+
+root.print();
+```
+
+Nantinya ketika user ingin melihat isi struktur dari folder yang ada, cukup panggil `print()` dari folder yang sudah kita buat (misalnya `root`) untuk ditampilkan output file tree sebagai berikut:
+
+```
+GoF
+  creational
+    prototype.txt
+    singleton.txt
+  structural
+    adapter.txt
+    composite.txt
+    decorator.txt
+  behavioral
+    observer.txt
+    strategy.txt
+  cover.jpg
+```
 
 ## Flyweight
 
