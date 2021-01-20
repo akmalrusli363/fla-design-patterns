@@ -475,7 +475,7 @@ Karena akses object asli (pada umumnya) harus menghadapi akses database, maka ko
 
 Sebagai solusinya, kita akan membuat sebuah class yang menjadi proxy, dan memiliki satu attribute yang berisikan class yang akan Client akses. Melalui Proxy, nantinya Client perlu melakukan proses verifikasi terlebih dahulu untuk kemudian mendelegasikan kepada Proxy untuk mengambil data dari object class asli tersebut sebagai cached data kepada Client.
 
-### Implementasi Code
+#### Implementasi Code
 
 Pertama-tama, buatkan model yang berisikan data yang akan diakses oleh Client:
 

@@ -32,7 +32,7 @@ Ada 5 jenis creational design patterns:
 
 1. [Singleton](Creational/Singleton)
 2. [Factory Method](Creational/Factory-Method)
-3. [Abstract Method](Creational/Abstract-Method)
+3. [Abstract Factory](Creational/Abstract-Factory)
 4. [Builder](Creational/Builder)
 5. [Prototype](Creational/Prototype)
 

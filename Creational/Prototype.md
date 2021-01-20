@@ -4,7 +4,7 @@
 
 [Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/creational/prototype) | [refactoring.guru](https://refactoring.guru/design-patterns/prototype) | [sourcemaking.com](https://sourcemaking.com/design_patterns/prototype)
 
-![Prototype](https://refactoring.guru/images/patterns/content/prototype/prototype.png#center "Prototype")
+![Prototype](../assets/img/creational/prototype.png#center "Prototype")
 
 Prototype merupakan design pattern yang memanfaatkan _object clonability_ untuk menggandakan object dengan isi dan attribute dengan memastikan object tersebut identik namun tidak terkait satu sama lain.
 
@@ -69,9 +69,6 @@ public class AModel implements Cloneable {
 
 Tanpa mengimplementasikan interface `Cloneable`, class akan otomatis melemparkan exception berupa `CloneNotSupportedException` karena adanya satu attribute yang tidak mendukung/mengimplementasikan interface `Cloneable`.
 
-## UML Model
-
-![Prototype](../assets/img/creational/prototype.png#center "Prototype")
 
 ## Contoh implementasi
 
