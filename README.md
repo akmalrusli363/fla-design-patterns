@@ -14,7 +14,7 @@
 
 Hai teman-teman, selamat datang di Repository Framework Layer Architectures (FLA)! Kali ini saya kembali menuliskan ringkasan materi-materi FLA melalui Repository, Wiki, dan GitHub Pages dengan **100% asli hasil pembelajaran saya**.
 
-Oh iya, perkenalkan **"Oh-My-Patt!"**, brand laman Design Pattern berbahasa Indonesia dimana anda akan terjun ke dalam alam dunia Design Pattern dengan penyajian materi yang menarik & lengkap melalui project ini.
+Oh iya, perkenalkan **"Oh-My-Patt!"**, sebuah laman Design Pattern berbahasa Indonesia dimana anda akan terjun ke dalam alam dunia Design Pattern dengan penyajian materi yang menarik & lengkap melalui project ini.
 
 **Oh-My-Patt! Design Patterns** merupakan Repository, Wiki & GitHub Pages yang berisikan kumpulan design patterns dalam Framework Layer Architectures.
 

@@ -2,7 +2,7 @@
 
 [refactoring.guru](https://refactoring.guru/design-patterns/singleton) | [sourcemaking.com](https://sourcemaking.com/design_patterns/singleton)
 
-![Singleton](https://refactoring.guru/images/patterns/content/singleton/singleton.png "Singleton")
+![Singleton](singleton.png "Singleton")
 
 > The most basic & simplest type of creational design pattern. Just define a private constructor & call for a instance to define a object.
 
@@ -11,10 +11,6 @@ Singleton merupakan design pattern yang paling sederhana yang bertujuan untuk me
 Sederhananya, client tidak bisa membuat object dari suatu class lebih dari 1 kali, sebaliknya object tersebut kemudian memanggil instance/object pertama sudah dibuatkan oleh class tersebut.
 
 ## Implementasi
-
-### UML Model
-
-![Singleton](singleton.png "Singleton")
 
 ### Contoh code
 
