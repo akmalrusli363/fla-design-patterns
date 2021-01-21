@@ -14,7 +14,7 @@ div.highlighter-rouge,
 figure.highlight,
 .highlight code {
   position: relative;
-  color: $base05;
+  color: $base05 !important;
   font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
   font-size: 0.85em;
   line-height: 1.3em;
@@ -114,9 +114,11 @@ table.rouge-table {
   }
 
   .gd { /* Generic.Deleted */
-    color: $base08; }
+    color: $base08;
+    background-color: $base01; }
   .gi { /* Generic.Inserted */
-    color: $base0B; }
+    color: $base0B;
+    background-color: $base01; }
 
   .gr { /* Generic.Error */
     color: $base0F }
@@ -155,7 +157,8 @@ table.rouge-table {
   .esc { /* Escape */
     color: $base0C; }
   .err { /* Error */
-    color: $base08; }
+    color: $base08;
+    background-color: $base01; }
 
   .l {  /* Literal */
     color: $base09; }
@@ -316,4 +319,11 @@ table.rouge-table {
 table.dataframe {
   border: 0 solid $border-color;
   border-collapse: collapse;
+}
+
+@media screen and (max-width: 768px) {
+  .highlight * {
+    font-size: .75rem !important;
+    line-height: 1em;
+  }
 }
