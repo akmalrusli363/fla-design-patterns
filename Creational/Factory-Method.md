@@ -10,7 +10,7 @@
 >
 > Kehadiran banyak variasi Smartphone dengan spesifikasi yang kurang lebih sama basis modelnya menunjukkan bahwa Factory Method cukup berperan dalam merakit 1 basis model smartphone meski dengan ragam model yang banyak & beragam.
 
-Factory method dan Abstract factory adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
+**Factory method dan Abstract factory** adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
 
 **Factory method** menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object.
 
@@ -132,8 +132,8 @@ Penggunaan **Factory Method** dapat dipergunakan pada class-class lain tanpa har
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 121-132.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 121-180.
 - Refactoring.guru (Factory Method, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/factory-method](https://refactoring.guru/design-patterns/factory-method)
 - SourceMaking (Factory Method) - [https://sourcemaking.com/design_patterns/factory_method](https://sourcemaking.com/design_patterns/factory_method)
 - Gang Of Four (GoF) Design Patterns: Factory - [https://www.journaldev.com/1392/factory-design-pattern-in-java](https://www.journaldev.com/1392/factory-design-pattern-in-java)

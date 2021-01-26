@@ -92,8 +92,8 @@ public class Storage {
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 144-152.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 181-202.
 - Refactoring.guru (Singleton, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/singleton](https://refactoring.guru/design-patterns/singleton)
 - SourceMaking (Singleton) - [https://sourcemaking.com/design_patterns/singleton](https://sourcemaking.com/design_patterns/singleton)
 - Gang Of Four (GoF) Design Patterns: Singleton - [https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples](https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples)

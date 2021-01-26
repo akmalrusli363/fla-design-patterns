@@ -6,7 +6,7 @@
 
 ![Template Method](../assets/img/behavioral/template-method.png#center "Template Method")
 
-Template Method merupakan design pattern dimana dalam sebuah abstract class yang memiliki satu atau lebih abstract method yang harus didefinisikan oleh class turunannya. Selain memiliki abstract method, sebuah abstract class juga mempunyai satu atau lebih concrete method yang akan memanggil abstract method tersebut.
+**Template Method** merupakan design pattern dimana dalam sebuah abstract class yang memiliki satu atau lebih abstract method yang harus didefinisikan oleh class turunannya. Selain memiliki abstract method, sebuah abstract class juga mempunyai satu atau lebih concrete method yang akan memanggil abstract method tersebut.
 
 Template Method memungkinkan sebuah class untuk mendefinisikan method yang memanggil method-method abstract yang akan digunakan oleh subclassnya. Misalnya sebuah abstract class yang berisikan beberapa method abstract/*override-able* yaitu `boilWater()`, `prepareIngredients()`, `cook()`, dan `serve()` yang dipanggil oleh sebuah method concrete bernama `createSoup()`.
 
@@ -326,8 +326,8 @@ Sebaliknya, penggunaan keyword `final` pada sebuah method menandakan bahwa metho
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 360-365.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 287-327.
 - Refactoring.guru (Template Method) - [https://refactoring.guru/design-patterns/adapter](https://refactoring.guru/design-patterns/template-method)
 - SourceMaking (Template Method) - [https://sourcemaking.com/design_patterns/adapter](https://sourcemaking.com/design_patterns/template_method)
 - Gang Of Four (GoF) Design Patterns: Template Method - [https://www.journaldev.com/1763/template-method-design-pattern-in-java](https://www.journaldev.com/1763/template-method-design-pattern-in-java)

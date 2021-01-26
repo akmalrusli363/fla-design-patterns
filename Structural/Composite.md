@@ -6,7 +6,7 @@
 
 ![Composite](../assets/img/structural/composite.png#center "Composite")
 
-Merupakan design pattern dimana komponen-komponen dari sebuah hierarki memiliki hubungan *has-a* ke object lain (mempunyai attribute ke object lain) yang dapat bersifat rekursif. Sebuah hubungan rekursif yang dimiliki sebuah object bisa saja terhubung pada class-class dalam hierarki yang sama yang bersifat kolektif hingga ujung node (alias leaf) yang tidak beranak.
+**Composite** merupakan design pattern dimana komponen-komponen dari sebuah hierarki memiliki hubungan *has-a* ke object lain (mempunyai attribute ke object lain) yang dapat bersifat rekursif. Sebuah hubungan rekursif yang dimiliki sebuah object bisa saja terhubung pada class-class dalam hierarki yang sama yang bersifat kolektif hingga ujung node (alias leaf) yang tidak beranak.
 
 **Composite** sangat memungkinkan sebuah object untuk mempunyai banyak object yang bercabang-cabang di dalamnya sebagai sebuah *tree*.
 
@@ -264,7 +264,7 @@ GoF
 
 ## References
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 183-195.
 - Refactoring.guru (Composite) - [https://refactoring.guru/design-patterns/composite](https://refactoring.guru/design-patterns/composite)
 - SourceMaking (Composite, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/composite](https://sourcemaking.com/design_patterns/composite)
 - Gang Of Four (GoF) Design Patterns: Composite - [https://www.journaldev.com/1535/composite-design-pattern-in-java](https://www.journaldev.com/1535/composite-design-pattern-in-java)

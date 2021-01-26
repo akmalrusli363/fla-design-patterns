@@ -709,7 +709,7 @@ Runnable run = () -> {
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 263-273
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 263-273.
 - Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 191-233.
 - Refactoring.guru (Command, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/command](https://refactoring.guru/design-patterns/command)
 - SourceMaking (Command, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/command](https://sourcemaking.com/design_patterns/command)

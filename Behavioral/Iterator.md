@@ -6,7 +6,7 @@
 
 ![Iterator](../assets/img/behavioral/iterator.png#center "Iterator")
 
-Merupakan design pattern yang berisikan sebuah List dan sebuah pointer yang berisikan index dari List/Array. Ketika Client/user ingin mengambil data, Iterator akan mengambil isi list pada pointer dan kemudian bergerak ke index berikutnya untuk kemudian akan dipanggil oleh user bila diperlukan.
+**Iterator** merupakan design pattern yang berisikan sebuah List dan sebuah pointer yang berisikan index dari List/Array. Ketika Client/user ingin mengambil data, Iterator akan mengambil isi list pada pointer dan kemudian bergerak ke index berikutnya untuk kemudian akan dipanggil oleh user bila diperlukan.
 
 Dengan Iterator, developer cukup menentukan strategi apa yang digunakan untuk mengambil data dari sebuah List/Array tanpa harus menentukan index yang akan diambil (misalnya dengan teknik *Depth-First* atau *Breadth-First* Iteration serta dapat diterapkan pada konsep *Linked-List*).
 
@@ -536,8 +536,8 @@ Dalam kasus Iterator bawaan Java, perubahan, modifikasi (termasuk senggolan) sek
 
 ## References
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 289-304.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 327-352.
 - Refactoring.guru (Iterator) - [https://refactoring.guru/design-patterns/iterator](https://refactoring.guru/design-patterns/iterator)
 - SourceMaking (Iterator) - [https://sourcemaking.com/design_patterns/iterator](https://sourcemaking.com/design_patterns/iterator)
 - Gang Of Four (GoF) Design Patterns: Iterator - [https://www.journaldev.com/1716/iterator-design-pattern-java](https://www.journaldev.com/1716/iterator-design-pattern-java)

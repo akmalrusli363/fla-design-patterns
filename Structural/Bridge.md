@@ -571,8 +571,8 @@ Terdapat 3 cara untuk melakukan injeksi sebuah dependency (komponen implementasi
 
 ## References
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 171-182.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 613.
 - Refactoring.guru (Bridge, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/bridge](https://refactoring.guru/design-patterns/bridge)
 - SourceMaking (Bridge, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/bridge](https://sourcemaking.com/design_patterns/bridge)
 - Gang Of Four (GoF) Design Patterns: Bridge - [https://www.journaldev.com/1491/bridge-design-pattern-java](https://www.journaldev.com/1491/bridge-design-pattern-java)

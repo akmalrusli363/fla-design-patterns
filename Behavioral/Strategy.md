@@ -6,9 +6,9 @@
 
 ![Strategy](../assets/img/behavioral/strategy.png#center "Strategy")
 
-Merupakan design pattern dimana sebuah class menggunakan sebuah Interface yang berisikan method-method yang dapat ditentukan sendiri isinya oleh class turunannya sehingga class pemakai dapat menggunakan implementasi dari Interface yang ia gunakan.
+**Strategy** merupakan design pattern dimana sebuah class menggunakan sebuah Interface yang berisikan method-method yang dapat ditentukan sendiri isinya oleh class turunannya sehingga class pemakai dapat menggunakan implementasi dari Interface yang ia gunakan.
 
-Strategy sangat memungkinkan Client untuk mengubah pilihan implementasi interface asalkan berada dalam satu interface yang sama. Selain itu, dengan Strategy design pattern, developer dapat menerapkan prinsip enkapsulasi dimana user tidak perlu mengetahui proses maupun code-code di dalam algoritma yang mereka kerjakan.
+**Strategy** sangat memungkinkan Client untuk mengubah pilihan implementasi interface asalkan berada dalam satu interface yang sama. Selain itu, dengan Strategy design pattern, developer dapat menerapkan prinsip enkapsulasi dimana user tidak perlu mengetahui proses maupun code-code di dalam algoritma yang mereka kerjakan.
 
 Design pattern ini merupakan salah satu design pattern yang diimplementasikan langsung oleh bahasa pemrograman dimana secara mendasar programmer sudah menentukan method-method yang akan diimplementasikan secara langsung oleh class pemakainya.
 
@@ -259,8 +259,7 @@ Mengenai pembahasan lebih lanjut mengenai perbedaan antara **Anonymous Inner Cla
 
 ### Core - Strategy
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 349-359.
 - Refactoring.guru (Strategy) - [https://refactoring.guru/design-patterns/strategy](https://refactoring.guru/design-patterns/strategy)
 - SourceMaking (Strategy) - [https://sourcemaking.com/design_patterns/strategy](https://sourcemaking.com/design_patterns/strategy)
 - Gang Of Four (GoF) Design Patterns: Strategy - [https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial](https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial)

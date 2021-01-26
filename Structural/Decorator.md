@@ -6,9 +6,9 @@
 
 ![Decorator](../assets/img/structural/decorator.png#center "Decorator")
 
-Merupakan design pattern yang dapat merangkapkan dirinya sendiri dalam model class yang sama, yang berisikan dirinya, dan diakses secara delegatif dari dalam ke luar maupun dari luar ke dalam.
+**Decorator** merupakan design pattern yang dapat merangkapkan dirinya sendiri dalam model class yang sama, yang berisikan dirinya, dan diakses secara delegatif dari dalam ke luar maupun dari luar ke dalam.
 
-Decorator sangat memungkinkan pengguna untuk merangkap object yang dideklarasikan ke dalam object-object sehierarki dengannya sehingga object tersebut dapat ditambahkan kelengkapan-kelengkapan object dari class lain di dalamnya tanpa harus memodifikasi code dari sebuah object sedikitpun.
+**Decorator** sangat memungkinkan pengguna untuk merangkap object yang dideklarasikan ke dalam object-object sehierarki dengannya sehingga object tersebut dapat ditambahkan kelengkapan-kelengkapan object dari class lain di dalamnya tanpa harus memodifikasi code dari sebuah object sedikitpun.
 
 
 ## Analogi
@@ -317,7 +317,7 @@ Wear military-type hat to player: Topi tentara
 
 ## References
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 196-207.
 - Refactoring.guru (Decorator) - [https://refactoring.guru/design-patterns/decorator](https://refactoring.guru/design-patterns/decorator)
 - SourceMaking (Decorator, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/decorator](https://sourcemaking.com/design_patterns/decorator)
 - Gang Of Four (GoF) Design Patterns: Decorator - [https://www.journaldev.com/1540/decorator-design-pattern-in-java-example](https://www.journaldev.com/1540/decorator-design-pattern-in-java-example)

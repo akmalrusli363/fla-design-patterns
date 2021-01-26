@@ -347,8 +347,8 @@ Untuk penjelasan super lengkapnya, dapat kalian simak codenya & jalankan demonya
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 305-315.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 622-623.
 - Refactoring.guru (Mediator, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/mediator](https://refactoring.guru/design-patterns/mediator)
 - SourceMaking (Mediator, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/mediator](https://sourcemaking.com/design_patterns/mediator)
 - Gang Of Four (GoF) Design Patterns: Mediator - [https://www.journaldev.com/1730/mediator-design-pattern-java](https://www.journaldev.com/1730/mediator-design-pattern-java)

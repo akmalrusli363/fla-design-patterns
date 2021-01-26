@@ -359,8 +359,8 @@ Ketika komponen tersebut mendapatkan perlakuan dari keyboard, mouse, maupun even
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 326-338.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 49-90.
 - Refactoring.guru (Observer) - [https://refactoring.guru/design-patterns/observer](https://refactoring.guru/design-patterns/observer)
 - SourceMaking (Observer) - [https://sourcemaking.com/design_patterns/observer](https://sourcemaking.com/design_patterns/observer)
 - Gang Of Four (GoF) Design Patterns: Observer - [https://www.journaldev.com/1739/observer-design-pattern-in-java](https://www.journaldev.com/1739/observer-design-pattern-in-java)

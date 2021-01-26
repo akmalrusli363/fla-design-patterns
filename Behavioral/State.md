@@ -6,7 +6,7 @@
 
 ![State](../assets/img/behavioral/state.png#center "State")
 
-Merupakan Design Pattern yang terdiri dari beberapa state dimana setiap state mewakili aksi dan tanggung jawab yang berbeda-beda yang dapat dijalankan oleh sebuah *Context*. Sebuah state dapat berubah status bergantung pada apa yang dipanggil oleh Context menjadi state lain tanpa harus dipanggil secara eksplisit oleh Context yang menggunakan state tersebut.
+**State** merupakan Design Pattern yang terdiri dari beberapa state dimana setiap state mewakili aksi dan tanggung jawab yang berbeda-beda yang dapat dijalankan oleh sebuah *Context*. Sebuah state dapat berubah status bergantung pada apa yang dipanggil oleh Context menjadi state lain tanpa harus dipanggil secara eksplisit oleh Context yang menggunakan state tersebut.
 
 Dengan State design pattern, ketika object tersebut mengalami perubahan state, maka behavior yang dijalankan pada object tersebut ikut berubah bergantung pada state yang digunakan pada object tersebut.
 
@@ -358,7 +358,8 @@ Perlu kalian ketahui bahwa sebuah state machine baru akan berganti state melalui
 
 ## References
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 338-348.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 385-428.
 - Refactoring.guru (State) - [https://refactoring.guru/design-patterns/state](https://refactoring.guru/design-patterns/state)
 - SourceMaking (State) - [https://sourcemaking.com/design_patterns/state](https://sourcemaking.com/design_patterns/state)
 - Gang Of Four (GoF) Design Patterns: State - [https://www.journaldev.com/1751/state-design-pattern-java](https://www.journaldev.com/1751/state-design-pattern-java)

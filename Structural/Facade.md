@@ -190,8 +190,8 @@ Selain itu, Facade juga berpotensi menciptakan God Class[^1] karena bengkaknya k
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 208-218.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 255-286.
 - Refactoring.guru (Facade) - [https://refactoring.guru/design-patterns/facade](https://refactoring.guru/design-patterns/facade)
 - SourceMaking (Facade, termasuk referensi gambar) - [https://sourcemaking.com/design_patterns/facade](https://sourcemaking.com/design_patterns/facade)
 - Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1557/facade-design-pattern-in-java](https://www.journaldev.com/1557/facade-design-pattern-in-java)

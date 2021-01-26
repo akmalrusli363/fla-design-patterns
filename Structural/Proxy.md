@@ -6,7 +6,7 @@
 
 ![Proxy](../assets/img/structural/proxy.png#center "Proxy")
 
-Merupakan design pattern yang diciptakan sebagai class penengah yang bertujuan untuk mengatur akses ke object asli (baik melalui pembatasan, caching, maupun panggilan ke remote class). Sebelum Client dapat benar-benar mengakses object asli, sebuah class harus menghadapi beberapa proses (seperti validasi, akses remote, dll) terlebih dahulu untuk mencegah akses object asli secara langsung.
+**Proxy** merupakan design pattern yang diciptakan sebagai class penengah yang bertujuan untuk mengatur akses ke object asli (baik melalui pembatasan, caching, maupun panggilan ke remote class). Sebelum Client dapat benar-benar mengakses object asli, sebuah class harus menghadapi beberapa proses (seperti validasi, akses remote, dll) terlebih dahulu untuk mencegah akses object asli secara langsung.
 
 Design pattern ini sering digunakan dalam kasus koneksi ke database, services, maupun kasus data caching yang sering dipakai dalam aplikasi-aplikasi (baik service maupun app-based) yang memerlukan data secara online.
 
@@ -296,8 +296,8 @@ Nantinya apabila user ingin mengambil konten yang diinginkan olehnya, Client cuk
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 233-246.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 441-510.
 - Refactoring.guru (Proxy) - [https://refactoring.guru/design-patterns/proxy](https://refactoring.guru/design-patterns/proxy)
 - SourceMaking (Proxy) - [https://sourcemaking.com/design_patterns/proxy](https://sourcemaking.com/design_patterns/proxy)
 - Gang Of Four (GoF) Design Patterns: Proxy - [https://www.journaldev.com/1572/proxy-design-pattern](https://www.journaldev.com/1572/proxy-design-pattern)

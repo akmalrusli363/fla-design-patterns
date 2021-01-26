@@ -615,8 +615,8 @@ Atau sebaliknya, kita juga bisa menggunakan library **JUnit Tests** untuk menguj
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 133-143.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 626-627.
 - Refactoring.guru (Prototype, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/prototype](https://refactoring.guru/design-patterns/prototype)
 - SourceMaking (Prototype) - [https://sourcemaking.com/design_patterns/prototype](https://sourcemaking.com/design_patterns/prototype)
 - Gang Of Four (GoF) Design Patterns: Prototype - [https://www.journaldev.com/1440/prototype-design-pattern-in-java](https://www.journaldev.com/1440/prototype-design-pattern-in-java)

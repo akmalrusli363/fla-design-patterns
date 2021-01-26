@@ -414,8 +414,8 @@ Atau dalam implementasi model UML:
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
-- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 157-170.
+- Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns. O'Reilly Media, 2004. ISBN: 9780596007126. Page 247-253.
 - Refactoring.guru (Adapter, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/adapter](https://refactoring.guru/design-patterns/adapter)
 - SourceMaking (Adapter) - [https://sourcemaking.com/design_patterns/adapter](https://sourcemaking.com/design_patterns/adapter)
 - Gang Of Four (GoF) Design Patterns: Adapter - [https://www.journaldev.com/1487/adapter-design-pattern-java](https://www.journaldev.com/1487/adapter-design-pattern-java)

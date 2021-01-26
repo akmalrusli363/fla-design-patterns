@@ -10,7 +10,7 @@
 >
 > Karena pembuatan beberapa model furniture tidak sama ragamnya karena mencakup material, rangka, dan slot yang berbeda dan tidak semua furniture memilikinya, maka penggunaan Abstract Factory sangat dibutuhkan dalam pembuatan ragam model furniture dengan jenis model & style yang berbeda-beda.
 
-Factory method dan Abstract factory adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
+**Factory method dan Abstract factory** adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
 
 **Abstract factory** menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **berbagai macam** object.
 
@@ -223,7 +223,7 @@ public class Client {
 
 ## Referensi
 
-- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+- Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994. Page 99-109.
 - Refactoring.guru (Abstract Factory, termasuk referensi gambar) - [https://refactoring.guru/design-patterns/abstract-factory](https://refactoring.guru/design-patterns/abstract-factory)
 - SourceMaking (Abstract Factory) - [https://sourcemaking.com/design_patterns/abstract_factory](https://sourcemaking.com/design_patterns/abstract_ _factory)
 - Gang Of Four (GoF) Design Patterns: Abstract Factory - [https://www.journaldev.com/1418/abstract-factory-design-pattern-in-java](https://www.journaldev.com/1418/abstract-factory-design-pattern-in-java)
