@@ -34,7 +34,8 @@ public class OrderList {
         } return str;
     }
     
-    private Vector<Order> cloneOrder() {
+    @SuppressWarnings("unchecked")
+	private Vector<Order> cloneOrder() {
     	return (Vector<Order>) orderList.clone();
     }
 
