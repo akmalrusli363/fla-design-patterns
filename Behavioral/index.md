@@ -16,7 +16,7 @@ Ada 10 jenis behavioral design patterns:
 4. [Strategy](Strategy)
 5. [Mediator](Mediator)
 6. [Iterator](Iterator)
-7. Chain of Responsibility
+7. [Chain of Responsibility](Chain-of-Responsibility)
 8. [Command](Command)
 9. Visitor
 10. [Memento](Memento)
