@@ -1,7 +1,9 @@
 package ohmypatt.patt.creational.abstractfactory.furniture.factory;
 
-import ohmypatt.patt.creational.abstractfactory.furniture.model.Furniture;
+import ohmypatt.patt.creational.abstractfactory.furniture.model.Bed;
+import ohmypatt.patt.creational.abstractfactory.furniture.model.Sofa;
 
 public interface FurnitureFactory {
-	public Furniture createFurniture(String type);
+	Sofa createSofa();
+	Bed createBed();
 }

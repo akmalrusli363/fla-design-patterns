@@ -2,19 +2,17 @@ package ohmypatt.patt.creational.abstractfactory.furniture.main;
 
 import java.util.ArrayList;
 
-import ohmypatt.patt.creational.abstractfactory.furniture.factory.BedFactory;
-import ohmypatt.patt.creational.abstractfactory.furniture.factory.SofaFactory;
+import ohmypatt.patt.creational.abstractfactory.furniture.factory.FurnitureFactory;
 import ohmypatt.patt.creational.abstractfactory.furniture.model.Furniture;
 
 public class ChandraFurniture {
 	public ArrayList<Furniture> createFurnitureSets() {
 		ArrayList<Furniture> setFurniture = new ArrayList<>();
 		
-		SofaFactory pabrikSofa = new SofaFactory();
-		BedFactory pabrikRanjang = new BedFactory();
+		FurnitureFactory furnitureFactory = new ChandraFurnitureFactory();
 
-		Furniture sofa = pabrikSofa.createFurniture("Victorian");
-		Furniture ranjang = pabrikRanjang.createFurniture("Medieval");
+		Furniture sofa = furnitureFactory.createSofa();
+		Furniture ranjang = furnitureFactory.createBed();
 	    
 	    System.out.println("------------------");
 
