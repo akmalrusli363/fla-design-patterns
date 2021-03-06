@@ -84,6 +84,123 @@ public class Storage {
 ```
 
 
+## Jenis-jenis Singleton
+
+### 1. Eagerly-initialized Singleton
+
+```java
+public class MySingleton {
+  private static MySingleton instance = new MySingleton();
+
+  private MySingleton() {
+    // TODO contents of constructor (if needed)
+  }
+
+  public static MySingleton getInstance() {
+    return instance;
+  }
+
+  // TODO declaration and methods here...
+}
+```
+
+Jenis Singleton ini merupakan jenis singleton termudah, hanya dengan mendeklarasikan object langsung pada `static` attribute tanpa harus melalui *null checking* dimana method `getInstance()` hanya memanggil object instance pada class Singleton.
+
+Jenis ini kurang efektif apabila class yang dibuatkan Singleton hanya dipanggil apabila dibutuhkan oleh class client dan mengakibatkan pemborosan resources dibanding dengan *lazy initialization*.
+
+Namun dari segi pembuatan object, object tersebut sudah dibuatkan langsung oleh JVM sesaat class tersebut dipanggil & sebelum thread mengakses object/instance tersebut sehingga dijamin *thread-safe* dibanding melalui *lazy initialization*.
+
+
+### 2. Lazy-initialized Singleton
+
+```java
+public class MySingleton {
+  private MySingleton() {
+    // TODO contents of constructor (if needed)
+  }
+
+  private static MySingleton instance = null;
+
+  public static MySingleton getInstance() {
+    if (instance == null) {
+      instance = new MySingleton();
+    }
+    return instance;
+  }
+
+  // TODO declaration and methods here...
+}
+```
+
+Jenis Singleton ini mencakup deklarasi object dengan *lazy initialization* dimana object akan dibuatkan apabila belum ada. Sebaliknya, class akan memanggil instance yang sudah dibuatkan sebelumnya sebagai objectnya.
+
+Jenis ini tidak akan berjalan efektif apabila class memerlukan aktivitas yang melibatkan beberapa thread atau ingin menjamin bahwa Singleton tersebut dapat berjalan efektif dalam kasus *multithreading*.
+
+
+### 3. Thread-Safe Singleton
+
+```java
+public class MySingleton {
+  private MySingleton() {
+    // TODO contents of constructor (if needed)
+  }
+
+  private volatile static MySingleton instance = null;
+
+  public static synchronized MySingleton getInstance() {
+    if (instance == null) {
+      instance = new MySingleton();
+    }
+    return instance;
+  }
+
+  // TODO declaration and methods here...
+}
+```
+
+Jenis Singleton ini menggunakan keyword `volatile` kepada object Singleton, `instance` untuk menampung variabel tersebut langsung ke *main memory* dan `synchronized` kepada method `getInstance()` untuk menjamin bahwa proses pengambilan instance tersebut *thread-safe*.
+
+Jenis ini menjamin bahwa pembuatan object Singleton hanya sekali untuk semua thread yang menggunakan object tersebut & efektif dalam kasus *multithreading*.
+
+
+### 4. Double-check Locking Singleton
+
+```java
+public class MySingleton {
+  private MySingleton() {
+    // TODO contents of constructor (if needed)
+  }
+
+  private volatile static MySingleton instance = null;
+
+  public static MySingleton getInstance() {
+    if (instance == null) {
+      synchronized(MySingleton.class) {
+        if (instance == null) {
+          instance = new MySingleton();
+        }
+      }
+    }
+    return instance;
+  }
+
+  // TODO declaration and methods here...
+}
+```
+
+Merupakan implementasi lanjutan dari *thread-safe* Singleton, namun peletakan `synchronized` ditempatkan dalam method body `getInstance()` dalam *null check* untuk meminimalisir panggilan sinkronisasi thread berulang ketika memanggil instance object, sehingga sinkronisasi hanya dipakai apabila belum ada object instance pada class tersebut.
+
+Selain itu, metode ini mengecek keberadaan object/instance Singleton sebanyak 2 kali, yaitu ketika method `getInstance()` dipanggil & dalam method body `synchronized()` pada static method `getInstance()`.
+
+Singleton ini menggunakan `synchronized()` dalam block pada static method `getInstance()` dimana apabila tidak ada object instance pada class tersebut, maka hanya 1 thread dalam class tersebut yang dapat mengakses isi method body `synchronized()` untuk dicek keberadaan object tersebut & dideklarasikan object/instance Singleton apabila benar-benar kosong.
+
+
+## Catatan Tambahan
+
+- Keyword `volatile` digunakan dalam object Java untuk ditampung ke memory utama dalam komputer (bukan CPU Cache) dengan menjamin bahwa setiap thread dapat mengakses object tersebut secara langsung (baik read dan write) & data yang diperoleh sesuai dengan kebutuhan thread dalam kasus *multithreading* dan *concurrency*.
+- Penggunaan keyword `synchronized` dapat dilakukan dalam method definition (secara keseluruhan) maupun dalam method body *(block of code)* dimana hanya 1 thread yang diperbolehkan untuk mengakses method/*block of code* tersebut.
+
+
 ## Referensi
 
 - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.

@@ -730,7 +730,22 @@ Nantinya apabila user ingin mengambil konten yang diinginkan olehnya, Client cuk
 
 ## Bridge
 
-Coming soon...
+[Penjelasan & Source code](bridge) | [refactoring.guru](https://refactoring.guru/design-patterns/bridge) | [sourcemaking.com](https://sourcemaking.com/design_patterns/bridge)
+
+![Bridge](bridge.png "Bridge")
+
+**Bridge** adalah design pattern yang memisahkan satu kesatuan konsep yang saling bereleasi satu sama lain sebagai 2 hierarki yang terpisah yaitu **abstraksi dan implementasi** dimana abstraksi _(abstraction)_ mempunyai hubungan *has-a* (memiliki attribute) dengan implementasi _(implementor/implementation)_ sehingga menghasilkan hubungan "bridge" antara abstraksi dengan implementasi.
+
+Dalam **Bridge** design pattern, satu kesatuan konsep sebuah komponen dipisahkan hierarkinya menjadi 2 hierarki yaitu **hierarki abstraksi** dan **hierarki interface**.
+
+Bridge bertujuan untuk mengurangi ikatan *coupling* seminimal mungkin sehingga dapat mencegah terjadinya dependensi yang berlebihan (apalagi menghasilkan hierarki yang tidak dibutuhkan)[^1] serta dapat meningkatkan ekspansibilitas pada masing-masing hierarki abstraksi dan implementasi.
+
+![Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)](https://refactoring.guru/images/patterns/content/bridge/bridge-3-en.png#white-center "Bertempur dengan update/changes (Single whole hierarchy vs bridged hierarchy)")
+
+Karena hierarki antara abstraksi *(abstraction)* dan implementasi *(implementator)* merupakan satu kesatuan konsep hierarki yang terpisah oleh "bridge", maka perubahan maupun penambahan fitur yang melibatkan salah satu sisi hierarki baik abstraksi maupun implementasi dapat lebih mudah ditangani sehingga tidak mempersulit keberadaan komponen secara keseluruhan.
+
+
+### Contoh Code
 
 ## Composite
 

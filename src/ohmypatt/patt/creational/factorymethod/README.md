@@ -8,19 +8,27 @@
 >
 > Kehadiran banyak variasi Smartphone dengan spesifikasi yang kurang lebih sama basis modelnya menunjukkan bahwa Factory Method cukup berperan dalam merakit 1 basis model smartphone meski dengan ragam model yang banyak & beragam.
 
-Factory method dan Abstract factory adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
+**Factory method dan Abstract factory** adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
 
-**Factory method** menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object.
+**Factory method** menggunakan **satu abstract method** yang merepresentasikan 1 jenis class untuk memanggil/mendeklarasikan object class yang dilakukan oleh subclass dengan variasi object yang berbeda-beda.
 
-Berbeda dengan Abstract factory, Factory method **hanya mengembalikan/memproduksi 1 jenis class beserta turunannya** dimana pembuatan object terbatas pada 1 model class saja (misal SmartphoneFactory menggunakan createSmartphone() untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone).
+Berbeda dengan Abstract factory, Factory method **hanya mengembalikan/memproduksi 1 jenis class beserta turunannya** dimana pembuatan object terbatas pada 1 model class saja (misal `SmartphoneFactory` menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 jenis class saja, yaitu `Smartphone`).
 
 ## Contoh kasus: Smartphone
 
 [Source code](smartphone) | [Source code - contoh alternatif](milktea)
 
+Dalam kasus produksi smartphone, pembuatan object Smartphone dilakukan melalui `SmartphoneFactory` menggunakan method `createSmartphone()`. Variasi-variasi yang dilakukan oleh factory method terbatas pada 1 jenis class saja, yaitu `Smartphone`, sehingga setiap factory yang mengimplementasikan `SmartphoneFactory` hanya dapat menghasilkan 1 jenis class saja, yaitu `Smartphone`.
+
+### Class Diagram
+
+![Smartphone Factory Class Diagram](factory-method-uml.png "Smartphone Factory Class Diagram")
+
+### Implementasi Code
+
 ```java
 public interface SmartphoneFactory {
-  public Smartphone createSmartphone(String type);
+  Smartphone createSmartphone(String type);
 }
 
 public class SimsongFactory implements SmartphoneFactory {
