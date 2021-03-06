@@ -12,31 +12,21 @@
 
 **Factory method dan Abstract factory** adalah 2 design pattern yang menerapkan teknik-teknik deklarasi class yang dilakukan dengan melakukan passing parameter yang diberikan oleh Client untuk mengembalikan Object yang dibuat oleh class perantaranya yaitu **Factory**.
 
-**Factory method** menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object.
+**Factory method** menggunakan **satu abstract method** yang merepresentasikan 1 jenis class untuk memanggil/mendeklarasikan object class yang dilakukan oleh subclass dengan variasi object yang berbeda-beda.
 
-Berbeda dengan Abstract factory, Factory method **hanya mengembalikan/memproduksi 1 jenis class beserta turunannya** dimana pembuatan object terbatas pada 1 model class saja (misal SmartphoneFactory menggunakan createSmartphone() untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone).
+Berbeda dengan Abstract factory, Factory method **hanya mengembalikan/memproduksi 1 jenis class beserta turunannya** dimana pembuatan object terbatas pada 1 model class saja (misal `SmartphoneFactory` menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 jenis class saja, yaitu `Smartphone`).
 
 ## Contoh kasus: Smartphone
 
+Dalam kasus produksi smartphone, pembuatan object Smartphone dilakukan melalui `SmartphoneFactory` menggunakan method `createSmartphone()`. Variasi-variasi yang dilakukan oleh factory method terbatas pada 1 jenis class saja, yaitu `Smartphone`, sehingga setiap factory yang mengimplementasikan `SmartphoneFactory` hanya dapat menghasilkan 1 jenis class saja, yaitu `Smartphone`.
+
+### Class Diagram
+
+![Smartphone Factory Class Diagram](../assets/img/creational/factory-method-uml.png#center "Smartphone Factory Class Diagram")
+
+### Implementasi Code
+
 ```java
-public interface SmartphoneFactory {
-  public Smartphone createSmartphone(String type);
-}
-
-public class SimsongFactory implements SmartphoneFactory {
-  public Smartphone createSmartphone(String type){
-    Smartphone smartphone = null;
-    if (type.equals("Galaxy Prime")) {
-      smartphone = new SimsongGalaxyPrime();
-    } else if (type.equals("Galaxy Note")) {
-      smartphone = new SimsongGalaxyNote();
-    } else if (type.equals("Fold Z")) {
-      smartphone = new SimsongFoldZ();
-    }
-    return smartphone;
-  }
-}
-
 public abstract class Smartphone {
   private float screenSize;
   private int capacity;
@@ -121,6 +111,26 @@ public class SimsongFoldZ extends Smartphone {
     return "Simsong Fold Z";
   }
   // some codes...
+}
+```
+
+```java
+public interface SmartphoneFactory {
+  Smartphone createSmartphone(String type);
+}
+
+public class SimsongFactory implements SmartphoneFactory {
+  public Smartphone createSmartphone(String type){
+    Smartphone smartphone = null;
+    if (type.equals("Galaxy Prime")) {
+      smartphone = new SimsongGalaxyPrime();
+    } else if (type.equals("Galaxy Note")) {
+      smartphone = new SimsongGalaxyNote();
+    } else if (type.equals("Fold Z")) {
+      smartphone = new SimsongFoldZ();
+    }
+    return smartphone;
+  }
 }
 ```
 

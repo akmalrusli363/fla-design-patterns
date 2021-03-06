@@ -79,29 +79,11 @@ public class MySingleton {
 
 ![Factory Method](../assets/img/creational/factory-method.png#center "Factory Method")
 
-Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **sebuah** object (misal SmartphoneFactory menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone)
+Factory method menggunakan **satu abstract method** yang merepresentasikan 1 jenis class untuk memanggil/mendeklarasikan object class yang dilakukan oleh subclass dengan variasi object yang berbeda-beda (misal `SmartphoneFactory` menggunakan `createSmartphone()` untuk bikin Smartphone. Variasi-variasi yang dilakukan oleh factory terbatas pada 1 object class saja, yaitu Smartphone).
 
 Contoh code:
 
 ```java
-public interface SmartphoneFactory {
-  public Smartphone createSmartphone(String type);
-}
-
-public class SimsongFactory implements SmartphoneFactory {
-  public Smartphone createSmartphone(String type){
-    Smartphone smartphone = null;
-    if (type.equals("Galaxy Prime")) {
-      smartphone = new SimsongGalaxyPrime();
-    } else if (type.equals("Galaxy Note")) {
-      smartphone = new SimsongGalaxyNote();
-    } else if (type.equals("Fold Z")) {
-      smartphone = new SimsongFoldZ();
-    }
-    return smartphone;
-  }
-}
-
 public abstract class Smartphone {
   private float screenSize;
   private int capacity;
@@ -189,6 +171,26 @@ public class SimsongFoldZ extends Smartphone {
 }
 ```
 
+```java
+public interface SmartphoneFactory {
+  public Smartphone createSmartphone(String type);
+}
+
+public class SimsongFactory implements SmartphoneFactory {
+  public Smartphone createSmartphone(String type){
+    Smartphone smartphone = null;
+    if (type.equals("Galaxy Prime")) {
+      smartphone = new SimsongGalaxyPrime();
+    } else if (type.equals("Galaxy Note")) {
+      smartphone = new SimsongGalaxyNote();
+    } else if (type.equals("Fold Z")) {
+      smartphone = new SimsongFoldZ();
+    }
+    return smartphone;
+  }
+}
+```
+
 
 ## [Abstract Factory](Abstract-Factory)
 
@@ -196,49 +198,17 @@ public class SimsongFoldZ extends Smartphone {
 
 ![Abstract Factory](../assets/img/creational/abstract-factory.png#center "Abstract Factory")
 
-Factory method menggunakan satu abstract method untuk memanggil/mendeklarasikan class yang dilakukan oleh subclass yang mendeklarasikan **berbagai macam** object (misal FurnitureFactory menggunakan `createFurniture()` untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.))
+Abstract Factory menggunakan **sekumpulan abstract method** yang merepresentasikan beberapa jenis class untuk mendeklarasikan object class yang dilakukan oleh subclass dengan variasi object yang berbeda-beda (misal `FurnitureFactory` dengan menggunakan 2 method `createSofa()` dan `createBed()` untuk bikin Furniture beserta turunan modelnya (sofa, lemari, meja, dll.)).
 
 Contoh code:
 
 ```java
-public interface FurnitureFactory {
-  public Furniture createFurniture(String type);
-}
-
-public class SofaFactory implements FurnitureFactory {
-  public Furniture createFurniture(String type) {
-    Sofa sofa = null;
-    if (type.equals("Victorian")) {
-      sofa = new VictorianSofa();
-    } else if (type.equals("Cyber")) {
-      sofa = new CyberSofa();
-    } else if (type.equals("Medieval")) {
-      sofa = new MedievalSofa();
-    }
-    return sofa;
-  }
-}
-
-public class BedFactory implements FurnitureFactory {
-  public Furniture createFurniture(String type) {
-    Bed bed = null;
-    if (type.equals("Victorian")) {
-      bed = new VictorianBed();
-    } else if (type.equals("Cyber")) {
-      bed = new CyberBed();
-    } else if (type.equals("Medieval")) {
-      bed = new MedievalBed();
-    }
-    return bed;
-  }
-}
-
 public interface Furniture {
-  public void assemble();
-  public String describe();
+  void assemble();
+  String describe();
 
   @Override
-  public String toString();
+  String toString();
 
   default String getFullDescription() {
     return toString();
@@ -266,6 +236,15 @@ public abstract class Sofa implements Furniture {
   public int getCapacity() {
     return capacity;
   }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(describe());
+    sb.append("\nMaterial: ").append(getMaterial());
+    sb.append("\nCapacity: ").append(getCapacity());
+    return sb.toString();
+  }
 }
 
 public abstract class Bed implements Furniture {
@@ -288,8 +267,19 @@ public abstract class Bed implements Furniture {
   public String getCover() {
     return cover;
   }
-}
 
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(describe());
+    sb.append("\nMaterial: ").append(getMaterial());
+    sb.append("\nCover: ").append(getCover());
+    return sb.toString();
+  }
+}
+```
+
+```java
 public class VictorianSofa extends Sofa {
   public void assemble() {
     // assembling Victorian-styled sofa...
@@ -310,29 +300,80 @@ public class VictorianBed extends Bed {
   }
 }
 
-public class CyberSofa extends Sofa {
+public class MedievalSofa extends Sofa {
   public void assemble() {
-    // assembling Cyber-styled sofa...
+    // assembling Medieval-styled sofa...
   }
 
   public String describe() {
-    return "Cyber-styled Sofa";
+    return "Medieval Sofa";
   }
 }
 
+public class MedievalBed extends Bed {
+  public void assemble() {
+    // assembling Medieval-styled bed...
+  }
+
+  public String describe() {
+    return "Medieval Bed";
+  }
+}
 // more furniture-derived style classes
 ```
 
-Dalam kasus dalam tangan client (misal class `ChandraFurniture`), client dapat bebas memilih jenis factory dan style yang ia inginkan (misal Sofa dan Bed factory dengan perpaduan style VictorianSofa dan MedievalBed) yang bila didefinisikan dalam code terancang sebagai berikut:
+```java
+public interface FurnitureFactory {
+  public Sofa createSofa();
+  public Bed createBed();
+}
+
+public class VictorianFurnitureFactory implements FurnitureFactory {
+  public Sofa createSofa() {
+    return new VictorianSofa();
+  }
+
+  public Bed createBed() {
+    return new VictorianBed();
+  }
+}
+
+public class MedievalFurnitureFactory implements FurnitureFactory {
+  public Sofa createSofa() {
+    return new MedievalSofa();
+  }
+
+  public Bed createBed() {
+    return new MedievalBed();
+  }
+}
+```
+
+Anda juga bisa mendeklarasikan model-model factory sesuai kebutuhan object dengan menurunkan FurnitureFactory sebagai class turunannya, dimana anda juga bisa mendeklarasikan object sesuai kebutuhan factory dan client class sesuai dengan contoh kasus `ChandraFurniture` berikut:
 
 ```java
-public class ChandraFurniture {
-  public void createFurnitureSets() {
-    SofaFactory pabrikSofa = new SofaFactory();
-    BedFactory pabrikRanjang = new BedFactory();
+public class ChandraFurnitureFactory implements FurnitureFactory {
+  public Sofa createSofa() {
+    return new VictorianSofa();
+  }
 
-    Furniture sofa = pabrikSofa.createFurniture("Victorian");
-    Furniture ranjang = pabrikRanjang.createFurniture("Medieval");
+  public Bed createBed() {
+    return new MedievalBed();
+  }
+}
+```
+
+Sederhananya, client class tidak perlu mengetahui style furniture yang ingin mereka karena pembuatan style furniture sudah diserahkan langsung ke factory sesuai prinsip *Liskov-Subtitution Principle* (LSP).
+
+Dalam kasus dalam tangan client (misal class `AgenFurniture` sebagai agen), client dapat bebas memilih jenis factory sesuai style yang ia  inginkan (misal `ChandraFurnitureFactory` dengan perpaduan style `VictorianSofa` dan `MedievalBed`) yang bila didefinisikan dalam code terancang sebagai berikut:
+
+```java
+public class AgenFurniture {
+  public void createFurnitureSets() {
+    FurnitureFactory furnitureFactory = new ChandraFurnitureFactory();
+
+    Furniture sofa = furnitureFactory.createSofa(); // Victorian
+    Furniture ranjang = furnitureFactory.createFurniture(); // Medieval
 
     System.out.println("------------------");
 
