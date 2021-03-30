@@ -1,6 +1,6 @@
 let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 let element = document.body;
-let iconToggler = document.querySelector(".night-toggle i");
+let iconToggler = document.querySelectorAll(".night-toggle i");
 
 function toggleDarkMode(dark) {
     if (dark == null) {
@@ -9,12 +9,16 @@ function toggleDarkMode(dark) {
 
     if (dark == true) {
         element.classList.add("dark");
-        iconToggler.classList.remove("fa-sun-o");
-        iconToggler.classList.add("fa-moon-o");
+        for (var i = 0; i < iconToggler.length; i++) {
+            iconToggler[i].classList.remove("fa-sun-o");
+            iconToggler[i].classList.add("fa-moon-o");
+        }
     } else {
         element.classList.remove("dark");
-        iconToggler.classList.add("fa-sun-o");
-        iconToggler.classList.remove("fa-moon-o");
+        for (var i = 0; i < iconToggler.length; i++) {
+            iconToggler[i].classList.add("fa-sun-o");
+            iconToggler[i].classList.remove("fa-moon-o");
+        }
     }
     localStorage.setItem("nightMode", dark);
 }

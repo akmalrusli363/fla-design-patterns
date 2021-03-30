@@ -86,6 +86,20 @@ body {
 
 .night-toggle {
   cursor: pointer;
+
+  i {
+    width: 1rem;
+  }
+
+  .night-toggle-text {
+    margin-left: .5rem;
+  }
+
+  @media screen and (max-width: 899px) {
+    .night-toggle-text {
+      display: none;
+    }
+  }
 }
 
 .site-footer {

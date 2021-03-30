@@ -228,6 +228,12 @@ nav li .active {
   display: block;
 }
 
+@media screen and (min-width: 769px) and (max-width: 840px) {
+  .menu a, .navigation-menu a {
+    padding: 1rem .65rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   nav.blend {
     top: 0;
