@@ -2,7 +2,7 @@
 
 [refactoring.guru](https://refactoring.guru/design-patterns/composite) | [sourcemaking.com](https://sourcemaking.com/design_patterns/composite)
 
-![Composite](composite.png#center "Composite")
+![Composite](composite.png "Composite")
 
 Merupakan design pattern dimana komponen-komponen dari sebuah hierarki memiliki hubungan *has-a* ke object lain (mempunyai attribute ke object lain) yang dapat bersifat rekursif. Sebuah hubungan rekursif yang dimiliki sebuah object bisa saja terhubung pada class-class dalam hierarki yang sama yang bersifat kolektif hingga ujung node (alias leaf) yang tidak beranak.
 
