@@ -1,16 +1,14 @@
 # Template Method
 
-[Main Page](..) → [Behavioral Design Patterns](.) → [Template Method](#)
+[refactoring.guru](https://refactoring.guru/design-patterns/template-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/template_method)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/templatemethod) | [refactoring.guru](https://refactoring.guru/design-patterns/template-method) | [sourcemaking.com](https://sourcemaking.com/design_patterns/template_method)
-
-![Template Method](../assets/img/behavioral/template-method.png#center "Template Method")
+![Template Method](template-method.png "Template Method")
 
 Template Method merupakan design pattern dimana dalam sebuah abstract class yang memiliki satu atau lebih abstract method yang harus didefinisikan oleh class turunannya. Selain memiliki abstract method, sebuah abstract class juga mempunyai satu atau lebih concrete method yang akan memanggil abstract method tersebut.
 
 Template Method memungkinkan sebuah class untuk mendefinisikan method yang memanggil method-method abstract yang akan digunakan oleh subclassnya. Misalnya sebuah abstract class yang berisikan beberapa method abstract/*override-able* yaitu `boilWater()`, `prepareIngredients()`, `cook()`, dan `serve()` yang dipanggil oleh sebuah method concrete bernama `createSoup()`.
 
-![Hollywood Principle](../assets/img/behavioral/template-method-hollywood.png#center "Hollywood Principle")
+![Hollywood Principle](template-method-hollywood.png "Hollywood Principle")
 
 Dalam template method, isi-isi deklarasi dari method abstract/override-able dapat ditentukan langsung dari parent class maupun ditentukan sendiri oleh subclassnya. Sebaliknya, class pemanggil *(parent class)* cukup memanggil method yang berisikan method-method *(abstract/override-able)* melalui concrete method (template). Ketika Client ingin menyiapkan produk yang diinginkan, Client cukup memanggil parent class saja tanpa harus memanggil isi method maupun memanggil method dari subclassnya (mengikuti Hollywood Principle).
 

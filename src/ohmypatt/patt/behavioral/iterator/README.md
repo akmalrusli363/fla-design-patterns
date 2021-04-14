@@ -1,10 +1,8 @@
 # Iterator
 
-[Main Page](..) → [Behavioral Design Patterns](.) → [Iterator](#)
+[refactoring.guru](https://refactoring.guru/design-patterns/iterator) | [sourcemaking.com](https://sourcemaking.com/design_patterns/iterator)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/iterator) | [refactoring.guru](https://refactoring.guru/design-patterns/iterator) | [sourcemaking.com](https://sourcemaking.com/design_patterns/iterator)
-
-![Iterator](../assets/img/behavioral/iterator.png#center "Iterator")
+![Iterator](iterator.png "Iterator")
 
 Merupakan design pattern yang berisikan sebuah List dan sebuah pointer yang berisikan index dari List/Array. Ketika Client/user ingin mengambil data, Iterator akan mengambil isi list pada pointer dan kemudian bergerak ke index berikutnya untuk kemudian akan dipanggil oleh user bila diperlukan.
 

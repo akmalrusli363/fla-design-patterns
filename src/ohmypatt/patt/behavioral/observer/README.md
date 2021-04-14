@@ -1,10 +1,8 @@
 # Observer
 
-[Main Page](..) → [Behavioral Design Patterns](.) → [Observer](#)
+[refactoring.guru](https://refactoring.guru/design-patterns/observer) | [sourcemaking.com](https://sourcemaking.com/design_patterns/observer)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/observer) | [refactoring.guru](https://refactoring.guru/design-patterns/observer) | [sourcemaking.com](https://sourcemaking.com/design_patterns/observer)
-
-![Observer](../assets/img/behavioral/observer.png#center "Observer")
+![Observer](observer.png "Observer")
 
 **Observer** merupakan design pattern yang menggunakan 2 Class, yaitu Observable (misalnya Penulis/Channel) sebagai sumber informasi dan Observer/Watcher (misalnya Pembaca/Viewer) sebagai penerima informasi.
 
@@ -89,12 +87,12 @@ public class Channel implements Observable {
 
 ## UML Model
 
-![Observer Model](../assets/img/behavioral/observer-model.png#center "Observer Model")
+![Observer Model](observer-model.png "Observer Model")
 
 
 ## Contoh Kasus
 
-![Channel and Subscriptions](../assets/img/behavioral/observer-channel.png#center "Observer Model")
+![Channel and Subscriptions](observer-channel.png "Observer Model")
 
 Sebuah Channel dalam sebuah aplikasi streaming dihadapkan dengan banyaknya penonton yang ingin selalu up-to-date dengan kontennya. Ada dua cara yang dilakukan para developer pada saat itu untuk menghadapi kasus tersebut, melakukan update berkala secara rutin atau membiarkan penonton kesepian dan cari konten terbaru dari channel tersebut sampai jenuh?
 
@@ -211,7 +209,7 @@ public class Main {
 
 Penerapan Observer design pattern juga dilakukan pada class-class yang menerapkan Observer design pattern dalam beberapa bahasa pemrograman, termasuk Java dimana class tersebut sering digunakan pada tampilan User Interface yaitu `EventListener`.
 
-![EventListener in Java](../assets/img/Behavioral/observer-java-eventlistener.gif#center "EventListener in Java")
+![EventListener in Java](observer-java-eventlistener.gif "EventListener in Java")
 
 Event Listener sendiri sering dipakai pada elemen-elemen yang memiliki keterikatan dan interaksi dengan langsung dengan user seperti Button, Checkbox, Drop down, Menu item, dan komponen-komponen lainnya. Ada banyak Action/Event Listener yang dapat ditambahkan pada object-object dengan implementasi Event Listener seperti `KeyListener`, `MouseListener`, `ActionListener`, `WindowListener`, dan lain-lainnya.
 

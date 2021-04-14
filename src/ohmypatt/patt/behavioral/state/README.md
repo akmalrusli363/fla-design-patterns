@@ -1,10 +1,8 @@
 # State
 
-[Main Page](..) → [Behavioral Design Patterns](.) → [State](#)
+[refactoring.guru](https://refactoring.guru/design-patterns/state) | [sourcemaking.com](https://sourcemaking.com/design_patterns/state)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/state) | [refactoring.guru](https://refactoring.guru/design-patterns/state) | [sourcemaking.com](https://sourcemaking.com/design_patterns/state)
-
-![State](../assets/img/behavioral/state.png#center "State")
+![State](state.png "State")
 
 Merupakan Design Pattern yang terdiri dari beberapa state dimana setiap state mewakili aksi dan tanggung jawab yang berbeda-beda yang dapat dijalankan oleh sebuah *Context*. Sebuah state dapat berubah status bergantung pada apa yang dipanggil oleh Context menjadi state lain tanpa harus dipanggil secara eksplisit oleh Context yang menggunakan state tersebut.
 
@@ -12,13 +10,13 @@ Dengan State design pattern, ketika object tersebut mengalami perubahan state, m
 
 ## Analogi Dasar: Finite State Automata
 
-![State Automata](../assets/img/behavioral/state-automata.png#center "State Automata")
+![State Automata](state-automata.png "State Automata")
 
 Mendasari apa yang telah dipelajari dalam ilmu Computer Science, Finite State Automata adalah sebuah graph yang merepresentasikan perubahan state apabila terjadi input yang diterima oleh sebuah state. Adapun interaksi/perlakuan terhadap state dari sebuah machine mengakibatkan state tersebut berganti ke state lain yang telah ditentukan, sehingga state berikut yang dihasilkan adalah berupa state yang terpilih oleh input dari state sebelumnya.
 
 ## Contoh Kasus
 
-![State Example: ATM](../assets/img/behavioral/state-atm.png#center "State Example: ATM")
+![State Example: ATM](state-atm.png "State Example: ATM")
 
 Pada contoh kasus berikut, sebuah mesin ATM memiliki 4 state, yaitu:
 

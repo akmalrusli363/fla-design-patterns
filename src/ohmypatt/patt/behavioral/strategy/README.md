@@ -1,10 +1,8 @@
 # Strategy
 
-[Main Page](..) → [Behavioral Design Patterns](.) → [Strategy](#)
+[refactoring.guru](https://refactoring.guru/design-patterns/strategy) | [sourcemaking.com](https://sourcemaking.com/design_patterns/strategy)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/strategy) | [refactoring.guru](https://refactoring.guru/design-patterns/strategy) | [sourcemaking.com](https://sourcemaking.com/design_patterns/strategy)
-
-![Strategy](../assets/img/behavioral/strategy.png#center "Strategy")
+![Strategy](strategy.png "Strategy")
 
 Merupakan design pattern dimana sebuah class menggunakan sebuah Interface yang berisikan method-method yang dapat ditentukan sendiri isinya oleh class turunannya sehingga class pemakai dapat menggunakan implementasi dari Interface yang ia gunakan.
 

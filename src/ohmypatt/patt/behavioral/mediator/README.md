@@ -1,10 +1,8 @@
 # Mediator
 
-[Main Page](..) → [Behavioral Design Patterns](.) → [Mediator](#)
+[refactoring.guru](https://refactoring.guru/design-patterns/mediator) | [sourcemaking.com](https://sourcemaking.com/design_patterns/mediator)
 
-[Source Code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/mediator) | [refactoring.guru](https://refactoring.guru/design-patterns/mediator) | [sourcemaking.com](https://sourcemaking.com/design_patterns/mediator)
-
-![Mediator as class object traffic controller](https://refactoring.guru/images/patterns/content/mediator/mediator.png#center "Mediator as class object traffic controller")
+![Mediator as class object traffic controller](https://refactoring.guru/images/patterns/content/mediator/mediator.png "Mediator as class object traffic controller")
 
 **Mediator** merupakan design pattern yang berperan sebagai penengah antara 2 atau lebih komponen/object class yang berbeda. Ketika object-object ingin berkomunikasi satu sama lain, maka Mediator akan menerima dan mengirimkan informasi dari satu object class ke object class lainnya.
 
@@ -15,17 +13,17 @@ Mediator memiliki hubungan antar object yang *many-to-many* bila dibandingkan de
 
 ## Analogi
 
-![User interface elements without centralization using mediator](https://refactoring.guru/images/patterns/diagrams/mediator/problem1-en.png#white-center "User interface elements without centralization using mediator")
+![User interface elements without centralization using mediator](https://refactoring.guru/images/patterns/diagrams/mediator/problem1-en.png "User interface elements without centralization using mediator")
 
 Pernahkah kalian menggunakan Controller ketika anda sedang mengerjakan project-project berbasis *MVC (Model-View-Controller)*? Penggunaan Controller sendiri adalah salah satu bentuk bagaimana komunikasi antar elemen dalam class dipusatkan pada 1 class khusus yaitu **_Controller/Mediator_**.
 
 Begitu juga ketika anda sedang merancang aplikasi berbasis User Interface yang menggunakan mediator sebagai penengah antar object-objectnya dimana sebuah view/UI class (sebagai pusat komunikasi antar object dipersatukan) seharusnya berkomunikasi secara terpusat melaluinya. Elemen-elemen view apapun (baik button, dropdown, text field, maupun tab) harus dipusatkan melalui 1 class pusat yang dikenal sebagai **Mediator**.
 
-![Mediator helps you to centralize user interface elements for better coordination](https://refactoring.guru/images/patterns/diagrams/mediator/solution1-en.png#white-center "Mediator helps you to centralize user interface elements for better coordination")
+![Mediator helps you to centralize user interface elements for better coordination](https://refactoring.guru/images/patterns/diagrams/mediator/solution1-en.png "Mediator helps you to centralize user interface elements for better coordination")
 
 Hal ini bertujuan agar segala tatanan yang dijalankan pada elemen-elemen view dapat terkoordinasi dengan baik, terutama bila anda ingin melakukan validasi pada setiap elemen view untuk kebutuhan registrasi/login/dll. Tanpa adanya pemusatan komunikasi melalui sebuah mediator, komunikasi antar *view element* bakalan kacau karena dependensi antar object yang saling terikat satu sama lain karena tingkat *coupling* yang sangat tinggi.
 
-![Air Traffic Control](https://sourcemaking.com/files/v2/content/patterns/Mediator_example.png#white-center "Air Traffic Control")
+![Air Traffic Control](https://sourcemaking.com/files/v2/content/patterns/Mediator_example.png "Air Traffic Control")
 
 Hal ini juga berlaku demikian pada kasus di dunia penerbangan dimana setiap pesawat dan helikopter yang berada dalam lalu lintas udara harus berkomunikasi dengan pihak *Air Traffic Control (ATC)* untuk melaporkan lokasi dan kondisi penerbangan terutama ketika ia ingin melakukan pendaratan maupun yang akan lepas landas dari landasan pacu. Penggunaan *Air Traffic Control (ATC)* dalam dunia penerbangan bertujuan agar para penerbang (pilot) dapat menjalankan tugas penerbangan secara terkoordinir tanpa mengakibatkan gangguan maupun miskomunikasi akibat adanya pesawat yang ingin melakukan lepas landas maupun melakukan pendaratan (secara normal maupun darurat) serta pilot dapat memahami secara pasti mengenai kondisi di sekitar landasan pacu (termasuk bandara/pangkalan penerbangan).
 
@@ -33,7 +31,7 @@ Hal ini juga berlaku demikian pada kasus di dunia penerbangan dimana setiap pesa
 
 Masih belum paham mengenai konsep mediator? Anda juga bisa menyimak contoh konsep dari *Head First Design Pattern* dimana dalam sebuah kisah terdapat rancangan sistem *smart home* dimana pada awal mulanya terdapat 4 object yang saling berkomunikasi satu sama lain.
 
-![Smart Home system](../assets/img/behavioral/mediator-smarthome.png#center "Smart Home system")
+![Smart Home system](mediator-smarthome.png "Smart Home system")
 
 Komunikasi antar keempat object tersebut tentunya akan semakin sulit dan rumit apabila salah satu classnya diubah isinya ataupun terdapat tambahan class baru yang tentunya sangat mempersulit keberadaan class lainnya karena class lain akan ikut terpengaruh terhadap perubahan yang terjadi pada salah satu classnya.
 
@@ -161,12 +159,12 @@ public class MyComponent {
 
 ## UML Model
 
-![Mediator Model](../assets/img/behavioral/mediator.png#center "Mediator Model")
+![Mediator Model](mediator.png "Mediator Model")
 
 
 ## Contoh Kasus
 
-![Chat, a mediator example to mediate between peoples](../assets/img/behavioral/mediator-chat.png#center "Chat, a mediator example to mediate between peoples")
+![Chat, a mediator example to mediate between peoples](mediator-chat.png "Chat, a mediator example to mediate between peoples")
 
 Salah satu contoh penerapan **mediator design pattern** adalah sarana komunikasi melalui chat dimana orang-orang akan saling berkomunikasi sama lain dengan menggunakan layanan instant messaging. Ketika seseorang ingin mengirimkan pesan ke orang lain, maka orang lain akan menerima pesan dari orang yang dikirimkan. Dalam beberapa kasus tertentu, ketika orang ingin mengirimkan pesan kepada orang-orang dalam grup tertentu, perlu ada penambahan code yang tentunya mengakibatkan sebuah class (user/chat member) sering mengalami modifikasi yang berkali-kali sehingga melanggar *Open/Closed Principle (OCP)*.
 
@@ -342,7 +340,7 @@ Maka outputnya adalah sebagai berikut:
 [Andreas - Research] sends message to [William - Database Admin]: Oke siap sobatku :D
 ```
 
-Untuk penjelasan super lengkapnya, dapat kalian simak codenya & jalankan demonya pada link [source code](https://github.com/akmalrusli363/fla-design-patterns/tree/main/src/ohmypatt/patt/behavioral/mediator).
+Untuk penjelasan super lengkapnya, dapat kalian simak codenya & jalankan demonya pada source code di atas.
 
 
 ## Referensi
