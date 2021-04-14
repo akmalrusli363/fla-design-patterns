@@ -4,7 +4,7 @@
 
 ![State](state.png "State")
 
-Merupakan Design Pattern yang terdiri dari beberapa state dimana setiap state mewakili aksi dan tanggung jawab yang berbeda-beda yang dapat dijalankan oleh sebuah *Context*. Sebuah state dapat berubah status bergantung pada apa yang dipanggil oleh Context menjadi state lain tanpa harus dipanggil secara eksplisit oleh Context yang menggunakan state tersebut.
+**State** adalah design pattern yang terdiri dari beberapa state dimana setiap state mewakili aksi *(action)* dan tanggung jawab yang berbeda-beda yang dapat dijalankan oleh sebuah *State Machine*/Context. Sebuah state dapat berubah status bergantung pada apa yang dipanggil oleh Context menjadi state lain tanpa harus dipanggil secara eksplisit oleh Context yang menggunakan state tersebut.
 
 Dengan State design pattern, ketika object tersebut mengalami perubahan state, maka behavior yang dijalankan pada object tersebut ikut berubah bergantung pada state yang digunakan pada object tersebut.
 
@@ -13,6 +13,148 @@ Dengan State design pattern, ketika object tersebut mengalami perubahan state, m
 ![State Automata](state-automata.png "State Automata")
 
 Mendasari apa yang telah dipelajari dalam ilmu Computer Science, Finite State Automata adalah sebuah graph yang merepresentasikan perubahan state apabila terjadi input yang diterima oleh sebuah state. Adapun interaksi/perlakuan terhadap state dari sebuah machine mengakibatkan state tersebut berganti ke state lain yang telah ditentukan, sehingga state berikut yang dihasilkan adalah berupa state yang terpilih oleh input dari state sebelumnya.
+
+
+## Essences of State
+
+### 1. State Interface
+
+```java
+interface CreditState {
+  void topup(int amount);
+  void check(int amount);
+  void pay();
+  void withdraw(int amount);
+}
+```
+
+**State interface** merupakan interface yang mewakili state yang berisikan *action-action* yang akan dijalankan oleh state, dimana setiap method berperan sebagai action yang akan dijalankan oleh state. Nantinya setiap state akan diimplementasikan dari state interface ini.
+
+### 2. State class
+
+**State class** merepresentasikan sebuah state yang mengimplementasikan *state interface* dimana dalam state class berisikan beberapa action-action yang dijalankan sesuai state yang dituju.
+
+Misalnya terdapat 3 state yang diimplementasikan dari `CreditState`, yaitu `FullCredit`, `HasCredit`, dan `NoCredit`. Masing-masing state memiliki behavior masing-masing yang tertuang dalam contoh code di bawah:
+
+```java
+public class FullCredit implements CreditState {
+  private CreditMachine machine;
+
+  public FullCredit(CreditMachine machine) {
+    this.machine = machine
+  }
+  
+  @Override
+  public void topup(int amount) {
+    // unable to topup
+  }
+  @Override
+  public void check() {
+    // return current credit
+  }
+  @Override
+  public void pay(int amount) {
+    // pay for n credit
+  }
+  @Override
+  public void withdraw(int amount) {
+    // withdraw for n credit
+  }
+}
+
+public class HasCredit implements CreditState {
+  private CreditMachine machine;
+
+  public HasCredit(CreditMachine machine) {
+    this.machine = machine
+  }
+
+  @Override
+  public void topup(int amount) {
+    // add n credit
+  }
+  @Override
+  public void check() {
+    // return current credit
+  }
+  @Override
+  public void pay(int amount) {
+    // pay for n credit
+  }
+  @Override
+  public void withdraw(int amount) {
+    // withdraw for n credit
+  }
+}
+
+public class NoCredit implements CreditState {
+  private CreditMachine machine;
+
+  public NoCredit(CreditMachine machine) {
+    this.machine = machine
+  }
+
+  @Override
+  public void topup(int amount) {
+    // add n credit
+  }
+  @Override
+  public void check() {
+    // return current credit
+  }
+  @Override
+  public void pay(int amount) {
+    // unable to pay, not enough credit
+  }
+  @Override
+  public void withdraw(int amount) {
+    // unable to withdraw, not enough credit
+  }
+}
+```
+
+Maka ketika context/*state machine* menjalankan sebuah action, maka action tersebut kemudian didelegasikan pada state yang ada pada context/*state machine* tersebut.
+
+### 3. State Machine (Context)
+
+```java
+public class CreditMachine {
+  public static final CreditState noCredit, hasCredit, fullCredit;
+
+  private CreditState creditState;
+  private int balance;
+
+  public CreditMachine(int balance) {
+    this.balance = balance;
+    this.noCredit = new NoCredit(this);
+    this.hasCredit = new HasCredit(this);
+    this.fullCredit = new FullCredit(this);
+    this.creditState = checkState(this.balance);
+  }
+
+  private CreditState checkState(int balance) {
+    // check balance & set state
+  }
+  
+  public void topup(int amount) {
+    // DELEGATE to state - add n credit
+  }
+  public void check() {
+    // DELEGATE to state - return current credit
+  }
+  public void pay(int amount) {
+    // DELEGATE to state - pay for n credit
+  }
+  public void withdraw(int amount) {
+    // DELEGATE to state - withdraw for credit
+  }
+}
+```
+
+**_State Machine_** atau context merupakan pengendali state dimana state akan dikendalikan oleh sebuah class yang berisikan state-state yang tersimpan dalam *constant object variable* dan state penunjuk *(state pointer)* yang merepresentasikan state yang ditunjuk oleh context saat ini.
+
+Semua action yang didefinisikan dalam *state machine* nantinya akan didelegasikan ke state sesuai kondisi state pada *state machine*.
+
 
 ## Contoh Kasus
 
@@ -197,7 +339,7 @@ public class NoCash implements ATMState {
 }
 ```
 
-Nantinya keempat state tersebut akan disertakan ke dalam context/model yang akan menentukan role dari ATM baik perubahan state, reaksi ketika user berinteraksi dengan ATM, dan perubahan behavior yang terjadi bila object tersebut berganti state.
+Nantinya keempat state tersebut akan disertakan ke dalam context *(state machine)* yang akan menentukan role dari ATM baik perubahan state, reaksi ketika user berinteraksi dengan ATM, dan perubahan behavior yang terjadi bila object tersebut berganti state.
 
 Dalam sebuah context (misalnya class `ATMMachine`), nantinya keempat state harus disertakan dalam class tersebut sebagai *constant object variable* dimana keempat state dideklarasikan ketika class tersebut dijalankan. Selain keempat state, juga terdapat *state pointer* dimana nantinya ATM akan menggunakan salah satu state sebagai state awal ketika object tersebut dideklarasikan dan dapat berubah ketika mengalami perubahan state oleh state yang menjalankan method yang melakukan pergantian state.
 
@@ -271,7 +413,7 @@ public class ATMMachine {
 }
 ```
 
-Karena hubungan antara context dan state interface mempunyai hubungan yang erat dan bergantung satu sama lain, maka contextlah yang memiliki state interface karena Context berperan sebagai *state machine* yang mempunyai behavior yang terikat dengan state-state dalam class tersebut dan dalam state sudah terwakili object yang berisikan state machine dimana ketika state tersebut ingin mengubah state, maka state akan mengubah *state machine* ke state lain.
+Karena hubungan antara context dan state interface mempunyai hubungan yang erat dan bergantung satu sama lain, maka contextlah yang memiliki state interface karena Context berperan sebagai *state machine* yang mempunyai behavior yang terikat dengan state-state dalam class tersebut dan dalam state sudah terwakili object yang berisikan state machine dimana ketika state tersebut ingin mengubah state, maka state akan mengubah state pada *state machine* ke state lain.
 
 Ketika client ingin berinteraksi dengan ATM, maka client dapat memilih salah satu dari 4 action yang tersedia dalam ATM dimana setiap action akan menghasilkan behavior yang berbeda sesuai dengan state yang ada pada ATM.
 
