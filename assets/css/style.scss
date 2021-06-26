@@ -144,15 +144,9 @@ img {
   }
 }
 
-.main-content {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    padding-top: 5rem;
-    margin-top: -5rem;
-  }
-  margin-top: -5rem;
+:target::before {
+  content: "";
+  display: block;
+  height: 5rem;
+  margin: -5rem 0 0;
 }
